@@ -1,11 +1,11 @@
-The Controller
-==============
+控制器
+======
 
 Still here after the first two parts? You are already becoming a Symfony fan!
 Without further ado, discover what controllers can do for you.
 
-Returning Raw Responses
------------------------
+返回响应
+--------
 
 Symfony defines itself as a Request-Response framework. When the user makes a
 request to your application, Symfony creates a ``Request`` object to encapsulate
@@ -35,8 +35,8 @@ also create a raw ``Response`` object to return any text content::
         }
     }
 
-Route Parameters
-----------------
+路由参数
+--------
 
 Most of the time, the URLs of applications include variable parts on them. If you
 are creating for example a blog application, the URL to display the articles should
@@ -96,8 +96,8 @@ and reload your browser, the page will display a different message. And if you
 remove the last part of the URL (e.g. ``http://localhost:8000/hello``), Symfony
 will display an error because the route expects a name and you haven't provided it.
 
-Using Formats
--------------
+指定响应格式
+------------
 
 Nowadays, a web application should be able to deliver more than just HTML
 pages. From XML for RSS feeds or Web Services, to JSON for Ajax requests,
@@ -172,8 +172,8 @@ The ``hello`` action will now match URLs like ``/hello/fabien.xml`` or
 like ``/hello/fabien.js``, because the value of the ``_format`` variable doesn't
 meet its requirements.
 
-Redirecting and Forwarding
---------------------------
+重定向与转发
+------------
 
 If you want to redirect the user to another page, use the ``redirectToRoute()``
 method::
@@ -210,8 +210,8 @@ different controller using the ``forward()`` method::
         }
     }
 
-Displaying Error Pages
-----------------------
+错误信息页面
+------------
 
 Errors will inevitably happen during the execution of every web application.
 In the case of ``404`` errors, Symfony includes a handy shortcut that you can
@@ -250,8 +250,8 @@ Symfony will transform it into a proper ``500`` error page::
         }
     }
 
-Getting Information from the Request
-------------------------------------
+获取请求信息
+------------
 
 Sometimes your controllers need to access the information related to the user
 request, such as their preferred language, IP address or the URL query parameters.
@@ -297,8 +297,8 @@ In a template, you can also access the ``Request`` object via the special
 
     {{ app.request.request.get('page') }}
 
-Persisting Data in the Session
-------------------------------
+在会话里保存数据
+----------------
 
 Even if the HTTP protocol is stateless, Symfony provides a nice session object
 that represents the client (be it a real person using a browser, a bot, or a
@@ -344,8 +344,8 @@ And you can display the flash message in the template like this:
         {{ app.session.flashbag.get('notice') }}
     </div>
 
-Final Thoughts
---------------
+结论
+----
 
 That's all there is to it, and I'm not even sure you'll have spent the full
 10 minutes. You were briefly introduced to bundles in the first part, and all the

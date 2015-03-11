@@ -1,12 +1,12 @@
-Forms
-=====
+表单
+====
 
 Forms are one of the most misused Symfony components due to its vast scope and
 endless list of features. In this chapter we'll show you some of the best
 practices so you can leverage forms but get work done quickly.
 
-Building Forms
---------------
+定义表单
+--------
 
 .. best-practice::
 
@@ -62,8 +62,8 @@ To use the class, use ``createForm`` and instantiate the new class::
         // ...
     }
 
-Registering Forms as Services
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+把表单注册为服务
+~~~~~~~~~~~~~~~~
 
 You can also
 :ref:`register your form type as a service <form-cookbook-form-field-service>`.
@@ -75,8 +75,8 @@ For most forms that are used only to edit or create something, registering
 the form as a service is over-kill, and makes it more difficult to figure
 out exactly which form class is being used in a controller.
 
-Form Button Configuration
--------------------------
+表单中的按钮
+------------
 
 Form classes should try to be agnostic to *where* they will be used. This
 makes them easier to re-use later.
@@ -146,8 +146,8 @@ view layer:
                class="btn btn-default pull-right" />
     {{ form_end(form) }}
 
-Rendering the Form
-------------------
+输出表单HTML
+------------
 
 There are a lot of ways to render your form, ranging from rendering the entire
 thing in one line to rendering each part of each field independently. The
@@ -169,8 +169,8 @@ See the :doc:`/cookbook/form/form_customization` article for more information
 on this and how you can control *how* the form renders at a global level
 using form theming.
 
-Handling Form Submits
----------------------
+处理表单提交
+------------
 
 Handling a form submit usually follows a similar template:
 

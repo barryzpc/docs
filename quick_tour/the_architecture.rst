@@ -1,5 +1,5 @@
-The Architecture
-================
+架构
+====
 
 You are my hero! Who would have thought that you would still be here after the
 first three parts? Your efforts will be well rewarded soon. The first three
@@ -7,8 +7,8 @@ parts didn't look too deeply at the architecture of the framework. Because it
 makes Symfony stand apart from the framework crowd, let's dive into the
 architecture now.
 
-Understanding the Directory Structure
--------------------------------------
+了解目录结构
+------------
 
 The directory structure of a Symfony :term:`application` is rather flexible,
 but the recommended structure is as follows:
@@ -22,8 +22,8 @@ but the recommended structure is as follows:
 ``web/``
     The web root directory.
 
-The ``web/`` Directory
-~~~~~~~~~~~~~~~~~~~~~~
+``web/`` 目录
+~~~~~~~~~~~~~
 
 The web root directory is the home of all public and static files like images,
 stylesheets, and JavaScript files. It is also where each :term:`front controller`
@@ -48,7 +48,7 @@ contents returned by the kernel back to the user.
 
 .. _the-app-dir:
 
-The ``app/`` Directory
+``app/`` 目录
 ~~~~~~~~~~~~~~~~~~~~~~
 
 The ``AppKernel`` class is the main entry point of the application
@@ -68,8 +68,8 @@ are stored under the ``vendor/`` directory, but this is just a convention.
 You can store them wherever you want, globally on your server or locally
 in your projects.
 
-Understanding the Bundle System
--------------------------------
+理解包（bundle）的概念
+----------------------
 
 This section introduces one of the greatest and most powerful features of
 Symfony, the :term:`bundle` system.
@@ -94,8 +94,8 @@ Symfony already includes an AppBundle that you may use to start developing your
 application. Then, if you need to split the application into reusable
 components, you can create your own bundles.
 
-Registering a Bundle
-~~~~~~~~~~~~~~~~~~~~
+启用包
+~~~~~~
 
 An application is made up of bundles as defined in the ``registerBundles()``
 method of the ``AppKernel`` class. Each bundle is a directory that contains
@@ -129,8 +129,8 @@ In addition to the AppBundle that was already talked about, notice that the
 kernel also enables other bundles that are part of Symfony, such as FrameworkBundle,
 DoctrineBundle, SwiftmailerBundle and AsseticBundle.
 
-Configuring a Bundle
-~~~~~~~~~~~~~~~~~~~~
+配置包
+~~~~~~
 
 Each bundle can be customized via configuration files written in YAML, XML, or
 PHP. Have a look at this sample of the default Symfony configuration:
@@ -198,15 +198,15 @@ and then modifies it to add some debugging tools:
 
     # ...
 
-Extending a Bundle
-~~~~~~~~~~~~~~~~~~
+扩展包的功能
+~~~~~~~~~~~~
 
 In addition to being a nice way to organize and configure your code, a bundle
 can extend another bundle. Bundle inheritance allows you to override any existing
 bundle in order to customize its controllers, templates, or any of its files.
 
-Logical File Names
-..................
+文件别名
+........
 
 When you want to reference a file from a bundle, use this notation:
 ``@BUNDLE_NAME/path/to/file``; Symfony will resolve ``@BUNDLE_NAME``
@@ -215,16 +215,16 @@ to the real path to the bundle. For instance, the logical path
 ``src/AppBundle/Controller/DefaultController.php``, because Symfony knows
 the location of the AppBundle.
 
-Logical Controller Names
-........................
+控制器别名
+..........
 
 For controllers, you need to reference actions using the format
 ``BUNDLE_NAME:CONTROLLER_NAME:ACTION_NAME``. For instance,
 ``AppBundle:Default:index`` maps to the ``indexAction`` method from the
 ``AppBundle\Controller\DefaultController`` class.
 
-Extending Bundles
-.................
+扩展
+....
 
 If you follow these conventions, then you can use :doc:`bundle inheritance </cookbook/bundles/inheritance>`
 to override files, controllers or templates. For example, you can create
@@ -239,8 +239,8 @@ applications, store them locally or globally, your choice.
 
 .. _using-vendors:
 
-Using Vendors
--------------
+使用第三方代码
+--------------
 
 Odds are that your application will depend on third-party libraries. Those
 should be stored in the ``vendor/`` directory. You should never touch anything
@@ -248,8 +248,8 @@ in this directory, because it is exclusively managed by Composer. This directory
 already contains the Symfony libraries, the SwiftMailer library, the Doctrine ORM,
 the Twig templating system and some other third party libraries and bundles.
 
-Understanding the Cache and Logs
---------------------------------
+缓存与日志
+----------
 
 Symfony applications can contain several configuration files defined in several
 formats (YAML, XML, PHP, etc.) Instead of parsing and combining all those files
@@ -270,8 +270,8 @@ When developing a web application, things can go wrong in many ways. The log
 files in the ``app/logs/`` directory tell you everything about the requests
 and help you fix the problem quickly.
 
-Using the Command Line Interface
---------------------------------
+命令行界面
+----------
 
 Each application comes with a command line interface tool (``app/console``)
 that helps you maintain your application. It provides commands that boost your
@@ -289,8 +289,8 @@ The ``--help`` option helps you discover the usage of a command:
 
     $ php app/console debug:router --help
 
-Final Thoughts
---------------
+结论
+----
 
 Call me crazy, but after reading this part, you should be comfortable with
 moving things around and making Symfony work for you. Everything in Symfony

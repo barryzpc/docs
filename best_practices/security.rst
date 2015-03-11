@@ -1,8 +1,8 @@
-Security
-========
+安全
+====
 
-Authentication and Firewalls (i.e. Getting the User's Credentials)
-------------------------------------------------------------------
+校验方式与“防火墙”
+------------------
 
 You can configure Symfony to authenticate your users using any method you
 want and to load user information from any source. This is a complex topic,
@@ -70,8 +70,8 @@ which uses a login form to load users from the database:
 
     The source code for our project contains comments that explain each part.
 
-Authorization (i.e. Denying Access)
------------------------------------
+权限
+----
 
 Symfony gives you several ways to enforce authorization, including the ``access_control``
 configuration in :doc:`security.yml </reference/configuration/security>`, the
@@ -97,8 +97,8 @@ with a custom security voter or with ACL.
 
 .. _best-practices-security-annotation:
 
-The @Security Annotation
-------------------------
+@Security注解
+-------------
 
 For controlling access on a controller-by-controller basis, use the ``@Security``
 annotation whenever possible. It's easy to read and is placed consistently
@@ -124,8 +124,8 @@ Using ``@Security``, this looks like:
         // ...
     }
 
-Using Expressions for Complex Security Restrictions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使用表达式来实现复杂的访问控制
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your security logic is a little bit more complex, you can use an `expression`_
 inside ``@Security``. In the following example, a user can only access the
@@ -211,8 +211,8 @@ Now you can reuse this method both in the template and in the security expressio
 .. _checking-permissions-without-security:
 .. _manually-checking-permissions:
 
-Checking Permissions without @Security
---------------------------------------
+用@Security注解来检查权限
+-------------------------
 
 The above example with ``@Security`` only works because we're using the
 :ref:`ParamConverter <best-practices-paramconverter>`, which gives the expression
@@ -240,8 +240,8 @@ more advanced use-case, you can always do the same security check in PHP:
         // ...
     }
 
-Security Voters
----------------
+安全判定器
+----------
 
 If your security logic is complex and can't be centralized into a method
 like ``isAuthor()``, you should leverage custom voters. These are an order
@@ -339,8 +339,8 @@ via the even easier shortcut in a controller:
         // }
     }
 
-Learn More
-----------
+了解更多
+--------
 
 The `FOSUserBundle`_, developed by the Symfony community, adds support for a
 database-backed user system in Symfony. It also handles common tasks like

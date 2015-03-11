@@ -1,5 +1,5 @@
-Controllers
-===========
+控制器
+======
 
 Symfony follows the philosophy of *"thin controllers and fat models"*. This
 means that controllers should hold just the thin layer of *glue-code*
@@ -33,8 +33,8 @@ Overall, this means you should aggressively decouple your business logic
 from the framework while, at the same time, aggressively coupling your controllers
 and routing *to* the framework in order to get the most out of it.
 
-Routing Configuration
----------------------
+路由定义
+--------
 
 To load routes defined as annotations in your controllers, add the following
 configuration to the main routing configuration file:
@@ -68,8 +68,8 @@ reorganize them into subdirectories:
                 ├─ ...
                 └─ ...
 
-Template Configuration
-----------------------
+指定模板
+--------
 
 .. best-practice::
 
@@ -90,8 +90,8 @@ a measurable performance impact. In the sample blog application, rendering the
 homepage took 5 milliseconds using the ``$this->render()`` method and 26 milliseconds
 using the ``@Template`` annotation.
 
-How the Controller Looks
-------------------------
+使控制器轻量化
+--------------
 
 Considering all this, here is an example of how the controller should look
 for the homepage of our app:
@@ -122,8 +122,8 @@ for the homepage of our app:
 
 .. _best-practices-paramconverter:
 
-Using the ParamConverter
-------------------------
+运用ParamConverter
+-----------------
 
 If you're using Doctrine, then you can *optionally* use the `ParamConverter`_
 to automatically query for an entity and pass it as an argument to your controller.
@@ -159,8 +159,8 @@ class (which is a Doctrine entity), the ParamConverter automatically queries
 for an object whose ``$id`` property matches the ``{id}`` value. It will
 also show a 404 page if no ``Post`` can be found.
 
-When Things Get More Advanced
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+如果查询条件更复杂
+~~~~~~~~~~~~~~~~~
 
 This works without any configuration because the wildcard name ``{id}`` matches
 the name of the property on the entity. If this isn't true, or if you have
@@ -208,8 +208,8 @@ The point is this: the ParamConverter shortcut is great for simple situations.
 But you shouldn't forget that querying for entities directly is still very
 easy.
 
-Pre and Post Hooks
-------------------
+前置和后置的代码
+----------------
 
 If you need to execute some code before or after the execution of your controllers,
 you can use the EventDispatcher component to

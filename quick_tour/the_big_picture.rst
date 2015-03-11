@@ -1,5 +1,5 @@
-The Big Picture
-===============
+综述
+====
 
 Start using Symfony in 10 minutes! This chapter will walk you through the most
 important concepts behind Symfony and explain how you can get started quickly
@@ -20,8 +20,8 @@ to display the installed PHP version:
 
 .. _installing-symfony2:
 
-Installing Symfony
-------------------
+安装Symfony
+-----------
 
 In the past, Symfony had to be installed manually for each new project. Now you
 can use the **Symfony Installer**, which has to be installed the very first time
@@ -67,8 +67,8 @@ projects and then, execute the Symfony installer right away with this command:
 
     c:\> php symfony.phar
 
-Creating Your First Symfony Project
------------------------------------
+创建你的第一个Symfony项目
+-------------------------
 
 Once the Symfony Installer is set up, use the ``new`` command to create new
 Symfony projects. Let's create a new project called ``myproject``:
@@ -87,8 +87,8 @@ application right away.
 
 .. _running-symfony2:
 
-Running Symfony
----------------
+运行Symfony
+-----------
 
 This tutorial leverages the internal web server provided by PHP to run Symfony
 applications. Therefore, running a Symfony application is a matter of browsing
@@ -128,8 +128,8 @@ server with the ``server:stop`` command:
     If you prefer a traditional web server such as Apache or Nginx, read the
     :doc:`/cookbook/configuration/web_server_configuration` article.
 
-Understanding the Fundamentals
-------------------------------
+了解基本概念
+------------
 
 One of the main goals of a framework is to keep your code organized and to allow
 your application to evolve easily over time by avoiding the mixing of database
@@ -150,8 +150,8 @@ file and rendered the ``app/Resources/views/default/index.html.twig`` template.
 In the following sections you'll learn in detail the inner workings of Symfony
 controllers, routes and templates.
 
-Actions and Controllers
-~~~~~~~~~~~~~~~~~~~~~~~
+动作代码与控制器
+~~~~~~~~~~~~~~~~
 
 Open the ``src/AppBundle/Controller/DefaultController.php`` file and you'll see
 the following code (for now, don't look at the ``@Route`` configuration because
@@ -190,8 +190,8 @@ In this example, the ``index`` action is practically empty because it doesn't
 need to call any other method. The action just renders a template with the
 *Welcome to Symfony!* content.
 
-Routing
-~~~~~~~
+路由
+~~~~
 
 Symfony routes each request to the action that handles it by matching the
 requested URL against the paths configured by the application. Open again the
@@ -241,8 +241,8 @@ of the ``Default`` controller when the user browses the ``/`` path of the applic
     This flexibility is one of the main features of Symfony, a framework that
     never imposes a particular configuration format on you.
 
-Templates
-~~~~~~~~~
+模板
+~~~~
 
 The only content of the ``index`` action is this PHP instruction:
 
@@ -274,8 +274,8 @@ will introduce how templates work in Symfony.
 
 .. _quick-tour-big-picture-environments:
 
-Working with Environments
--------------------------
+运行场景
+--------
 
 Now that you have a better understanding of how Symfony works, take a closer
 look at the bottom of any Symfony rendered page. You should notice a small
@@ -302,8 +302,8 @@ production server? Keep reading to discover the concept of **execution environme
 
 .. _quick-tour-big-picture-environments-intro:
 
-What is an Environment?
-~~~~~~~~~~~~~~~~~~~~~~~
+什么是“场景”？
+~~~~~~~~~~~~~~
 
 An :term:`Environment` represents a group of configurations that's used to run
 your application. Symfony defines two environments by default: ``dev``
@@ -347,8 +347,8 @@ with its own options.
 For more details on environments, see
 ":ref:`Environments & Front Controllers <page-creation-environments>`" article.
 
-Final Thoughts
---------------
+结论
+----
 
 Congratulations! You've had your first taste of Symfony code. That wasn't so
 hard, was it? There's a lot more to explore, but you should already see how

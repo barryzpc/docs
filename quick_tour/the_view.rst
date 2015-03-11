@@ -1,5 +1,5 @@
-The View
-========
+视图
+====
 
 After reading the first part of this tutorial, you have decided that Symfony
 was worth another 10 minutes. In this second part, you will learn more about
@@ -7,8 +7,8 @@ was worth another 10 minutes. In this second part, you will learn more about
 Twig makes your templates more readable and concise; it also makes them more
 friendly for web designers.
 
-Getting familiar with Twig
---------------------------
+初识Twig
+--------
 
 The official `Twig documentation`_ is the best resource to learn everything
 about this template engine. This section just gives you a quick overview of
@@ -85,8 +85,8 @@ display the content of a variable passed by the controller depending on its type
     {{ user.name() }}
     {{ user.getName() }}
 
-Decorating Templates
---------------------
+模板代码的复用
+--------------
 
 More often than not, templates in a project share common elements, like the
 well-known header and footer. Twig solves this problem elegantly with a concept
@@ -131,8 +131,8 @@ override those portions of the template. In this example, the ``index.html.twig`
 template overrides the ``body`` block, but not the ``title`` block, which will
 display the default content defined in the ``base.html.twig`` template.
 
-Using Tags, Filters, and Functions
-----------------------------------
+语法标签、过滤器和函数
+----------------------
 
 One of the best features of Twig is its extensibility via tags, filters, and
 functions. Take a look at the following sample template that uses filters
@@ -151,8 +151,8 @@ extensively to modify the information before displaying it to the user:
 Don't forget to check out the official `Twig documentation`_ to learn everything
 about filters, functions and tags.
 
-Including other Templates
-~~~~~~~~~~~~~~~~~~~~~~~~~
+引用模板
+~~~~~~~~
 
 The best way to share a snippet of code between several templates is to create a
 new template fragment that can then be included from other templates.
@@ -181,8 +181,8 @@ the ``include()`` function:
         {{ include('ads/banner.html.twig') }}
     {% endblock %}
 
-Embedding other Controllers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+嵌入其他控制器输出的内容
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 And what if you want to embed the result of another controller in a template?
 That's very useful when working with Ajax, or when the embedded template needs
@@ -219,8 +219,8 @@ action of the ``Default`` controller (the ``AppBundle`` part will be explained l
         // ...
     }
 
-Creating Links between Pages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+构造链接
+~~~~~~~~
 
 Creating links between pages is a must for web applications. Instead of
 hardcoding URLs in templates, the ``path`` function knows how to generate
@@ -240,8 +240,8 @@ optionally pass an array of route parameters as the second argument.
     *absolute* URLs, which is very handy when rendering emails and RSS files:
     ``<a href="{{ url('homepage') }}">Visit our website</a>``.
 
-Including Assets: Images, JavaScripts and Stylesheets
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+引用前端资源文件：图像、Javascript和CSS样式表
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What would the Internet be without images, JavaScripts, and stylesheets?
 Symfony provides the ``asset`` function to deal with them easily:
@@ -260,8 +260,8 @@ Using the ``asset`` function, your application is more portable. The reason is
 that you can move the application root directory anywhere under your web root
 directory without changing anything in your template's code.
 
-Final Thoughts
---------------
+结论
+----
 
 Twig is simple yet powerful. Thanks to layouts, blocks, templates and action
 inclusions, it is very easy to organize your templates in a logical and

@@ -1,5 +1,5 @@
-Organizing Your Business Logic
-==============================
+业务逻辑代码的组织
+==================
 
 In computer software, **business logic** or domain logic is "the part of the
 program that encodes the real-world business rules that determine how data can
@@ -24,8 +24,8 @@ Inside here, you can create whatever directories you want to organize things:
     ├─ vendor/
     └─ web/
 
-Storing Classes Outside of the Bundle?
---------------------------------------
+所有文件一定要放在Bundle里吗？
+------------------------------
 
 But there's no technical reason for putting business logic inside of a bundle.
 If you like, you can create your own namespace inside the ``src/`` directory
@@ -49,8 +49,8 @@ and put things there:
     simplicity. If you're advanced enough to know what needs to live in
     a bundle and what can live outside of one, then feel free to do that.
 
-Services: Naming and Format
----------------------------
+服务的命名与定义
+----------------
 
 The blog application needs a utility that can transform a post title (e.g.
 "Hello World") into a slug (e.g. "hello-world"). The slug will be used as
@@ -112,8 +112,8 @@ Now you can use the custom slugger in any controller class, such as the
         }
     }
 
-Service Format: YAML
---------------------
+推荐的服务定义格式：YAML
+------------------------
 
 In the previous section, YAML was used to define the service.
 
@@ -129,8 +129,8 @@ personal taste.
 We recommend YAML because it's friendly to newcomers and concise. You can
 of course use whatever format you like.
 
-Service: No Class Parameter
----------------------------
+不必把服务的类名注册为参数
+--------------------------
 
 You may have noticed that the previous service definition doesn't configure
 the class namespace as a parameter:
@@ -159,8 +159,8 @@ allow overriding services. However, overriding a service by just changing its
 class name is a very rare use case because, frequently, the new service has
 different constructor arguments.
 
-Using a Persistence Layer
--------------------------
+持久层
+------
 
 Symfony is an HTTP framework that only cares about generating an HTTP response
 for each HTTP request. That's why Symfony doesn't provide a way to talk to
@@ -190,8 +190,8 @@ The three entities defined by our sample blog application are a good example:
     If you're more advanced, you can of course store them under your own
     namespace in ``src/``.
 
-Doctrine Mapping Information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Doctrine的映射配置
+~~~~~~~~~~~~~~~~~~
 
 Doctrine Entities are plain PHP objects that you store in some "database".
 Doctrine only knows about your entities through the mapping metadata configured
@@ -273,8 +273,8 @@ looking for mapping information:
 All formats have the same performance, so this is once again ultimately a
 matter of taste.
 
-Data Fixtures
-~~~~~~~~~~~~~
+数据定制
+~~~~~~~~
 
 As fixtures support is not enabled by default in Symfony, you should execute
 the following command to install the Doctrine fixtures bundle:
@@ -324,8 +324,8 @@ command:
       > purging database
       > loading AppBundle\DataFixtures\ORM\LoadFixtures
 
-Coding Standards
-----------------
+代码规范
+--------
 
 The Symfony source code follows the `PSR-1`_ and `PSR-2`_ coding standards that
 were defined by the PHP community. You can learn more about
