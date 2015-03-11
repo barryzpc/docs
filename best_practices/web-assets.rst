@@ -1,5 +1,5 @@
-Web Assets
-==========
+前端资源文件
+============
 
 Web assets are things like CSS, JavaScript and image files that make the
 frontend of your site look and work great. Symfony developers have traditionally
@@ -32,8 +32,8 @@ much more concise:
     here will be publicly accessible. For that reason, you should put your
     compiled web assets here, but not their source files (e.g. SASS files).
 
-Using Assetic
--------------
+使用Assetic
+-----------
 
 These days, you probably can't simply create static CSS and JavaScript files
 and include them in your template. Instead, you'll probably want to combine
@@ -73,8 +73,8 @@ with a single Twig tag:
         <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
 
-Frontend-Based Applications
----------------------------
+富前端应用
+----------
 
 Recently, frontend technologies like AngularJS have become pretty popular
 for developing frontend web applications that talk to an API.
@@ -84,8 +84,8 @@ that are recommended by the technology, such as Bower and GruntJS. You should
 develop your frontend application separately from your Symfony backend (even
 separating the repositories if you want).
 
-Learn More about Assetic
-------------------------
+更多信息
+--------
 
 Assetic can also minimize CSS and JavaScript assets
 :doc:`using UglifyCSS/UglifyJS </cookbook/assetic/uglifyjs>` to speed up your

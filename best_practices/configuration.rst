@@ -1,5 +1,5 @@
-Configuration
-=============
+配置参数
+========
 
 Configuration usually involves different application parts (such as infrastructure
 and security credentials) and different environments (development, production).
@@ -8,8 +8,8 @@ three parts.
 
 .. _config-parameters.yml:
 
-Infrastructure-Related Configuration
-------------------------------------
+架构相关的配置
+--------------
 
 .. best-practice::
 
@@ -42,8 +42,8 @@ they have nothing to do with the application's behavior. In other words, your
 application doesn't care about the location of your database or the credentials
 to access to it, as long as the database is correctly configured.
 
-Canonical Parameters
-~~~~~~~~~~~~~~~~~~~~
+默认参数
+~~~~~~~~
 
 .. best-practice::
 
@@ -61,8 +61,8 @@ Symfony will check if there is any difference between the canonical
 is a difference, Symfony will ask you to provide a value for the new parameter
 and it will add it to your local ``parameters.yml`` file.
 
-Application-Related Configuration
----------------------------------
+应用相关的配置
+--------------
 
 .. best-practice::
 
@@ -80,8 +80,8 @@ one :doc:`environment </cookbook/configuration/environments>` to another. That's
 why Symfony already includes ``app/config/config_dev.yml`` and ``app/config/config_prod.yml``
 files so that you can override specific values for each environment.
 
-Constants vs Configuration Options
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+常量VS配置
+~~~~~~~~~~
 
 One of the most common errors when defining application configuration is to
 create new options for values that never change, such as the number of items for
@@ -153,8 +153,8 @@ whereas they cannot access the container parameters:
 The only notable disadvantage of using constants for this kind of configuration
 values is that you cannot redefine them easily in your tests.
 
-Semantic Configuration: Don't Do It
------------------------------------
+别为难自己：不必按场景配置
+--------------------------
 
 .. best-practice::
 
@@ -170,8 +170,8 @@ such as configuration validation, the amount of work needed to define that
 configuration isn't worth it for bundles that aren't meant to be shared as
 third-party bundles.
 
-Moving Sensitive Options Outside of Symfony Entirely
-----------------------------------------------------
+避免在Symfony项目里泄露敏感配置
+-------------------------------
 
 When dealing with sensitive options, like database credentials, we also recommend
 that you store them outside the Symfony project and make them available

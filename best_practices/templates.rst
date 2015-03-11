@@ -1,5 +1,5 @@
-Templates
-=========
+模板
+====
 
 When PHP was created 20 years ago, developers loved its simplicity and how
 well it blended HTML and dynamic code. But as time passed, other template
@@ -22,8 +22,8 @@ In addition, Twig is the only template format with guaranteed support in Symfony
 3.0. As a matter of fact, PHP may be removed from the officially supported
 template engines.
 
-Template Locations
-------------------
+模板文件的位置
+--------------
 
 .. best-practice::
 
@@ -51,8 +51,8 @@ Another advantage is that centralizing your templates simplifies the work
 of your designers. They don't need to look for templates in lots of directories
 scattered through lots of bundles.
 
-Twig Extensions
----------------
+Twig扩展
+--------
 
 .. best-practice::
 

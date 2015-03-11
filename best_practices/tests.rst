@@ -1,21 +1,21 @@
-Tests
-=====
+测试
+====
 
 Roughly speaking, there are two types of test. Unit testing allows you to
 test the input and output of specific functions. Functional testing allows
 you to command a "browser" where you browse to pages on your site, click
 links, fill out forms and assert that you see certain things on the page.
 
-Unit Tests
-----------
+单元测试
+--------
 
 Unit tests are used to test your "business logic", which should live in classes
 that are independent of Symfony. For that reason, Symfony doesn't really
 have an opinion on what tools you use for unit testing. However, the most
 popular tools are `PhpUnit`_ and `PhpSpec`_.
 
-Functional Tests
-----------------
+功能测试
+--------
 
 Creating really good functional tests can be tough so some developers skip
 these completely. Don't skip the functional tests! By defining some *simple*
@@ -70,8 +70,8 @@ In computer software, this kind of test is called `smoke testing`_ and consists
 of *"preliminary testing to reveal simple failures severe enough to reject a
 prospective software release"*.
 
-Hardcode URLs in a Functional Test
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+在功能测试里指定具体URL
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Some of you may be asking why the previous functional test doesn't use the URL
 generator service:
@@ -100,8 +100,8 @@ changes the path of the ``blog_archives`` route, the test will still pass,
 but the original (old) URL won't work! This means that any bookmarks for
 that URL will be broken and you'll lose any search engine page ranking.
 
-Testing JavaScript Functionality
---------------------------------
+测试Javascript代码
+------------------
 
 The built-in functional testing client is great, but it can't be used to
 test any JavaScript behavior on your pages. If you need to test this, consider
@@ -110,8 +110,8 @@ using the `Mink`_ library from within PHPUnit.
 Of course, if you have a heavy JavaScript frontend, you should consider using
 pure JavaScript-based testing tools.
 
-Learn More about Functional Tests
----------------------------------
+更多信息
+--------
 
 Consider using `Faker`_ and `Alice`_ libraries to generate real-looking data
 for your test fixtures.

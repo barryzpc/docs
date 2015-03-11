@@ -1,5 +1,5 @@
-Official Symfony Best Practices
-===============================
+Symfony官方最佳实践
+===================
 
 .. toctree::
     :hidden:

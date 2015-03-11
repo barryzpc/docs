@@ -1,8 +1,8 @@
 .. index::
    single: Symfony Framework Best Practices
 
-The Symfony Framework Best Practices
-====================================
+Symfony框架最佳实践
+===================
 
 The Symfony framework is well-known for being *really* flexible and is used
 to build micro-sites, enterprise applications that handle billions of connections
@@ -15,8 +15,8 @@ Unfortunately, a lot of these recommendations are unneeded for web applications.
 Much of the time, they unnecessarily overcomplicate things and don't follow the
 original pragmatic philosophy of Symfony.
 
-What is this Guide About?
--------------------------
+提到哪些内容？
+--------------
 
 This guide aims to fix that by describing the **best practices for developing
 web apps with the Symfony full-stack framework**. These are best practices that
@@ -53,8 +53,8 @@ continue using your own best practices and methodologies, you can of course
 do it. Symfony is flexible enough to adapt to your needs. That will never
 change.
 
-Who this Book Is for (Hint: It's not a Tutorial)
-------------------------------------------------
+适合谁阅读（友情提示：这并不是入门教程）
+----------------------------------------
 
 Any Symfony developer, whether you are an expert or a newcomer, can read this
 guide. But since this isn't a tutorial, you'll need some basic knowledge of
@@ -66,8 +66,8 @@ you can find in the vast Symfony documentation, like discussions about dependenc
 injection or front controllers. We'll solely focus on explaining how to do
 what you already know.
 
-The Application
----------------
+示例项目
+--------
 
 In addition to this guide, you'll find a sample application developed with
 all these best practices in mind. **The application is a simple blog engine**,
@@ -79,8 +79,8 @@ selected snippets of code through the chapters. Please refer to the last chapter
 of this guide to find more details about this application and the instructions
 to install it.
 
-Don't Update Your Existing Applications
----------------------------------------
+不必重构现有代码！
+------------------
 
 After reading this handbook, some of you may be considering refactoring your
 existing Symfony applications. Our recommendation is sound and clear: **you

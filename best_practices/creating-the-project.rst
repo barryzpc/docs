@@ -1,15 +1,15 @@
-Creating the Project
-====================
+创建项目
+========
 
-Installing Symfony
-------------------
+安装Symfony
+-----------
 
 In the past, Symfony projects were created with `Composer`_, the dependency manager
 for PHP applications. However, the current recommendation is to use the **Symfony
 Installer**, which has to be installed before creating your first project.
 
-Linux and Mac OS X Systems
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Linux和Mac OS X系统
+~~~~~~~~~~~~~~~~~~~
 
 Open your command console and execute the following:
 
@@ -22,8 +22,8 @@ Open your command console and execute the following:
 Now you can execute the Symfony Installer as a global system command called
 ``symfony``.
 
-Windows Systems
-~~~~~~~~~~~~~~~
+Windows系统
+~~~~~~~~~~~
 
 Open your command console and execute the following:
 
@@ -38,8 +38,8 @@ execute it as follows:
 
     c:\> php symfony.phar
 
-Creating the Blog Application
------------------------------
+创建博客应用
+------------
 
 Now that everything is correctly set up, you can create a new project based on
 Symfony. In your command console, browse to a directory where you have permission
@@ -68,8 +68,8 @@ requirements.
     `public checksums repository`_ and follow `these steps`_ to verify the
     signatures.
 
-Structuring the Application
----------------------------
+代码目录结构
+------------
 
 After creating the application, enter the ``blog/`` directory and you'll see a
 number of files and directories generated automatically:
@@ -104,8 +104,8 @@ following:
 * ``web/``, stores all the front controller files and all the web assets, such
   as stylesheets, JavaScript files and images.
 
-Application Bundles
-~~~~~~~~~~~~~~~~~~~
+项目bundle
+~~~~~~~~~~
 
 When Symfony 2.0 was released, most developers naturally adopted the symfony
 1.x way of dividing applications into logical modules. That's why many Symfony
@@ -159,8 +159,8 @@ that follows these best practices:
 
         $ php app/console generate:bundle --namespace=AppBundle --dir=src --format=annotation --no-interaction
 
-Extending the Directory Structure
----------------------------------
+修改默认的目录结构
+------------------
 
 If your project or infrastructure requires some changes to the default directory
 structure of Symfony, you can
