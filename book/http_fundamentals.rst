@@ -3,8 +3,8 @@
 
 .. _symfony2-and-http-fundamentals:
 
-Symfony and HTTP Fundamentals
-=============================
+Symfony和HTTP基础工具
+=====================
 
 Congratulations! By learning about Symfony, you're well on your way towards
 being a more *productive*, *well-rounded* and *popular* web developer (actually,
@@ -21,8 +21,8 @@ True to the Symfony philosophy, this chapter begins by explaining the fundamenta
 concept common to web development: HTTP. Regardless of your background or
 preferred programming language, this chapter is a **must-read** for everyone.
 
-HTTP is Simple
---------------
+HTTP很简单
+----------
 
 HTTP (Hypertext Transfer Protocol to the geeks) is a text language that allows
 two machines to communicate with each other. That's it! For example, when
@@ -44,8 +44,8 @@ how to master it.
 .. index::
    single: HTTP; Request-response paradigm
 
-Step1: The Client Sends a Request
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+第一步：客户端发出请求
+~~~~~~~~~~~~~~~~~~~~~~
 
 Every conversation on the web starts with a *request*. The request is a text
 message created by a client (e.g. a browser, a smartphone app, etc) in a
@@ -107,8 +107,8 @@ the client accepts (``Accept``) and the application the client is using to
 make the request (``User-Agent``). Many other headers exist and can be found
 on Wikipedia's `List of HTTP header fields`_ article.
 
-Step 2: The Server Returns a Response
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+第二部：服务端返回响应
+~~~~~~~~~~~~~~~~~~~~~~
 
 Once a server has received the request, it knows exactly which resource the
 client needs (via the URI) and what the client wants to do with that resource
@@ -153,8 +153,8 @@ being returned. A list of common media types can be found on Wikipedia's
 Many other headers exist, some of which are very powerful. For example, certain
 headers can be used to create a powerful caching system.
 
-Requests, Responses and Web Development
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+请求，响应和Web开发
+~~~~~~~~~~~~~~~~~~~
 
 This request-response conversation is the fundamental process that drives all
 communication on the web. And as important and powerful as this process is,
@@ -177,8 +177,8 @@ Symfony is architected to match this reality.
 .. index::
    single: Symfony Fundamentals; Requests and responses
 
-Requests and Responses in PHP
------------------------------
+PHP里的请求和响应
+-----------------
 
 So how do you interact with the "request" and create a "response" when using
 PHP? In reality, PHP abstracts you a bit from the whole process::
@@ -209,8 +209,8 @@ message. PHP will create a true HTTP response and return it to the client:
     The URI requested is: /testing?foo=symfony
     The value of the "foo" parameter is: symfony
 
-Requests and Responses in Symfony
----------------------------------
+Symfony里的请求和响应
+---------------------
 
 Symfony provides an alternative to the raw PHP approach via two classes that
 allow you to interact with the HTTP request and response in an easier way.
@@ -300,8 +300,8 @@ and create the appropriate response based on your application logic*.
     used entirely independently of Symfony and also provides classes for handling
     sessions and file uploads.
 
-The Journey from the Request to the Response
---------------------------------------------
+从请求通往响应的旅程
+--------------------
 
 Like HTTP itself, the ``Request`` and ``Response`` objects are pretty simple.
 The hard part of building an application is writing what comes in between.
@@ -315,8 +315,8 @@ code organized and maintainable?
 
 Symfony was created to solve these problems so that you don't have to.
 
-The Front Controller
-~~~~~~~~~~~~~~~~~~~~
+前端控制器
+~~~~~~~~~~
 
 Traditionally, applications were built so that each "page" of a site was
 its own physical file:
@@ -356,8 +356,8 @@ and the routing of different URLs to different parts of your application
 is done internally. This solves both problems with the original approach.
 Almost all modern web apps do this - including apps like WordPress.
 
-Stay Organized
-~~~~~~~~~~~~~~
+保持条理清晰
+~~~~~~~~~~~~
 
 Inside your front controller, you have to figure out which code should be
 executed and what the content to return should be. To figure this out, you'll
@@ -383,8 +383,8 @@ on that value. This can get ugly quickly::
 Solving this problem can be difficult. Fortunately it's *exactly* what Symfony
 is designed to do.
 
-The Symfony Application Flow
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Symfony应用的运行流程
+~~~~~~~~~~~~~~~~~~~~~
 
 When you let Symfony handle each request, life is much easier. Symfony follows
 the same simple pattern for every request:
@@ -415,8 +415,8 @@ It's that easy! To review:
 * The correct PHP function is executed, where your code creates and returns
   the appropriate ``Response`` object.
 
-A Symfony Request in Action
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Symfony请求处理示例
+~~~~~~~~~~~~~~~~~~~
 
 Without diving into too much detail, here is this process in action. Suppose
 you want to add a ``/contact`` page to your Symfony application. First, start
@@ -487,8 +487,8 @@ email messages.
 
 .. _symfony2-build-your-app-not-your-tools:
 
-Symfony: Build your App, not your Tools
----------------------------------------
+Symfony：专注开发您的项目，而不是您的工具
+-----------------------------------------
 
 You now know that the goal of any app is to interpret each incoming request
 and create an appropriate response. As an application grows, it becomes more
@@ -507,8 +507,8 @@ Symfony framework, or just one piece of Symfony all by itself.
 
 .. _standalone-tools-the-symfony2-components:
 
-Standalone Tools: The Symfony *Components*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+独立的工具箱: Symfony*组件*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 So what *is* Symfony? First, Symfony is a collection of over twenty independent
 libraries that can be used inside *any* PHP project. These libraries, called
@@ -548,8 +548,8 @@ Every part is made to be used if needed and replaced when necessary.
 
 .. _the-full-solution-the-symfony2-framework:
 
-The Full Solution: The Symfony *Framework*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+全方位解决方案: Symfony*框架*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 So then, what *is* the Symfony *Framework*? The *Symfony Framework* is
 a PHP library that accomplishes two distinct tasks:

@@ -1,8 +1,8 @@
 .. index::
    single: Tests
 
-Performance
-===========
+性能
+====
 
 Symfony is fast, right out of the box. Of course, if you really need speed,
 there are many ways that you can make Symfony even faster. In this chapter,
@@ -12,8 +12,8 @@ application even faster.
 .. index::
    single: Performance; Byte code cache
 
-Use a Byte Code Cache (e.g. APC)
---------------------------------
+使用二进制代码缓存（比如APC）
+-----------------------------
 
 One of the best (and easiest) things that you should do to improve your performance
 is to use a "byte code cache". The idea of a byte code cache is to remove
@@ -24,8 +24,8 @@ used byte code cache is probably `APC`_
 Using a byte code cache really has no downside, and Symfony has been architected
 to perform really well in this type of environment.
 
-Further Optimizations
-~~~~~~~~~~~~~~~~~~~~~
+更多优化
+~~~~~~~~
 
 Byte code caches usually monitor the source files for changes. This ensures
 that if the source of a file changes, the byte code is recompiled automatically.
@@ -42,8 +42,8 @@ your ``php.ini`` configuration.
 .. index::
    single: Performance; Autoloader
 
-Use Composer's Class Map Functionality
---------------------------------------
+使用Composer类映射表功能
+------------------------
 
 By default, the Symfony standard edition uses Composer's autoloader
 in the `autoload.php`_ file. This autoloader is easy to use, as it will
@@ -64,8 +64,8 @@ command line, and might become part of your deploy process:
 
 Internally, this builds the big class map array in ``vendor/composer/autoload_classmap.php``.
 
-Caching the Autoloader with APC
--------------------------------
+将类载入器缓存到APC
+-------------------
 
 Another solution is to cache the location of each class after it's located
 the first time. Symfony comes with a class - :class:`Symfony\\Component\\ClassLoader\\ApcClassLoader` -
@@ -102,8 +102,8 @@ For more details, see :doc:`/components/class_loader/cache_class_loader`.
 .. index::
    single: Performance; Bootstrap files
 
-Use Bootstrap Files
--------------------
+使用启动文件
+------------
 
 To ensure optimal flexibility and code reuse, Symfony applications leverage
 a variety of classes and 3rd party components. But loading all of these classes
@@ -130,8 +130,8 @@ Note that there are two disadvantages when using a bootstrap file:
 If you're using the Symfony Standard Edition, the bootstrap file is automatically
 rebuilt after updating the vendor libraries via the ``composer install`` command.
 
-Bootstrap Files and Byte Code Caches
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+启动文件和二进制代码缓存
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Even when using a byte code cache, performance will improve when using a bootstrap
 file since there will be fewer files to monitor for changes. Of course if this

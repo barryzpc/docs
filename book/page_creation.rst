@@ -3,8 +3,8 @@
 
 .. _creating-pages-in-symfony2:
 
-Creating Pages in Symfony
-=========================
+在Symfony应用里创建页面
+=======================
 
 Creating a new page in Symfony is a simple two-step process:
 
@@ -29,8 +29,8 @@ to keep your application organized as it grows in users and complexity.
 
 .. _page-creation-environments:
 
-Environments & Front Controllers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+运行配置 & 前端控制器
+~~~~~~~~~~~~~~~~~~~~~
 
 Every Symfony application runs within an :term:`environment`. An environment
 is a specific set of configuration and loaded bundles, represented by a string.
@@ -63,8 +63,8 @@ cache.
 .. index::
    single: Page creation; Example
 
-The "Random Number" Page
-------------------------
+“随机数”页面示例
+----------------
 
 In this chapter, you'll develop an application that can generate random numbers.
 When you're finished, the user will be able to get a random number between ``1``
@@ -89,8 +89,8 @@ process.
     * For Apache HTTP Server, refer to `Apache's DirectoryIndex documentation`_
     * For Nginx, refer to `Nginx HttpCoreModule location documentation`_
 
-Before you begin: Create the Bundle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+在您开始之前请先创建Bundle
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before you begin, you'll need to create a *bundle*. In Symfony, a :term:`bundle`
 is like a plugin, except that all the code in your application will live
@@ -133,8 +133,8 @@ the bundle is registered with the kernel::
 Now that you have a bundle setup, you can begin building your application
 inside the bundle.
 
-Step 1: Create the Route
-~~~~~~~~~~~~~~~~~~~~~~~~
+第一步：创建路由规则
+~~~~~~~~~~~~~~~~~~~~
 
 By default, the routing configuration file in a Symfony application is
 located at ``app/config/routing.yml``. Like all configuration in Symfony,
@@ -245,8 +245,8 @@ to generate the proper random number.
   and powerful URL structures in your application. For more details, see
   the chapter all about :doc:`Routing </book/routing>`.
 
-Step 2: Create the Controller
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+第二部：创建控制器
+~~~~~~~~~~~~~~~~~~
 
 When a URL such as ``/random/10`` is handled by the application, the ``random``
 route is matched and the ``AcmeDemoBundle:Random:index`` controller is executed
@@ -327,8 +327,8 @@ An optional, but common, third step in the process is to create a template.
    when creating pages. Much more information can be found in the
    :doc:`Controller Chapter </book/controller>`.
 
-Optional Step 3: Create the Template
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+第三部（可选）：创建模板
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Templates allow you to move all the presentation code (e.g. HTML) into
 a separate file and reuse different portions of the page layout. Instead
@@ -481,8 +481,8 @@ the content for that ``Response`` object.
 .. index::
    single: Directory Structure
 
-The Directory Structure
------------------------
+目录结构
+--------
 
 After just a few short sections, you already understand the philosophy behind
 creating and rendering pages in Symfony. You've also already begun to see
@@ -512,8 +512,8 @@ the same basic and recommended directory structure:
 
 .. _the-web-directory:
 
-The Web Directory
-~~~~~~~~~~~~~~~~~
+Web目录
+~~~~~~~
 
 The web root directory is the home of all public and static files including
 images, stylesheets, and JavaScript files. It is also where each
@@ -556,8 +556,8 @@ Though front controllers are essential in handling every request, you'll
 rarely need to modify or even think about them. They'll be mentioned again
 briefly in the `Environments`_ section.
 
-The Application (``app``) Directory
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+应用（``app``）目录
+~~~~~~~~~~~~~~~~~~~
 
 As you saw in the front controller, the ``AppKernel`` class is the main entry
 point of the application and is responsible for all configuration. As such,
@@ -608,7 +608,7 @@ You'll learn more about each of these directories in later chapters.
         Path:
             src/Acme/DemoBundle/Controller/RandomController.php
 
-The Source (``src``) Directory
+代码（``src``）目录
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Put simply, the ``src/`` directory contains all the actual code (PHP code,
@@ -620,8 +620,8 @@ But what exactly is a :term:`bundle`?
 
 .. _page-creation-bundles:
 
-The Bundle System
------------------
+Bundle系统
+----------
 
 A bundle is similar to a plugin in other software, but even better. The key
 difference is that *everything* is a bundle in Symfony, including both the
@@ -679,8 +679,8 @@ are used by your application (including the core Symfony bundles).
    A bundle can live *anywhere* as long as it can be autoloaded (via the
    autoloader configured at ``app/autoload.php``).
 
-Creating a Bundle
-~~~~~~~~~~~~~~~~~
+创建Bundle
+~~~~~~~~~~
 
 The Symfony Standard Edition comes with a handy task that creates a fully-functional
 bundle for you. Of course, creating a bundle by hand is pretty easy as well.
@@ -751,8 +751,8 @@ tools later.
    sure the bundle has been enabled in ``registerBundles()``. When using
    the ``generate:bundle`` command, this is done for you.
 
-Bundle Directory Structure
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Bundle目录结构
+~~~~~~~~~~~~~~
 
 The directory structure of a bundle is simple and flexible. By default, the
 bundle system follows a set of conventions that help to keep code consistent
@@ -789,8 +789,8 @@ create and validate forms, create translations for your application, write
 tests and much more. Each of these has their own place and role within the
 bundle.
 
-Application Configuration
--------------------------
+应用配置
+--------
 
 An application consists of a collection of bundles representing all the
 features and capabilities of your application. Each bundle can be customized
@@ -901,8 +901,8 @@ options of each feature.
 
     * *PHP*: Very powerful but less readable than standard configuration formats.
 
-Default Configuration Dump
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+导入默认配置项
+~~~~~~~~~~~~~~
 
 You can dump the default configuration for a bundle in YAML to the console using
 the ``config:dump-reference`` command. Here is an example of dumping the default
@@ -928,7 +928,7 @@ The extension alias (configuration key) can also be used:
 
 .. _environments-summary:
 
-Environments
+运行环境配置
 ------------
 
 An application can run in various environments. The different environments
@@ -984,8 +984,8 @@ cached files and allow them to rebuild:
 .. index::
    single: Environments; Configuration
 
-Environment Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~
+运行环境设置
+~~~~~~~~~~~~
 
 The ``AppKernel`` class is responsible for actually loading the configuration
 file of your choice::
@@ -1066,8 +1066,8 @@ to fit the needs of the specific environment. This is just a convention,
 but one that allows you to reuse most of your configuration and customize
 just pieces of it between environments.
 
-Summary
--------
+总结
+----
 
 Congratulations! You've now seen every fundamental aspect of Symfony and have
 hopefully discovered how easy and flexible it can be. And while there are
