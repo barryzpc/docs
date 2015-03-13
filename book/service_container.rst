@@ -2,8 +2,8 @@
    single: Service Container
    single: DependencyInjection; Container
 
-Service Container
-=================
+服务容器
+========
 
 A modern PHP application is full of objects. One object may facilitate the
 delivery of email messages while another may allow you to persist information
@@ -36,8 +36,8 @@ the service container makes writing good code so easy.
 .. index::
    single: Service Container; What is a service?
 
-What is a Service?
-------------------
+什么是服务?
+-----------
 
 Put simply, a :term:`Service` is any PHP object that performs some sort of
 "global" task. It's a purposefully-generic name used in computer science
@@ -69,8 +69,8 @@ are key to being a good developer in almost any language.
 .. index::
    single: Service Container; What is a service container?
 
-What is a Service Container?
-----------------------------
+什么是服务容器
+--------------
 
 A :term:`Service Container` (or *dependency injection container*) is simply
 a PHP object that manages the instantiation of services (i.e. objects).
@@ -97,8 +97,8 @@ down every place you create a ``Mailer`` service and change it.
 
 .. _service-container-creating-service:
 
-Creating/Configuring Services in the Container
-----------------------------------------------
+在容器中创建/配置服务
+---------------------
 
 A better answer is to let the service container create the ``Mailer`` object
 for you. In order for this to work, you must *teach* the container how to
@@ -158,8 +158,8 @@ later how you can configure a service that has multiple instances in the
 
 .. _book-service-container-parameters:
 
-Service Parameters
-------------------
+服务参数
+--------
 
 The creation of new services (i.e. objects) via the container is pretty
 straightforward. Parameters make defining services more organized and flexible:
@@ -254,13 +254,13 @@ third-party bundles will *always* use parameters as they make the service
 stored in the container more configurable. For the services in your application,
 however, you may not need the flexibility of parameters.
 
-Array Parameters
-~~~~~~~~~~~~~~~~
+数组类型参数
+~~~~~~~~~~~~
 
 Parameters can also contain array values. See :ref:`component-di-parameters-array`.
 
-Importing other Container Configuration Resources
--------------------------------------------------
+导入其他容器配置
+----------------
 
 .. tip::
 
@@ -286,8 +286,8 @@ for importing service configuration from third-party bundles.
 
 .. _service-container-imports-directive:
 
-Importing Configuration with ``imports``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使用``imports``导入
+~~~~~~~~~~~~~~~~~~~
 
 So far, you've placed your ``my_mailer`` service container definition directly
 in the application configuration file (e.g. ``app/config/config.yml``). Of
@@ -390,8 +390,8 @@ without worrying later if you move the AcmeHelloBundle to a different directory.
 
 .. _service-container-extension-configuration:
 
-Importing Configuration via Container Extensions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使用容器扩展导入配置
+~~~~~~~~~~~~~~~~~~~~
 
 When developing in Symfony, you'll most commonly use the ``imports`` directive
 to import container configuration from the bundles you've created specifically
@@ -508,8 +508,8 @@ If you want to expose user friendly configuration in your own bundles, read the
 .. index::
    single: Service Container; Referencing services
 
-Referencing (Injecting) Services
---------------------------------
+引用（注入）服务
+----------------
 
 So far, the original ``my_mailer`` service is simple: it takes just one argument
 in its constructor, which is easily configurable. As you'll see, the real
@@ -620,8 +620,8 @@ the work of instantiating the classes.
 
 .. _book-services-expressions:
 
-Using the Expression Language
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使用表达式
+~~~~~~~~~~
 
 The service container also supports an "expression" that allows you to inject
 very specific values into a service.
@@ -726,8 +726,8 @@ via a ``container`` variable. Here's another example:
 Expressions can be used in ``arguments``, ``properties``, as arguments with
 ``configurator`` and as arguments to ``calls`` (method calls).
 
-Optional Dependencies: Setter Injection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+可选依赖：使用Setter方式注入
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Injecting dependencies into the constructor in this manner is an excellent
 way of ensuring that the dependency is available to use. If you have optional
@@ -811,8 +811,8 @@ Injecting the dependency by the setter method just needs a change of syntax:
 
 .. _book-container-request-stack:
 
-Injecting the Request
-~~~~~~~~~~~~~~~~~~~~~
+注入请求对象
+~~~~~~~~~~~~
 
 As of Symfony 2.4, instead of injecting the ``request`` service, you should
 inject the ``request_stack`` service and access the ``Request`` by calling
@@ -904,8 +904,8 @@ Now, just inject the ``request_stack``, which behaves like any normal service:
     argument of your action method. See
     :ref:`book-controller-request-argument` for details.
 
-Making References optional
---------------------------
+创建可选依赖
+------------
 
 Sometimes, one of your services may have an optional dependency, meaning
 that the dependency is not required for your service to work properly. In
@@ -972,8 +972,8 @@ allow for an optional dependency::
             // ...
         }
 
-Core Symfony and Third-Party Bundle Services
---------------------------------------------
+Symfony内置服务第三方Bundle服务
+-------------------------------
 
 Since Symfony and all third-party bundles configure and retrieve their services
 via the container, you can easily access them or even use them in your own
@@ -1136,8 +1136,8 @@ out :doc:`/reference/dic_tags`. Each of these has a different effect on your
 service and many tags require additional arguments (beyond just the ``name``
 parameter).
 
-Debugging Services
-------------------
+服务调试
+--------
 
 You can find out what services are registered with the container using the
 console. To show all services and the class for each service, run:
@@ -1169,8 +1169,8 @@ its id:
 
     $ php app/console debug:container my_mailer
 
-Learn more
-----------
+了解更多
+--------
 
 * :doc:`/components/dependency_injection/parameters`
 * :doc:`/components/dependency_injection/compilation`
