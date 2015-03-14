@@ -1,8 +1,8 @@
 .. index::
    single: Translations
 
-Translations
-============
+多语言
+======
 
 The term "internationalization" (often abbreviated `i18n`_) refers to the
 process of abstracting strings and other locale-specific pieces out of your
@@ -46,8 +46,8 @@ to learn even more. Overall, the process has several steps:
 
 .. _book-translation-configuration:
 
-Configuration
--------------
+设置
+----
 
 Translations are handled by a ``translator`` :term:`service` that uses the
 user's locale to lookup and return translated messages. Before using it,
@@ -93,8 +93,8 @@ typically set via a ``_locale`` attribute on your routes (see :ref:`book-transla
 
 .. _book-translation-basic:
 
-Basic Translation
------------------
+翻译基本用法
+------------
 
 Translation of text is done through the  ``translator`` service
 (:class:`Symfony\\Component\\Translation\\Translator`). To translate a block
@@ -157,8 +157,8 @@ Now, if the language of the user's locale is French (e.g. ``fr_FR`` or ``fr_BE``
 the message will be translated into ``J'aime Symfony``. You can also translate
 the message inside your :ref:`templates <book-translation-tags>`.
 
-The Translation Process
-~~~~~~~~~~~~~~~~~~~~~~~
+翻译流程
+~~~~~~~~
 
 To actually translate the message, Symfony uses a simple process:
 
@@ -176,8 +176,8 @@ To actually translate the message, Symfony uses a simple process:
 When using the ``trans()`` method, Symfony looks for the exact string inside
 the appropriate message catalog and returns it (if it exists).
 
-Message Placeholders
---------------------
+消息占位符
+----------
 
 Sometimes, a message containing a variable needs to be translated::
 
@@ -197,8 +197,8 @@ will try to look up the exact message, including the variable portions
 For details on how to handle this situation, see :ref:`component-translation-placeholders`
 in the components documentation. For how to do this in templates, see :ref:`book-translation-tags`.
 
-Pluralization
--------------
+单复数
+------
 
 Another complication is when you have translations that may or may not be
 plural, based on some variable:
@@ -214,16 +214,16 @@ method or the ``transchoice`` tag/filter in your :ref:`template <book-translatio
 For much more information, see :ref:`component-translation-pluralization`
 in the Translation component documentation.
 
-Translations in Templates
--------------------------
+模板里使用翻译
+--------------
 
 Most of the time, translation occurs in templates. Symfony provides native
 support for both Twig and PHP templates.
 
 .. _book-translation-tags:
 
-Twig Templates
-~~~~~~~~~~~~~~
+Twig模板
+~~~~~~~~
 
 Symfony provides specialized Twig tags (``trans`` and ``transchoice``) to
 help with message translation of *static blocks of text*:
@@ -309,8 +309,8 @@ texts* and complex expressions:
     Note that this only influences the current template, not any "included"
     template (in order to avoid side effects).
 
-PHP Templates
-~~~~~~~~~~~~~
+PHP模板
+~~~~~~~
 
 The translator service is accessible in PHP templates through the
 ``translator`` helper:
@@ -327,8 +327,8 @@ The translator service is accessible in PHP templates through the
 
 .. _book-translation-resource-locations:
 
-Translation Resource/File Names and Locations
----------------------------------------------
+翻译文件命名规则已经存放位置
+----------------------------
 
 Symfony looks for message files (i.e. translations) in the following locations:
 
@@ -387,8 +387,8 @@ For more options, see :ref:`component-translator-message-catalogs`.
 
 .. _book-translation-fallback:
 
-Fallback Translation Locales
-----------------------------
+设置默认语言
+------------
 
 Imagine that the user's locale is ``fr_FR`` and that you're translating the
 key ``Symfony is great``. To find the French translation, Symfony actually
@@ -414,8 +414,8 @@ checks translation resources for several locales:
 
 .. _book-translation-user-locale:
 
-Handling the User's Locale
---------------------------
+处理用户语言选择
+----------------
 
 The locale of the current user is stored in the request and is accessible
 via the ``request`` object::
@@ -442,8 +442,8 @@ locale via routing.
 
 .. _book-translation-locale-url:
 
-The Locale and the URL
-~~~~~~~~~~~~~~~~~~~~~~
+多语言和URL
+~~~~~~~~~~~
 
 Since you can store the locale of the user in the session, it may be tempting
 to use the same URL to display a resource in different languages based
@@ -516,8 +516,8 @@ in your application.
     Read :doc:`/cookbook/routing/service_container_parameters` to learn how to
     avoid hardcoding the ``_locale`` requirement in all your routes.
 
-Setting a default Locale
-~~~~~~~~~~~~~~~~~~~~~~~~
+设置默认的语言
+~~~~~~~~~~~~~~
 
 What if the user's locale hasn't been determined? You can guarantee that a
 locale is set on each user's request by defining a ``default_locale`` for
@@ -555,8 +555,8 @@ the framework:
 
 .. _book-translation-constraint-messages:
 
-Translating Constraint Messages
--------------------------------
+翻译校验提示
+------------
 
 If you're using validation constraints with the form framework, then translating
 the error messages is easy: simply create a translation resource for the
@@ -671,15 +671,15 @@ bundle.
             'author.name.not_blank' => 'Please enter an author name.',
         );
 
-Translating Database Content
-----------------------------
+翻译数据库数据
+--------------
 
 The translation of database content should be handled by Doctrine through
 the `Translatable Extension`_ or the `Translatable Behavior`_ (PHP 5.4+).
 For more information, see the documentation for these libraries.
 
-Debugging Translations
-----------------------
+翻译调试
+--------
 
 .. versionadded:: 2.6
     Prior to Symfony 2.6, this command was called ``translation:debug``.
@@ -846,8 +846,8 @@ or only the missing messages, by using the ``--only-unused`` or ``--only-missing
     $ php app/console debug:translation en AcmeDemoBundle --only-unused
     $ php app/console debug:translation en AcmeDemoBundle --only-missing
 
-Summary
--------
+总结
+----
 
 With the Symfony Translation component, creating an internationalized application
 no longer needs to be a painful process and boils down to just a few basic

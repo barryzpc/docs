@@ -1,15 +1,15 @@
 .. index::
    single: Tests
 
-Testing
-=======
+测试
+====
 
 Whenever you write a new line of code, you also potentially add new bugs.
 To build better and more reliable applications, you should test your code
 using both functional and unit tests.
 
-The PHPUnit Testing Framework
------------------------------
+PHPUnit测试框架
+---------------
 
 Symfony integrates with an independent library - called PHPUnit - to give
 you a rich testing framework. This chapter won't cover PHPUnit itself, but
@@ -41,8 +41,8 @@ file.
 .. index::
    single: Tests; Unit tests
 
-Unit Tests
-----------
+单元测试
+--------
 
 A unit test is usually a test against a specific PHP class. If you want to
 test the overall behavior of your application, see the section about `Functional Tests`_.
@@ -108,8 +108,8 @@ Running tests for a given file or directory is also very easy:
 .. index::
    single: Tests; Functional tests
 
-Functional Tests
-----------------
+功能测试
+--------
 
 Functional tests check the integration of the different layers of an
 application (from the routing to the views). They are no different from unit
@@ -121,8 +121,8 @@ tests as far as PHPUnit is concerned, but they have a very specific workflow:
 * Test the response;
 * Rinse and repeat.
 
-Your First Functional Test
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+功能测试示例
+~~~~~~~~~~~~
 
 Functional tests are simple PHP files that typically live in the ``Tests/Controller``
 directory of your bundle. If you want to test the pages handled by your
@@ -316,8 +316,8 @@ document::
 .. index::
    single: Tests; Client
 
-Working with the Test Client
------------------------------
+使用测试客户端
+--------------
 
 The Test Client simulates an HTTP client like a browser and makes requests
 into your Symfony application::
@@ -399,8 +399,8 @@ script::
 
     $client->insulate();
 
-Browsing
-~~~~~~~~
+浏览
+~~~~
 
 The Client supports many operations that can be done in a real browser::
 
@@ -411,8 +411,8 @@ The Client supports many operations that can be done in a real browser::
     // Clears all cookies and the history
     $client->restart();
 
-Accessing internal Objects
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+访问内部对象
+~~~~~~~~~~~~
 
 .. versionadded:: 2.3
     The :method:`Symfony\\Component\\BrowserKit\\Client::getInternalRequest`
@@ -447,8 +447,8 @@ the ``Kernel``::
     $container = $client->getContainer();
     $kernel    = $client->getKernel();
 
-Accessing the Container
-~~~~~~~~~~~~~~~~~~~~~~~
+访问服务容器
+~~~~~~~~~~~~
 
 It's highly recommended that a functional test only tests the Response. But
 under certain very rare circumstances, you might want to access some internal
@@ -469,8 +469,8 @@ HTTP layer. For a list of services available in your application, use the
     If the information you need to check is available from the profiler, use
     it instead.
 
-Accessing the Profiler Data
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+访问调试数据
+~~~~~~~~~~~~
 
 On each request, you can enable the Symfony profiler to collect data about the
 internal handling of that request. For example, the profiler could be used to
@@ -490,8 +490,8 @@ To get the Profiler for the last request, do the following::
 For specific details on using the profiler inside a test, see the
 :doc:`/cookbook/testing/profiling` cookbook entry.
 
-Redirecting
-~~~~~~~~~~~
+处理重定向
+~~~~~~~~~~
 
 When a request returns a redirect response, the client does not follow
 it automatically. You can examine the response and force a redirection
@@ -514,14 +514,14 @@ will no longer be followed::
 
 .. _book-testing-crawler:
 
-The Crawler
------------
+页面抓取工具
+------------
 
 A Crawler instance is returned each time you make a request with the Client.
 It allows you to traverse HTML documents, select nodes, find links and forms.
 
-Traversing
-~~~~~~~~~~
+遍历
+~~~~
 
 Like jQuery, the Crawler has methods to traverse the DOM of an HTML/XML
 document. For example, the following finds all ``input[type=submit]`` elements,
@@ -576,8 +576,8 @@ narrow down your node selection by chaining the method calls::
     Use the ``count()`` function to get the number of nodes stored in a Crawler:
     ``count($crawler)``
 
-Extracting Information
-~~~~~~~~~~~~~~~~~~~~~~
+解析数据
+~~~~~~~~
 
 The Crawler can extract information from the nodes::
 
@@ -598,8 +598,8 @@ The Crawler can extract information from the nodes::
         return $node->attr('href');
     });
 
-Links
-~~~~~
+链接
+~~~~
 
 To select links, you can use the traversing methods above or the convenient
 ``selectLink()`` shortcut::
@@ -619,8 +619,8 @@ and pass it a ``Link`` object::
 
     $client->click($link);
 
-Forms
-~~~~~
+表单
+~~~~
 
 Forms can be selected using their buttons, which can be selected with the
 ``selectButton()`` method, just like links::
@@ -708,8 +708,8 @@ their type::
 .. index::
    pair: Tests; Configuration
 
-Testing Configuration
----------------------
+测试配置
+--------
 
 The Client used by functional tests creates a Kernel that runs in a special
 ``test`` environment. Since Symfony loads the ``app/config/config_test.yml``
@@ -789,8 +789,8 @@ You can also override HTTP headers on a per request basis::
 .. index::
    pair: PHPUnit; Configuration
 
-PHPUnit Configuration
-~~~~~~~~~~~~~~~~~~~~~
+PHPUnit配置
+~~~~~~~~~~~
 
 Each application has its own PHPUnit configuration, stored in the
 ``app/phpunit.xml.dist`` file. You can edit this file to change the defaults or
@@ -860,8 +860,8 @@ section:
         <!-- ... --->
     </phpunit>
 
-Learn more
-----------
+了解更多
+--------
 
 * :doc:`/components/dom_crawler`
 * :doc:`/components/css_selector`

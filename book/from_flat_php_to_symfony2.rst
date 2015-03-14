@@ -1,7 +1,7 @@
 .. _symfony2-versus-flat-php:
 
-Symfony versus Flat PHP
-=======================
+Symfony vs  纯PHP
+=================
 
 **Why is Symfony better than just opening up a file and writing flat PHP?**
 
@@ -18,8 +18,8 @@ to where it is now.
 By the end, you'll see how Symfony can rescue you from mundane tasks and
 let you take back control of your code.
 
-A Simple Blog in Flat PHP
--------------------------
+使用纯PHP写博客程序示例
+-----------------------
 
 In this chapter, you'll build the token blog application using only flat PHP.
 To begin, create a single page that displays blog entries that have been
@@ -77,8 +77,8 @@ to maintain. There are several problems that need to be addressed:
     tied to MySQL. Though not covered here, Symfony fully integrates `Doctrine`_,
     a library dedicated to database abstraction and mapping.
 
-Isolating the Presentation
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+分离展现代码
+~~~~~~~~~~~~
 
 The code can immediately gain from separating the application "logic" from
 the code that prepares the HTML "presentation":
@@ -136,8 +136,8 @@ a template to present that data. With the controller isolated, you could
 easily change *just* the template file if you needed to render the blog
 entries in some other format (e.g. ``list.json.php`` for JSON format).
 
-Isolating the Application (Domain) Logic
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+分率应用逻辑代码
+~~~~~~~~~~~~~~~~
 
 So far the application contains only one page. But what if a second page
 needed to use the same database connection, or even the same array of blog
@@ -199,8 +199,8 @@ Now, the sole task of the controller is to get data from the model layer of
 the application (the model) and to call a template to render that data.
 This is a very simple example of the model-view-controller pattern.
 
-Isolating the Layout
-~~~~~~~~~~~~~~~~~~~~
+分离布局代码
+~~~~~~~~~~~~
 
 At this point, the application has been refactored into three distinct pieces
 offering various advantages and the opportunity to reuse almost everything
@@ -250,8 +250,8 @@ PHP functions (``ob_start()``, ``ob_get_clean()``) in the template. Symfony
 uses a Templating component that allows this to be accomplished cleanly
 and easily. You'll see it in action shortly.
 
-Adding a Blog "show" Page
--------------------------
+添加显示博客文章页面
+--------------------
 
 The blog "list" page has now been refactored so that the code is better-organized
 and reusable. To prove it, add a blog "show" page, which displays an individual
@@ -320,8 +320,8 @@ As it stands now, that code would need to be added to every controller file.
 If you forget to include something in one file, hopefully it doesn't relate
 to security...
 
-A "Front Controller" to the Rescue
-----------------------------------
+“前端控制器”解决方案
+--------------------
 
 The solution is to use a :term:`front controller`: a single PHP file through
 which *all* requests are processed. With a front controller, the URIs for the
@@ -348,8 +348,8 @@ actually execute the ``index.php`` file, which is now responsible for routing
 requests internally based on the full URI. As you'll see, a front controller
 is a very powerful tool.
 
-Creating the Front Controller
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+创建前端控制器
+~~~~~~~~~~~~~~
 
 You're about to take a **big** step with the application. With one file handling
 all requests, you can centralize things such as security handling, configuration
@@ -419,8 +419,8 @@ Why should you have to reinvent solutions to all these routine problems?
 
 .. _add-a-touch-of-symfony2:
 
-Add a Touch of Symfony
-~~~~~~~~~~~~~~~~~~~~~~
+初识Symfony
+~~~~~~~~~~~
 
 Symfony to the rescue. Before actually using Symfony, you need to download
 it. This can be done by using Composer, which takes care of downloading the
@@ -534,8 +534,8 @@ will pay dividends as your application grows.
 
 .. _the-sample-application-in-symfony2:
 
-The Sample Application in Symfony
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+用Symfony搭建简单应用程序示例
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The blog has come a *long* way, but it still contains a lot of code for such
 a simple application. Along the way, you've made a simple routing
@@ -669,8 +669,8 @@ For a visual representation of how Symfony handles each request, see the
 
 .. _where-symfony2-delivers:
 
-Where Symfony Delivers
-~~~~~~~~~~~~~~~~~~~~~~
+使用Symfony的优点
+~~~~~~~~~~~~~~~~~
 
 In the upcoming chapters, you'll learn more about how each piece of Symfony
 works and the recommended organization of a project. For now, have a look
@@ -700,7 +700,7 @@ And perhaps best of all, by using Symfony, you now have access to a whole
 set of **high-quality open source tools developed by the Symfony community**!
 A good selection of Symfony community tools can be found on `KnpBundles.com`_.
 
-Better Templates
+更好用的模板引擎
 ----------------
 
 If you choose to use it, Symfony comes standard with a templating engine
@@ -747,8 +747,8 @@ Twig is well-supported in Symfony. And while PHP templates will always
 be supported in Symfony, the many advantages of Twig will continue to
 be discussed. For more information, see the :doc:`templating chapter </book/templating>`.
 
-Learn more from the Cookbook
-----------------------------
+了解更多
+--------
 
 * :doc:`/cookbook/templating/PHP`
 * :doc:`/cookbook/controller/service`

@@ -1,8 +1,8 @@
 .. index::
    single: Internals
 
-Internals
-=========
+核心功能
+========
 
 Looks like you want to understand how Symfony works and how to extend it.
 That makes me very happy! This section is an in-depth explanation of the
@@ -13,8 +13,8 @@ Symfony internals.
     You only need to read this section if you want to understand how Symfony
     works behind the scenes, or if you want to extend Symfony.
 
-Overview
---------
+总览
+----
 
 The Symfony code is made of several independent layers. Each layer is built
 on top of the previous one.
@@ -25,8 +25,8 @@ on top of the previous one.
     Composer's autoloader (``vendor/autoload.php``), which is included in
     the ``app/autoload.php`` file.
 
-HttpFoundation Component
-~~~~~~~~~~~~~~~~~~~~~~~~
+HTTP基础工具（HttpFoundation）组件
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The deepest level is the :namespace:`Symfony\\Component\\HttpFoundation`
 component. HttpFoundation provides the main objects needed to deal with HTTP.
@@ -48,8 +48,8 @@ variables:
 
     Read more about the :doc:`HttpFoundation component </components/http_foundation/introduction>`.
 
-HttpKernel Component
-~~~~~~~~~~~~~~~~~~~~
+HTTP内核（HttpKernel）组件
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 On top of HttpFoundation is the :namespace:`Symfony\\Component\\HttpKernel`
 component. HttpKernel handles the dynamic part of HTTP; it is a thin wrapper
@@ -66,8 +66,8 @@ DependencyInjection component and a powerful plugin system (bundles).
     :doc:`Dependency Injection </book/service_container>` and
     :doc:`Bundles </cookbook/bundles/best_practices>`.
 
-FrameworkBundle
-~~~~~~~~~~~~~~~
+框架库（FrameworkBundle）
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The :namespace:`Symfony\\Bundle\\FrameworkBundle` bundle is the bundle that
 ties the main components and libraries together to make a lightweight and fast
@@ -77,8 +77,8 @@ to ease the learning curve.
 .. index::
    single: Internals; Kernel
 
-Kernel
-------
+内核
+----
 
 The :class:`Symfony\\Component\\HttpKernel\\HttpKernel` class is the central
 class of Symfony and is responsible for handling client requests. Its main
@@ -93,8 +93,8 @@ Every Symfony Kernel implements
 .. index::
    single: Internals; Controller resolver
 
-Controllers
-~~~~~~~~~~~
+控制器
+~~~~~~
 
 To convert a Request to a Response, the Kernel relies on a "Controller". A
 Controller can be any valid PHP callable.
@@ -143,8 +143,8 @@ the Request attributes.
 .. index::
   single: Internals; Request handling
 
-Handling Requests
-~~~~~~~~~~~~~~~~~
+请求处理
+~~~~~~~~
 
 The :method:`Symfony\\Component\\HttpKernel\\HttpKernel::handle` method
 takes a ``Request`` and *always* returns a ``Response``. To convert the
@@ -189,8 +189,8 @@ third argument to the ``handle()`` method.
 .. index::
   single: Internals; Internal requests
 
-Internal Requests
-~~~~~~~~~~~~~~~~~
+内部请求
+~~~~~~~~
 
 At any time during the handling of a request (the 'master' one), a sub-request
 can be handled. You can pass the request type to the ``handle()`` method (its
@@ -205,8 +205,8 @@ processing must only occur on the master request).
 .. index::
    pair: Kernel; Event
 
-Events
-~~~~~~
+事件
+~~~~
 
 Each event thrown by the Kernel is a subclass of
 :class:`Symfony\\Component\\HttpKernel\\Event\\KernelEvent`. This means that
@@ -452,8 +452,8 @@ and set a new ``Exception`` object, or do nothing::
 .. index::
    single: EventDispatcher
 
-The EventDispatcher
--------------------
+事件分发器
+----------
 
 The EventDispatcher is a standalone component that is responsible for much
 of the underlying logic and flow behind a Symfony request. For more information,
@@ -464,8 +464,8 @@ see the :doc:`EventDispatcher component documentation </components/event_dispatc
 
 .. _internals-profiler:
 
-Profiler
---------
+代码运行分析器
+--------------
 
 When enabled, the Symfony profiler collects useful information about each
 request made to your application and store them for later analysis. Use the
@@ -489,11 +489,11 @@ web profiler are all already configured with sensible settings.
 .. index::
    single: Profiler; Visualizing
 
-Visualizing Profiling Data
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+可视化的分析数据
+~~~~~~~~~~~~~~~~
 
-Using the Web Debug Toolbar
-...........................
+使用调试工具条
+..............
 
 In the development environment, the web debug toolbar is available at the
 bottom of all pages. It displays a good summary of the profiling data that
@@ -508,8 +508,8 @@ token link (a string made of 13 random characters) to access the Web Profiler.
     If the token is not clickable, it means that the profiler routes are not
     registered (see below for configuration information).
 
-Analyzing Profiling Data with the Web Profiler
-..............................................
+使用分析工具做代码分析
+......................
 
 The Web Profiler is a visualization tool for profiling data that you can use
 in development to debug your code and enhance performance; but it can also be
@@ -519,8 +519,8 @@ collected by the profiler in a web interface.
 .. index::
    single: Profiler; Using the profiler service
 
-Accessing the Profiling information
-...................................
+访问分析数据
+............
 
 You don't need to use the default visualizer to access the profiling
 information. But how can you retrieve profiling information for a specific
@@ -569,8 +569,8 @@ where the information were generated, use the
 .. index::
    single: Profiler; Visualizing
 
-Configuration
-.............
+配置
+....
 
 The default Symfony configuration comes with sensible settings for the
 profiler, the web debug toolbar, and the web profiler. Here is for instance
@@ -676,8 +676,8 @@ information when the client IP comes from a specific address, or for a limited
 portion of the website? You can use a Profiler Matcher, learn more about that
 in ":doc:`/cookbook/profiler/matchers`".
 
-Learn more from the Cookbook
-----------------------------
+了解更多
+--------
 
 * :doc:`/cookbook/testing/profiling`
 * :doc:`/cookbook/profiler/data_collector`

@@ -1,8 +1,8 @@
 .. index::
    single: Templating
 
-Creating and Using Templates
-============================
+创建和使用模板
+==============
 
 As you know, the :doc:`controller </book/controller>` is responsible for
 handling each request that comes into a Symfony application. In reality,
@@ -22,8 +22,8 @@ code.
 .. index::
    single: Templating; What is a template?
 
-Templates
----------
+模板
+----
 
 A template is simply a text file that can generate any text-based format
 (HTML, XML, CSV, LaTeX ...). The most familiar type of template is a *PHP*
@@ -154,8 +154,8 @@ Throughout this chapter, template examples will be shown in both Twig and PHP.
 .. index::
    pair: Twig; Cache
 
-Twig Template Caching
-~~~~~~~~~~~~~~~~~~~~~
+Twig模板缓存
+~~~~~~~~~~~~
 
 Twig is fast. Each Twig template is compiled down to a native PHP class
 that is rendered at runtime. The compiled classes are located in the
@@ -177,8 +177,8 @@ regenerate. Remember to do this when deploying your application.
 .. index::
    single: Templating; Inheritance
 
-Template Inheritance and Layouts
---------------------------------
+模板继承和布局
+--------------
 
 More often than not, templates in a project share common elements, like the
 header, footer, sidebar or more. In Symfony, this problem is thought about
@@ -374,8 +374,8 @@ When working with template inheritance, here are some tips to keep in mind:
 
 .. _template-naming-locations:
 
-Template Naming and Locations
------------------------------
+模板命名规则和存放位置
+----------------------
 
 By default, templates can live in two different locations:
 
@@ -399,8 +399,8 @@ to render/extend ``app/Resources/views/base.html.twig``, you'll use the
 
 .. _template-referencing-in-bundle:
 
-Referencing Templates in a Bundle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+在Bundle里引用模板
+~~~~~~~~~~~~~~~~~~
 
 Symfony uses a **bundle**:**directory**:**filename** string syntax for
 templates that live inside a bundle. This allows for several types of
@@ -439,8 +439,8 @@ directory. This gives the power to override templates from any vendor bundle.
     Hopefully the template naming syntax looks familiar - it's similar to
     the naming convention used to refer to :ref:`controller-string-syntax`.
 
-Template Suffix
-~~~~~~~~~~~~~~~
+模板后缀
+~~~~~~~~
 
 Every template name also has two extensions that specify the *format* and
 *engine* for that template.
@@ -472,8 +472,8 @@ section.
    single: Templating; Tags and helpers
    single: Templating; Helpers
 
-Tags and Helpers
-----------------
+标签和助手功能
+--------------
 
 You already understand the basics of templates, how they're named and how
 to use template inheritance. The hardest parts are already behind you. In
@@ -495,8 +495,8 @@ few more.
 
 .. _including-templates:
 
-Including other Templates
-~~~~~~~~~~~~~~~~~~~~~~~~~
+包含其他模板
+~~~~~~~~~~~~
 
 You'll often want to include the same template or code fragment on several
 pages. For example, in an application with "news articles", the
@@ -582,8 +582,8 @@ you set `with_context`_ to false).
 
 .. _templating-embedding-controller:
 
-Embedding Controllers
-~~~~~~~~~~~~~~~~~~~~~
+嵌入控制器
+~~~~~~~~~~
 
 In some cases, you need to do more than include a simple template. Suppose
 you have a sidebar in your layout that contains the three most recent articles.
@@ -679,8 +679,8 @@ Controllers are fast to execute and promote good code organization and reuse.
 Of course, like all controllers, they should ideally be "skinny", meaning
 that as much code as possible lives in reusable :doc:`services </book/service_container>`.
 
-Asynchronous Content with hinclude.js
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使用hinclude.js异步载入内容
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Controllers can be embedded asynchronously using the hinclude.js_ JavaScript library.
 As the embedded content comes from another page (or controller for that matter),
@@ -833,8 +833,8 @@ Or you can also specify a string to display as the default content:
 
 .. _book-templating-pages:
 
-Linking to Pages
-~~~~~~~~~~~~~~~~
+创建页面链接
+~~~~~~~~~~~~
 
 Creating links to other pages in your application is one of the most common
 jobs for a template. Instead of hardcoding URLs in templates, use the ``path``
@@ -984,8 +984,8 @@ correctly:
 
 .. _book-templating-assets:
 
-Linking to Assets
-~~~~~~~~~~~~~~~~~
+创建静态文件链接
+~~~~~~~~~~~~~~~~
 
 Templates also commonly refer to images, JavaScript, stylesheets and other
 assets. Of course you could hard-code the path to these assets (e.g. ``/images/logo.png``),
@@ -1065,8 +1065,8 @@ If you need absolute URLs for assets, you can set the third argument (or the
    single: Stylesheets; Including stylesheets
    single: JavaScript; Including JavaScripts
 
-Including Stylesheets and JavaScripts in Twig
----------------------------------------------
+在Twig里引入CSS和JS文件
+-----------------------
 
 No site would be complete without including JavaScript files and stylesheets.
 In Symfony, the inclusion of these assets is handled elegantly by taking
@@ -1174,8 +1174,8 @@ is by default "web").
 The end result is a page that includes both the ``main.css`` and ``contact.css``
 stylesheets.
 
-Global Template Variables
--------------------------
+模板全局变量
+------------
 
 During each request, Symfony will set a global template variable ``app``
 in both Twig and PHP template engines by default. The ``app`` variable
@@ -1228,8 +1228,8 @@ automatically:
 .. index::
    single: Templating; The templating service
 
-Configuring and Using the ``templating`` Service
-------------------------------------------------
+配置和使用``templating``服务
+----------------------------
 
 The heart of the template system in Symfony is the templating ``Engine``.
 This special object is responsible for rendering templates and returning
@@ -1304,8 +1304,8 @@ Several configuration options are available and are covered in the
 
 .. _overriding-bundle-templates:
 
-Overriding Bundle Templates
----------------------------
+覆盖Bundle的模板
+----------------
 
 The Symfony community prides itself on creating and maintaining high quality
 bundles (see `KnpBundles.com`_) for a large number of different features.
@@ -1374,8 +1374,8 @@ subdirectory.
 .. index::
     single: Template; Overriding exception templates
 
-Overriding Core Templates
-~~~~~~~~~~~~~~~~~~~~~~~~~
+覆盖内置模板
+~~~~~~~~~~~~
 
 Since the Symfony framework itself is just a bundle, core templates can be
 overridden in the same way. For example, the core TwigBundle contains
@@ -1387,8 +1387,8 @@ TwigBundle to, you guessed it, the
 .. index::
    single: Templating; Three-level inheritance pattern
 
-Three-level Inheritance
------------------------
+“三层”继承
+----------
 
 One common way to use inheritance is to use a three-level approach. This
 method works perfectly with the three different types of templates that were just
@@ -1443,8 +1443,8 @@ layout.
 .. index::
    single: Templating; Output escaping
 
-Output Escaping
----------------
+转义
+----
 
 When generating HTML from a template, there is always a risk that a template
 variable may output unintended HTML or dangerous client-side code. The result
@@ -1492,8 +1492,8 @@ If you're using Twig, output escaping is on by default and you're protected.
 In PHP, output escaping is not automatic, meaning you'll need to manually
 escape where necessary.
 
-Output Escaping in Twig
-~~~~~~~~~~~~~~~~~~~~~~~
+Twig转义功能
+~~~~~~~~~~~~
 
 If you're using Twig templates, then output escaping is on by default. This
 means that you're protected out-of-the-box from the unintentional consequences
@@ -1515,8 +1515,8 @@ You can also disable output escaping inside a ``{% block %}`` area or
 for an entire template. For more information, see `Output Escaping`_ in
 the Twig documentation.
 
-Output Escaping in PHP
-~~~~~~~~~~~~~~~~~~~~~~
+PHP中使用转义
+~~~~~~~~~~~~~
 
 Output escaping is not automatic when using PHP templates. This means that
 unless you explicitly choose to escape a variable, you're not protected. To
@@ -1538,8 +1538,8 @@ in a JavaScript string, use the ``js`` context:
 .. index::
    single: Templating; Formats
 
-Debugging
----------
+调试
+----
 
 When using PHP, you can use the
 :ref:`dump() function from the VarDumper component <components-var-dumper-dump>`
@@ -1584,8 +1584,8 @@ The variables will only be dumped if Twig's ``debug`` setting (in ``config.yml``
 is ``true``. By default this means that the variables will be dumped in the
 ``dev`` environment but not the ``prod`` environment.
 
-Syntax Checking
----------------
+语法检查
+--------
 
 You can check for syntax errors in Twig templates using the ``twig:lint``
 console command:
@@ -1600,8 +1600,8 @@ console command:
 
 .. _template-formats:
 
-Template Formats
-----------------
+模板格式
+--------
 
 Templates are a generic way to render content in *any* format. And while in
 most cases you'll use templates to render HTML content, a template can just
@@ -1655,8 +1655,8 @@ key in the parameter hash:
             PDF Version
         </a>
 
-Final Thoughts
---------------
+总结
+----
 
 The templating engine in Symfony is a powerful tool that can be used each time
 you need to generate presentational content in HTML, XML or any other format.
@@ -1680,8 +1680,8 @@ Overall, the topic of templating should be thought of as a powerful tool
 that's at your disposal. In some cases, you may not need to render a template,
 and in Symfony, that's absolutely fine.
 
-Learn more from the Cookbook
-----------------------------
+了解更多
+--------
 
 * :doc:`/cookbook/templating/PHP`
 * :doc:`/cookbook/controller/error_pages`

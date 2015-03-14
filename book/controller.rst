@@ -1,8 +1,8 @@
 .. index::
    single: Controller
 
-Controller
-==========
+控制器
+======
 
 A controller is a PHP callable you create that takes information from the
 HTTP request and constructs and returns an HTTP response (as a Symfony
@@ -47,8 +47,8 @@ common examples:
 .. index::
    single: Controller; Request-controller-response lifecycle
 
-Requests, Controller, Response Lifecycle
-----------------------------------------
+“请求->控制器->响应”周期
+------------------------
 
 Every request handled by a Symfony project goes through the same simple lifecycle.
 The framework takes care of all the repetitive stuff: you just need to write
@@ -83,8 +83,8 @@ maps a URL to that controller (#2).
 .. index::
    single: Controller; Simple example
 
-A Simple Controller
--------------------
+简单的控制器示例
+----------------
 
 While a controller can be any PHP callable (a function, method on an object,
 or a ``Closure``), a controller is usually a method inside a controller class.
@@ -136,8 +136,8 @@ This controller is pretty straightforward:
 .. index::
    single: Controller; Routes and controllers
 
-Mapping a URL to a Controller
------------------------------
+创建URL和控制器的映射关系
+-------------------------
 
 The new controller returns a simple HTML page. To actually view this page
 in your browser, you need to create a route, which maps a specific URL path
@@ -225,8 +225,8 @@ Simple, right?
 
 .. _route-parameters-controller-arguments:
 
-Route Parameters as Controller Arguments
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使用路由参数作为控制器参数
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You already know that the route points to the
 ``HelloController::indexAction()`` method that lives inside AppBundle. What's
@@ -364,8 +364,8 @@ the following guidelines in mind while you develop.
 
 .. _book-controller-request-argument:
 
-The ``Request`` as a Controller Argument
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使用``Request``作为控制器参数
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What if you need to read query parameters, grab a request header or get access
 to an uploaded file? All of that information is stored in Symfony's ``Request``
@@ -389,8 +389,8 @@ object. To get it in your controller, just add it as an argument and
 .. index::
    single: Controller; Base controller class
 
-The Base Controller Class
--------------------------
+控制器基类
+----------
 
 For convenience, Symfony comes with an optional base ``Controller`` class.
 If you extend it, you'll get access to a number of helper methods and all
@@ -426,8 +426,8 @@ A great way to see the core functionality in action is to look in the
 .. index::
    single: Controller; Redirecting
 
-Redirecting
-~~~~~~~~~~~
+重定向
+~~~~~~
 
 If you want to redirect the user to another page, use the
 :method:`Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller::redirect`
@@ -464,8 +464,8 @@ perform a 301 (permanent) redirect, modify the second argument::
 
 .. _controller-rendering-templates:
 
-Rendering Templates
-~~~~~~~~~~~~~~~~~~~
+模板渲染
+~~~~~~~~
 
 If you're serving HTML, you'll want to render a template. The ``render()``
 method renders a template **and** puts that content into a ``Response``
@@ -496,8 +496,8 @@ The Symfony templating engine is explained in great detail in the
 
 .. _controller-accessing-services:
 
-Accessing other Services
-~~~~~~~~~~~~~~~~~~~~~~~~
+访问其他服务
+~~~~~~~~~~~~
 
 Symfony comes packed with a lot of useful objects, called services. These
 are used for rendering templates, sending emails, querying the database and
@@ -529,8 +529,8 @@ For more information, see the :doc:`/book/service_container` chapter.
    single: Controller; Managing errors
    single: Controller; 404 pages
 
-Managing Errors and 404 Pages
------------------------------
+生成404以及其他错误页面
+-----------------------
 
 When things are not found, you should play well with the HTTP protocol and
 return a 404 response. To do this, you'll throw a special type of exception.
@@ -569,8 +569,8 @@ You'll want to customize the error page your user sees. To do that, see the
    single: Controller; The session
    single: Session
 
-Managing the Session
---------------------
+操作会话（Session）
+-------------------
 
 Symfony provides a nice session object that you can use to store information
 about the user (be it a real person using a browser, a bot, or a web service)
@@ -602,8 +602,8 @@ session.
 .. index::
    single: Session; Flash messages
 
-Flash Messages
-~~~~~~~~~~~~~~
+闪现（flash）消息
+~~~~~~~~~~~~~~~~~
 
 You can also store small messages that will be stored on the user's session
 for exactly one additional request. This is useful when processing a form:
@@ -666,8 +666,8 @@ you've done in this example.
 .. index::
    single: Controller; Response object
 
-The Response Object
--------------------
+响应对象
+--------
 
 The only requirement for a controller is to return a ``Response`` object. The
 :class:`Symfony\\Component\\HttpFoundation\\Response` class is an abstraction
@@ -707,8 +707,8 @@ There are also special classes to make certain kinds of responses easier:
 .. index::
    single: Controller; Request object
 
-The Request Object
-------------------
+请求对象
+--------
 
 Besides the values of the routing placeholders, the controller also has access
 to the ``Request`` object. The framework injects the ``Request`` object in the
@@ -736,8 +736,8 @@ object and are easily accessible.
     Don't worry! There is a lot more information about the Request object
     in the component documentation. See :ref:`component-http-foundation-request`.
 
-Creating Static Pages
----------------------
+创建静态页面
+------------
 
 You can create a static page without even creating a controller (only a route
 and template are needed).
@@ -747,8 +747,8 @@ See :doc:`/cookbook/templating/render_without_controller`.
 .. index::
    single: Controller; Forwarding
 
-Forwarding to Another Controller
---------------------------------
+转移（forward）到其他控制器
+---------------------------
 
 Though not very common, you can also forward to another controller internally
 with the :method:`Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller::forward`
@@ -787,8 +787,8 @@ Just like when creating a controller for a route, the order of the arguments of
 order of the arguments, Symfony will still pass the correct value to each
 variable.
 
-Final Thoughts
---------------
+总结
+----
 
 Whenever you create a page, you'll ultimately need to write some code that
 contains the logic for that page. In Symfony, this is called a controller,
@@ -804,8 +804,8 @@ In other chapters, you'll see how the controller can be used to persist and
 fetch objects from a database, process form submissions, handle caching and
 more.
 
-Learn more from the Cookbook
-----------------------------
+了解更多
+--------
 
 * :doc:`/cookbook/controller/error_pages`
 * :doc:`/cookbook/controller/service`

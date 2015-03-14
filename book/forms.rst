@@ -1,8 +1,8 @@
 .. index::
    single: Forms
 
-Forms
-=====
+表单
+====
 
 Dealing with HTML forms is one of the most common - and challenging - tasks for
 a web developer. Symfony integrates a Form component that makes dealing with
@@ -19,8 +19,8 @@ learning the most important features of the form library along the way.
 .. index::
    single: Forms; Create a simple form
 
-Creating a Simple Form
-----------------------
+简单表单示例
+------------
 
 Suppose you're building a simple todo list application that will need to
 display "tasks". Because your users will need to edit and create tasks, you're
@@ -66,8 +66,8 @@ its data, and persist it to the database.
 .. index::
    single: Forms; Create a form in a controller
 
-Building the Form
-~~~~~~~~~~~~~~~~~
+创建表单
+~~~~~~~~
 
 Now that you've created a ``Task`` class, the next step is to create and
 render the actual HTML form. In Symfony, this is done by building a form
@@ -132,8 +132,8 @@ Symfony comes with many built-in types that will be discussed shortly
 .. index::
   single: Forms; Basic template rendering
 
-Rendering the Form
-~~~~~~~~~~~~~~~~~~
+表单渲染
+~~~~~~~~
 
 Now that the form has been created, the next step is to render it. This is
 done by passing a special form "view" object to your template (notice the
@@ -207,8 +207,8 @@ it into a format that's suitable for being rendered in an HTML form.
 
 .. _book-form-handling-form-submissions:
 
-Handling Form Submissions
-~~~~~~~~~~~~~~~~~~~~~~~~~
+表单提交的处理
+~~~~~~~~~~~~~~
 
 The second job of a form is to translate user-submitted data back to the
 properties of an object. To make this happen, the submitted data from the
@@ -291,8 +291,8 @@ possible paths:
 
 .. _book-form-submitting-multiple-buttons:
 
-Submitting Forms with Multiple Buttons
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+多按钮提交表单
+~~~~~~~~~~~~~~
 
 .. versionadded:: 2.3
     Support for buttons in forms was introduced in Symfony 2.3.
@@ -327,8 +327,8 @@ querying if the "Save and add" button was clicked::
 
 .. _book-forms-form-validation:
 
-Form Validation
----------------
+表单验证
+--------
 
 In the previous section, you learned how a form can be submitted with valid
 or invalid data. In Symfony, validation is applied to the underlying object
@@ -460,8 +460,8 @@ Validation is a very powerful feature of Symfony and has its own
 
 .. _book-forms-validation-groups:
 
-Validation Groups
-~~~~~~~~~~~~~~~~~
+验证规则分组
+~~~~~~~~~~~~
 
 If your object takes advantage of :ref:`validation groups <book-validation-validation-groups>`,
 you'll need to specify which validation group(s) your form should use::
@@ -493,8 +493,8 @@ be used to validate the underlying object.
 .. index::
    single: Forms; Disabling validation
 
-Disabling Validation
-~~~~~~~~~~~~~~~~~~~~
+关闭验证功能
+~~~~~~~~~~~~
 
 .. versionadded:: 2.3
     The ability to set ``validation_groups`` to false was introduced in Symfony 2.3.
@@ -521,8 +521,8 @@ fields were submitted. If you want to suppress validation, you can use the
 
 .. _book-form-validation-groups:
 
-Groups based on the Submitted Data
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+基于提交数据的验证规则分组
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you need some advanced logic to determine the validation groups (e.g.
 based on submitted data), you can set the ``validation_groups`` option
@@ -594,8 +594,8 @@ work in the book section about :ref:`validation groups <book-validation-validati
 .. index::
    single: Forms; Validation groups based on clicked button
 
-Groups based on the Clicked Button
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+基于提交按钮的验证规则分组
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. versionadded:: 2.3
     Support for buttons in forms was introduced in Symfony 2.3.
@@ -634,8 +634,8 @@ large or whether you tried to submit text in a number field.
 
 .. _book-forms-type-reference:
 
-Built-in Field Types
---------------------
+内置表单字段类型
+----------------
 
 Symfony comes standard with a large group of field types that cover all of
 the common form fields and data types you'll encounter:
@@ -648,8 +648,8 @@ the ":doc:`/cookbook/form/create_custom_field_type`" article of the cookbook.
 .. index::
    single: Forms; Field type options
 
-Field Type Options
-~~~~~~~~~~~~~~~~~~
+表单字段选项
+~~~~~~~~~~~~
 
 Each field type has a number of options that can be used to configure it.
 For example, the ``dueDate`` field is currently being rendered as 3 select
@@ -703,8 +703,8 @@ the documentation for each type.
 
 .. _book-forms-field-guessing:
 
-Field Type Guessing
--------------------
+表单字段类型自动预测
+--------------------
 
 Now that you've added validation metadata to the ``Task`` class, Symfony
 already knows a bit about your fields. If you allow it, Symfony can "guess"
@@ -738,8 +738,8 @@ the guessed field.
 .. index::
    single: Forms; Field type guessing
 
-Field Type Options Guessing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+表单字段选项自动预测
+~~~~~~~~~~~~~~~~~~~~
 
 In addition to guessing the "type" for a field, Symfony can also try to guess
 the correct values of a number of field options.
@@ -778,8 +778,8 @@ passing the option in the options field array::
 
 .. _form-rendering-template:
 
-Rendering a Form in a Template
-------------------------------
+在模板文件里渲染表单
+--------------------
 
 So far, you've seen how an entire form can be rendered with just one line
 of code. Of course, you'll usually need much more flexibility when rendering:
@@ -839,8 +839,8 @@ output can be customized on many different levels.
 .. index::
    single: Forms; Rendering each field by hand
 
-Rendering each Field by Hand
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+手动控制渲染表单
+~~~~~~~~~~~~~~~~
 
 The ``form_row`` helper is great because you can very quickly render each
 field of your form (and the markup used for the "row" can be customized as
@@ -955,8 +955,8 @@ the ``full_name`` value:
 
         <?php echo $form['task']->vars['full_name'] ?>
 
-Twig Template Function Reference
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Twig模板函数参考
+~~~~~~~~~~~~~~~~
 
 If you're using Twig, a full reference of the form rendering functions is
 available in the :doc:`reference manual </reference/forms/twig_reference>`.
@@ -968,8 +968,8 @@ that can be used with each.
 
 .. _book-forms-changing-action-and-method:
 
-Changing the Action and Method of a Form
-----------------------------------------
+修改表单的method和action的值
+----------------------------
 
 So far, the ``form_start()`` helper has been used to render the form's start
 tag and we assumed that each form is submitted to the same URL in a POST request.
@@ -1031,8 +1031,8 @@ to the ``form()`` or the ``form_start()`` helper:
 
 .. _book-form-creating-form-classes:
 
-Creating Form Classes
----------------------
+创建表单类
+----------
 
 As you've seen, a form can be created and used directly in a controller.
 However, a better practice is to build the form in a separate, standalone PHP
@@ -1134,8 +1134,8 @@ the choice is ultimately up to you.
 
         $form->get('dueDate')->setData(new \DateTime());
 
-Defining your Forms as Services
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+将表单定义为服务
+~~~~~~~~~~~~~~~~
 
 Defining your form type as a service is a good practice and makes it really
 easy to use in your application.
@@ -1221,8 +1221,8 @@ Read :ref:`form-cookbook-form-field-service` for more information.
 .. index::
    pair: Forms; Doctrine
 
-Forms and Doctrine
-------------------
+表单和Doctrine
+--------------
 
 The goal of a form is to translate data from an object (e.g. ``Task``) to an
 HTML form and then translate user-submitted data back to the original object. As
@@ -1255,8 +1255,8 @@ contains the submitted data).
 .. index::
    single: Forms; Embedded forms
 
-Embedded Forms
---------------
+表单嵌表单
+----------
 
 Often, you'll want to build a form that will include fields from many different
 objects. For example, a registration form may contain data belonging to
@@ -1265,8 +1265,8 @@ is easy and natural with the Form component.
 
 .. _forms-embedding-single-object:
 
-Embedding a Single Object
-~~~~~~~~~~~~~~~~~~~~~~~~~
+只嵌单个表单
+~~~~~~~~~~~~
 
 Suppose that each ``Task`` belongs to a simple ``Category`` object. Start,
 of course, by creating the ``Category`` object::
@@ -1399,8 +1399,8 @@ are used to construct an instance of ``Category``, which is then set on the
 The ``Category`` instance is accessible naturally via ``$task->getCategory()``
 and can be persisted to the database or used however you need.
 
-Embedding a Collection of Forms
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+内嵌一组表单
+~~~~~~~~~~~~
 
 You can also embed a collection of forms into one form (imagine a ``Category``
 form with many ``Product`` sub-forms). This is done by using the ``collection``
@@ -1415,8 +1415,8 @@ entry and the :doc:`collection </reference/forms/types/collection>` field type r
 
 .. _form-theming:
 
-Form Theming
-------------
+表单主题
+--------
 
 Every part of how a form is rendered can be customized. You're free to change
 how each form "row" renders, change the markup used to render errors, or
@@ -1510,8 +1510,8 @@ For a more extensive discussion, see :doc:`/cookbook/form/form_customization`.
 
 .. _form-template-blocks:
 
-Form Fragment Naming
-~~~~~~~~~~~~~~~~~~~~
+表单函数命名规则
+~~~~~~~~~~~~~~~~
 
 In Symfony, every part of a form that is rendered - HTML form elements, errors,
 labels, etc. - is defined in a base theme, which is a collection of blocks
@@ -1561,8 +1561,8 @@ to be overridden (e.g. ``textarea_widget``).
 .. index::
    single: Forms; Template fragment inheritance
 
-Template Fragment Inheritance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+表单模板函数继承关系
+~~~~~~~~~~~~~~~~~~~~
 
 In some cases, the fragment you want to customize will appear to be missing.
 For example, there is no ``textarea_errors`` fragment in the default themes
@@ -1588,8 +1588,8 @@ override the default error rendering for *all* fields, copy and customize the
 .. index::
    single: Forms; Global Theming
 
-Global Form Theming
-~~~~~~~~~~~~~~~~~~~
+全局表单主题
+~~~~~~~~~~~~
 
 In the above example, you used the ``form_theme`` helper (in Twig) to "import"
 the custom form fragments into *just* that form. You can also tell Symfony
@@ -1736,8 +1736,8 @@ globally to define form output.
 
 .. _forms-csrf:
 
-CSRF Protection
----------------
+CSRF保护
+--------
 
 CSRF - or `Cross-site request forgery`_ - is a method by which a malicious
 user attempts to make your legitimate users unknowingly submit data that
@@ -1800,8 +1800,8 @@ section.
 .. index::
    single: Forms; With no class
 
-Using a Form without a Class
-----------------------------
+不使用类直接创建表单
+--------------------
 
 In most cases, a form is tied to an object, and the fields of the form get
 and store their data on the properties of that object. This is exactly what
@@ -1859,8 +1859,8 @@ an array.
     a better choice, since it returns the data (usually an object) after
     it's been transformed by the form framework.
 
-Adding Validation
-~~~~~~~~~~~~~~~~~
+添加校验规则
+~~~~~~~~~~~~
 
 The only missing piece is validation. Usually, when you call ``$form->isValid()``,
 the object is validated by reading the constraints that you applied to that
@@ -1905,8 +1905,8 @@ but here's a short example:
 
     new NotBlank(array('groups' => array('create', 'update'))
 
-Final Thoughts
---------------
+总结
+----
 
 You now know all of the building blocks necessary to build complex and
 functional forms for your application. When building forms, keep in mind that
@@ -1923,8 +1923,8 @@ See the cookbook for these topics. Also, be sure to lean on the
 :doc:`field type reference documentation </reference/forms/types>`, which
 includes examples of how to use each field type and its options.
 
-Learn more from the Cookbook
-----------------------------
+了解更多
+--------
 
 * :doc:`/cookbook/doctrine/file_uploads`
 * :doc:`File Field Reference </reference/forms/types/file>`

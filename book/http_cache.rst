@@ -1,8 +1,8 @@
 .. index::
    single: Cache
 
-HTTP Cache
-==========
+HTTP缓存
+========
 
 The nature of rich web applications means that they're dynamic. No matter
 how efficient your application, each request will always contain more overhead
@@ -16,8 +16,8 @@ But as your site grows, that overhead can become a problem. The processing
 that's normally performed on every request should be done only once. This
 is exactly what caching aims to accomplish.
 
-Caching on the Shoulders of Giants
-----------------------------------
+站在巨人的肩膀上缓存
+--------------------
 
 The most effective way to improve performance of an application is to cache
 the full output of a page and then bypass the application entirely on each
@@ -68,8 +68,8 @@ Nottingham's `Cache Tutorial`_.
 
 .. _gateway-caches:
 
-Caching with a Gateway Cache
-----------------------------
+使用网关（Gateway）缓存技术
+---------------------------
 
 When caching with HTTP, the *cache* is separated from your application entirely
 and sits between your application and the client making the request.
@@ -90,8 +90,8 @@ as `Varnish`_, `Squid in reverse proxy mode`_, and the Symfony reverse proxy.
 .. index::
    single: Cache; Types of
 
-Types of Caches
-~~~~~~~~~~~~~~~
+缓存的类型
+~~~~~~~~~~
 
 But a gateway cache isn't the only type of cache. In fact, the HTTP cache
 headers sent by your application are consumed and interpreted by up to three
@@ -131,8 +131,8 @@ the HTTP cache directions set in the response.
 .. _`symfony-gateway-cache`:
 .. _symfony2-reverse-proxy:
 
-Symfony Reverse Proxy
-~~~~~~~~~~~~~~~~~~~~~
+Symfony反向代理
+~~~~~~~~~~~~~~~
 
 Symfony comes with a reverse proxy (also called a gateway cache) written
 in PHP. Enable it and cacheable responses from your application will start
@@ -266,8 +266,8 @@ misses.
 
 .. _http-cache-introduction:
 
-Introduction to HTTP Caching
-----------------------------
+HTTP缓存介绍
+------------
 
 To take advantage of the available cache layers, your application must be
 able to communicate which responses are cacheable and the rules that govern
@@ -300,8 +300,8 @@ which is actually a collection of various cache information.
    single: Cache; Cache-Control header
    single: HTTP headers; Cache-Control
 
-The Cache-Control Header
-~~~~~~~~~~~~~~~~~~~~~~~~
+Cache-Control头信息
+~~~~~~~~~~~~~~~~~~~
 
 The ``Cache-Control`` header is unique in that it contains not one, but various
 pieces of information about the cacheability of a response. Each piece of
@@ -340,8 +340,8 @@ its creation more manageable::
     to define cache headers based on the URL pattern and other request
     properties.
 
-Public vs Private Responses
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+公开 vs 私有响应
+~~~~~~~~~~~~~~~~
 
 Both gateway and proxy caches are considered "shared" caches as the cached
 content is shared by more than one user. If a user-specific response were
@@ -365,7 +365,7 @@ to be explicitly set as public.
 .. index::
    single: Cache; Safe methods
 
-Safe Methods
+安全访问方法
 ~~~~~~~~~~~~
 
 HTTP caching only works for "safe" HTTP methods (like GET and HEAD). Being
@@ -385,8 +385,8 @@ This has two very reasonable consequences:
 
 .. _http-cache-defaults:
 
-Caching Rules and Defaults
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+缓存规则和默认缓存规则
+~~~~~~~~~~~~~~~~~~~~~~
 
 HTTP 1.1 allows caching anything by default unless there is an explicit
 ``Cache-Control`` header. In practice, most caches do nothing when requests
@@ -454,8 +454,8 @@ sometimes used.
 .. index::
    single: Cache; HTTP expiration
 
-Expiration
-~~~~~~~~~~
+过期设置
+~~~~~~~~
 
 The expiration model is the more efficient and straightforward of the two
 caching models and should be used whenever possible. When a response is cached
@@ -469,8 +469,8 @@ HTTP headers: ``Expires`` or ``Cache-Control``.
    single: Cache; Expires header
    single: HTTP headers; Expires
 
-Expiration with the ``Expires`` Header
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使用``Expires``头信息设置过时时间
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 According to the HTTP specification, "the ``Expires`` header field gives
 the date/time after which the response is considered stale." The ``Expires``
@@ -504,8 +504,8 @@ servers should not send ``Expires`` dates more than one year in the future."
    single: Cache; Cache-Control header
    single: HTTP headers; Cache-Control
 
-Expiration with the ``Cache-Control`` Header
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使用``Cache-Control``头信息设置过时时间
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Because of the ``Expires`` header limitations, most of the time, you should
 use the ``Cache-Control`` header instead. Recall that the ``Cache-Control``
@@ -531,8 +531,8 @@ additional directives):
 .. index::
    single: Cache; Validation
 
-Validation
-~~~~~~~~~~
+验证
+~~~~
 
 When a resource needs to be updated as soon as a change is made to the underlying
 data, the expiration model falls short. With the expiration model, the application
@@ -563,8 +563,8 @@ to implement the validation model: ``ETag`` and ``Last-Modified``.
    single: Cache; Etag header
    single: HTTP headers; Etag
 
-Validation with the ``ETag`` Header
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+通过``ETag``头信息验证
+~~~~~~~~~~~~~~~~~~~~~~
 
 The ``ETag`` header is a string header (called the "entity-tag") that uniquely
 identifies one representation of the target resource. It's entirely generated
@@ -618,8 +618,8 @@ doing so much work.
    single: Cache; Last-Modified header
    single: HTTP headers; Last-Modified
 
-Validation with the ``Last-Modified`` Header
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+通过``Last-Modified``头信息验证
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``Last-Modified`` header is the second form of validation. According
 to the HTTP specification, "The ``Last-Modified`` header field indicates
@@ -674,8 +674,8 @@ the ``Response`` will be set to a 304 status code.
 
 .. _optimizing-cache-validation:
 
-Optimizing your Code with Validation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+通过数据校验优化代码
+~~~~~~~~~~~~~~~~~~~~
 
 The main goal of any caching strategy is to lighten the load on the application.
 Put another way, the less you do in your application to return a 304 response,
@@ -727,8 +727,8 @@ headers that must not be present for ``304`` responses (see
    single: Cache; Vary
    single: HTTP headers; Vary
 
-Varying the Response
-~~~~~~~~~~~~~~~~~~~~
+多缓存方式的响应
+~~~~~~~~~~~~~~~~
 
 So far, it's been assumed that each URI has exactly one representation of the
 target resource. By default, HTTP caching is done by using the URI of the
@@ -769,8 +769,8 @@ header::
 The ``setVary()`` method takes a header name or an array of header names for
 which the response varies.
 
-Expiration and Validation
-~~~~~~~~~~~~~~~~~~~~~~~~~
+过期时间校验和内容校验
+~~~~~~~~~~~~~~~~~~~~~~
 
 You can of course use both validation and expiration within the same ``Response``.
 As expiration wins over validation, you can easily benefit from the best of
@@ -786,8 +786,8 @@ at some interval (the expiration) to verify that the content is still valid.
 .. index::
    pair: Cache; Configuration
 
-More Response Methods
-~~~~~~~~~~~~~~~~~~~~~
+更多响应对象方法
+~~~~~~~~~~~~~~~~
 
 The Response class provides many more methods related to the cache. Here are
 the most useful ones::
@@ -816,8 +816,8 @@ Additionally, most cache-related HTTP headers can be set via the single
 
 .. _http-cache-invalidation:
 
-Cache Invalidation
-~~~~~~~~~~~~~~~~~~
+缓存同步
+~~~~~~~~
 
     "There are only two hard things in Computer Science: cache invalidation
     and naming things." -- Phil Karlton
@@ -922,8 +922,8 @@ different URLs. More flexible concepts exist for those cases:
 
 .. _edge-side-includes:
 
-Using Edge Side Includes
-------------------------
+使用ESI（Edge Side Includes）
+----------------------------
 
 Gateway caches are a great way to make your website perform better. But they
 have one limitation: they can only cache whole pages. If you can't cache
@@ -971,8 +971,8 @@ tags, Symfony makes the process of including them almost effortless.
 
 .. _using-esi-in-symfony2:
 
-Using ESI in Symfony
-~~~~~~~~~~~~~~~~~~~~
+在Symfony项目中使用ESI
+~~~~~~~~~~~~~~~~~~~~~~
 
 First, to use ESI, be sure to enable it in your application configuration:
 
@@ -1169,8 +1169,8 @@ The ``render_esi`` helper supports two other useful options:
     of ``continue`` indicating that, in the event of a failure, the gateway cache
     will simply remove the ESI tag silently.
 
-Summary
--------
+总结
+----
 
 Symfony was designed to follow the proven rules of the road: HTTP. Caching
 is no exception. Mastering the Symfony cache system means becoming familiar
@@ -1179,8 +1179,8 @@ of relying only on Symfony documentation and code examples, you have access
 to a world of knowledge related to HTTP caching and gateway caches such as
 Varnish.
 
-Learn more from the Cookbook
-----------------------------
+了解更多
+--------
 
 * :doc:`/cookbook/cache/varnish`
 

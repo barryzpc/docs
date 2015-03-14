@@ -1,8 +1,8 @@
 .. index::
    single: Validation
 
-Validation
-==========
+表单验证
+========
 
 Validation is a very common task in web applications. Data entered in forms
 needs to be validated. Data also needs to be validated before it is written
@@ -15,8 +15,8 @@ transparent. This component is based on the
 .. index::
    single: Validation; The basics
 
-The Basics of Validation
-------------------------
+表单验证基础用法
+----------------
 
 The best way to understand validation is to see it in action. To start, suppose
 you've created a plain-old-PHP object that you need to use somewhere in
@@ -106,8 +106,8 @@ following:
 .. index::
    single: Validation; Using the validator
 
-Using the ``validator`` Service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使用``validator``服务
+~~~~~~~~~~~~~~~~~~~~~
 
 Next, to actually validate an ``Author`` object, use the ``validate`` method
 on the ``validator`` service (class :class:`Symfony\\Component\\Validator\\Validator`).
@@ -205,8 +205,8 @@ Inside the template, you can output the list of errors exactly as needed:
 
 .. _book-validation-forms:
 
-Validation and Forms
-~~~~~~~~~~~~~~~~~~~~
+校验与表单
+~~~~~~~~~~
 
 The ``validator`` service can be used at any time to validate any object.
 In reality, however, you'll usually work with the ``validator`` indirectly
@@ -306,8 +306,8 @@ In Symfony, constraints are similar: they are assertions that a condition
 is true. Given a value, a constraint will tell you if that value
 adheres to the rules of the constraint.
 
-Supported Constraints
-~~~~~~~~~~~~~~~~~~~~~
+支持的校验种类
+~~~~~~~~~~~~~~
 
 Symfony packages many of the most commonly-needed constraints:
 
@@ -321,8 +321,8 @@ the ":doc:`/cookbook/validation/custom_constraint`" article of the cookbook.
 
 .. _book-validation-constraint-configuration:
 
-Constraint Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~
+校验配置
+~~~~~~~~
 
 Some constraints, like :doc:`NotBlank </reference/constraints/NotBlank>`,
 are simple whereas others, like the :doc:`Choice </reference/constraints/Choice>`
@@ -476,8 +476,8 @@ If you're ever unsure of how to specify an option, either check the API document
 for the constraint or play it safe by always passing in an array of options
 (the first method shown above).
 
-Translation Constraint Messages
--------------------------------
+翻译校验信息
+------------
 
 For information on translating the constraint messages, see
 :ref:`book-translation-constraint-messages`.
@@ -487,8 +487,8 @@ For information on translating the constraint messages, see
 
 .. _validator-constraint-targets:
 
-Constraint Targets
-------------------
+校验对象
+--------
 
 Constraints can be applied to a class property (e.g. ``name``) or a public
 getter method (e.g. ``getFullName``). The first is the most common and easy
@@ -499,8 +499,8 @@ to use, but the second allows you to specify more complex validation rules.
 
 .. _validation-property-target:
 
-Properties
-~~~~~~~~~~
+属性
+~~~~
 
 Validating class properties is the most basic validation technique. Symfony
 allows you to validate private, protected or public properties. The next
@@ -671,8 +671,8 @@ Now, create the ``isPasswordLegal()`` method, and include the logic you need::
 
 .. _validation-class-target:
 
-Classes
-~~~~~~~
+类
+~~
 
 Some constraints apply to the entire class being validated. For example,
 the :doc:`Callback </reference/constraints/Callback>` constraint is a generic
@@ -682,8 +682,8 @@ provide more custom validation.
 
 .. _book-validation-validation-groups:
 
-Validation Groups
------------------
+校验分组
+--------
 
 So far, you've been able to add constraints to a class and ask whether or
 not that class passes all the defined constraints. In some cases, however,
@@ -868,8 +868,8 @@ library. For information on how to use validation groups inside forms, see
 
 .. _book-validation-group-sequence:
 
-Group Sequence
---------------
+校验组顺序
+----------
 
 In some cases, you want to validate your groups by steps. To do this, you can
 use the ``GroupSequence`` feature. In this case, an object defines a group
@@ -1012,8 +1012,8 @@ that group are valid, the second group, ``Strict``, will be validated.
     sequence, which will contain the ``Default`` group which references the
     same group sequence, ...).
 
-Group Sequence Providers
-~~~~~~~~~~~~~~~~~~~~~~~~
+校验组选择器
+~~~~~~~~~~~~
 
 Imagine a ``User`` entity which can be a normal user or a premium user. When
 it's a premium user, some extra constraints should be added to the user entity
@@ -1201,8 +1201,8 @@ provides a sequence of groups to be validated:
 
 .. _book-validation-raw-values:
 
-Validating Values and Arrays
-----------------------------
+校验值和数组
+------------
 
 So far, you've seen how you can validate entire objects. But sometimes, you
 just want to validate a simple value - like to verify that a string is a valid
@@ -1256,8 +1256,8 @@ object, which acts just like an array of errors. Each error in the collection
 is a :class:`Symfony\\Component\\Validator\\ConstraintViolation` object,
 which holds the error message on its ``getMessage`` method.
 
-Final Thoughts
---------------
+总结
+----
 
 The Symfony ``validator`` is a powerful tool that can be leveraged to
 guarantee that the data of any object is "valid". The power behind validation
@@ -1266,8 +1266,8 @@ getter methods of your object. And while you'll most commonly use the validation
 framework indirectly when using forms, remember that it can be used anywhere
 to validate any object.
 
-Learn more from the Cookbook
-----------------------------
+了解更多
+--------
 
 * :doc:`/cookbook/validation/custom_constraint`
 

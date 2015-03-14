@@ -1,16 +1,16 @@
 .. index::
    single: Installation
 
-Installing and Configuring Symfony
-==================================
+安装配置Symfony
+===============
 
 The goal of this chapter is to get you up and running with a working application
 built on top of Symfony. In order to simplify the process of creating new
 applications, Symfony provides an installer that must be installed before
 creating the first application.
 
-Installing the Symfony Installer
---------------------------------
+安装Symfony安装工具
+-------------------
 
 Using the Symfony Installer is the only recommended way to create new Symfony
 applications. This installer is a PHP application that has to be installed
@@ -26,8 +26,8 @@ only once and then it can create any number of Symfony applications.
 Depending on your operating system, the installer must be installed in different
 ways.
 
-Linux and Mac OS X Systems
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Linux和Mac OS X系统
+~~~~~~~~~~~~~~~~~~~
 
 Open your command console and execute the following three commands:
 
@@ -40,8 +40,8 @@ Open your command console and execute the following three commands:
 This will create a global ``symfony`` command in your system that will be used
 to create new Symfony applications.
 
-Windows Systems
-~~~~~~~~~~~~~~~
+Windows系统
+~~~~~~~~~~~
 
 Open your command console and execute the following command:
 
@@ -57,8 +57,8 @@ execute it as follows:
     c:\> move symfony.phar c:\projects
     c:\projects\> php symfony.phar
 
-Creating the Symfony Application
---------------------------------
+创建Symfony应用
+---------------
 
 Once the Symfony Installer is ready, create your first Symfony application with
 the ``new`` command:
@@ -84,8 +84,8 @@ to meet those requirements.
     distributing them. If you want to verify the integrity of any Symfony
     version, follow the steps `explained in this post`_.
 
-Basing your Project on a Specific Symfony Version
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+基于某个Symfony版本来创建应用
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your project needs to be based on a specific Symfony version, pass the version
 number as the second argument of the ``new`` command:
@@ -104,8 +104,8 @@ to use for your projects.
 
 .. _book-creating-applications-without-the-installer:
 
-Creating Symfony Applications without the Installer
----------------------------------------------------
+不使用Symfony安装工具来创建应用
+-------------------------------
 
 If you still use PHP 5.3, or if you can't execute the installer for any reason,
 you can create Symfony applications using the alternative installation method
@@ -115,13 +115,13 @@ Composer is the dependency manager used by modern PHP applications and it can
 also be used to create new applications based on the Symfony framework. If you
 don't have installed it globally, start by reading the next section.
 
-Installing Composer Globally
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+全局安装Composer
+~~~~~~~~~~~~~~~~
 
 Start with :doc:`installing Composer globally </cookbook/composer>`.
 
-Creating a Symfony Application with Composer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+通过Composer安装Symfony应用
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once Composer is installed on your computer, execute the ``create-project``
 command to create a new Symfony application based on its latest stable version:
@@ -143,8 +143,8 @@ version as the second argument of the ``create-project`` command:
     doing anything. If that's your case, add the ``-vvv`` flag to the previous
     command to display a detailed output of everything that Composer is doing.
 
-Running the Symfony Application
--------------------------------
+运行Symfony应用
+---------------
 
 Symfony leverages the internal web server provided by PHP to run applications
 while developing them. Therefore, running a Symfony application is a matter of
@@ -186,8 +186,8 @@ server with the ``server:stop`` command:
 
     $ php app/console server:stop
 
-Checking Symfony Application Configuration and Setup
-----------------------------------------------------
+检查Symfony应用的配置和运行环境
+-------------------------------
 
 Symfony applications come with a visual server configuration tester to show if
 your environment is ready to use Symfony. Access the following URL to check your
@@ -268,8 +268,8 @@ If there are any issues, correct them now before moving on.
 
 .. _installation-updating-vendors:
 
-Updating Symfony Applications
------------------------------
+更新Symfony应用
+---------------
 
 At this point, you've created a fully-functional Symfony application in which
 you'll start to develop your own project. A Symfony application depends on
@@ -302,8 +302,8 @@ several minutes to complete.
 
 .. _installing-a-symfony2-distribution:
 
-Installing a Symfony Distribution
----------------------------------
+安装Symfony发行版
+-----------------
 
 Symfony project packages "distributions", which are fully-functional applications
 that include the Symfony core libraries, a selection of useful bundles, a
@@ -323,8 +323,8 @@ applications:
 * The `Symfony REST Edition`_ shows how to build an application that provides a
   RESTful API using the FOSRestBundle and several other related bundles.
 
-Using Source Control
---------------------
+使用代码管理工具
+----------------
 
 If you're using a version control system like `Git`_, you can safely commit all
 your project's code. The reason is that Symfony applications already contain a
@@ -333,8 +333,8 @@ your project's code. The reason is that Symfony applications already contain a
 For specific instructions on how best to set up your project to be stored
 in Git, see :doc:`/cookbook/workflow/new_project_git`.
 
-Checking out a versioned Symfony Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+检出Symfony应用
+~~~~~~~~~~~~~~~
 
 When using Composer to manage application's dependencies, it's recommended to
 ignore the entire ``vendor/`` directory before committing its code to the
@@ -356,8 +356,8 @@ Symfony application is committed to a repository, the ``composer.json`` and
 ``composer.lock`` files are also committed. These files tell Composer which
 dependencies (and which specific versions) to install for the application.
 
-Beginning Development
----------------------
+开始开发工作
+------------
 
 Now that you have a fully-functional Symfony application, you can begin
 development! Your distribution may contain some sample code - check the

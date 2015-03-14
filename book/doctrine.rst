@@ -1,8 +1,8 @@
 .. index::
    single: Doctrine
 
-Databases and Doctrine
-======================
+数据库和Doctrine
+================
 
 One of the most common and challenging tasks for any application
 involves persisting and reading information to and from a database. Although
@@ -25,15 +25,15 @@ can be.
     more information, read the "`DoctrineMongoDBBundle`_"
     documentation.
 
-A Simple Example: A Product
----------------------------
+一个简单的示例
+--------------
 
 The easiest way to understand how Doctrine works is to see it in action.
 In this section, you'll configure your database, create a ``Product`` object,
 persist it to the database and fetch it back out.
 
-Configuring the Database
-~~~~~~~~~~~~~~~~~~~~~~~~
+配置数据库
+~~~~~~~~~~
 
 Before you really begin, you'll need to configure your database connection
 information. By convention, this information is usually configured in an
@@ -191,8 +191,8 @@ for you:
                 ),
             ));
 
-Creating an Entity Class
-~~~~~~~~~~~~~~~~~~~~~~~~
+创建Entity类
+~~~~~~~~~~~~
 
 Suppose you're building an application where products need to be displayed.
 Without even thinking about Doctrine or databases, you already know that
@@ -229,8 +229,8 @@ just a simple PHP class.
 
 .. _book-doctrine-adding-mapping:
 
-Add Mapping Information
-~~~~~~~~~~~~~~~~~~~~~~~
+添加数据库字段映射信息
+~~~~~~~~~~~~~~~~~~~~~~
 
 Doctrine allows you to work with databases in a much more interesting way
 than just fetching rows of a column-based table into an array. Instead, Doctrine
@@ -376,8 +376,8 @@ see the :ref:`book-doctrine-field-types` section.
 
 .. _book-doctrine-generating-getters-and-setters:
 
-Generating Getters and Setters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+生成Getters和Setters
+~~~~~~~~~~~~~~~~~~~~
 
 Even though Doctrine now knows how to persist a ``Product`` object to the
 database, the class itself isn't really useful yet. Since ``Product`` is just
@@ -443,8 +443,8 @@ mapping information) of a bundle or an entire namespace:
 
 .. _book-doctrine-creating-the-database-tables-schema:
 
-Creating the Database Tables/Schema
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+创建数据库表
+~~~~~~~~~~~~
 
 You now have a usable ``Product`` class with mapping information so that
 Doctrine knows exactly how to persist it. Of course, you don't yet have the
@@ -475,8 +475,8 @@ in your application. To do this, run:
 Your database now has a fully-functional ``product`` table with columns that
 match the metadata you've specified.
 
-Persisting Objects to the Database
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+将对象保存到数据库
+~~~~~~~~~~~~~~~~~~
 
 Now that you have a mapped ``Product`` entity and corresponding ``product``
 table, you're ready to persist data to the database. From inside a controller,
@@ -557,8 +557,8 @@ an ``UPDATE`` query if the record already exists in the database.
     data into your project (i.e. "fixture data"). For information, see
     the "`DoctrineFixturesBundle`_" documentation.
 
-Fetching Objects from the Database
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+从数据库获取对象
+~~~~~~~~~~~~~~~~
 
 Fetching an object back out of the database is even easier. For example,
 suppose you've configured a route to display a specific ``Product`` based
@@ -647,8 +647,8 @@ to easily fetch objects based on multiple conditions::
     If you click the icon, the profiler will open, showing you the exact
     queries that were made.
 
-Updating an Object
-~~~~~~~~~~~~~~~~~~
+更新对象
+~~~~~~~~
 
 Once you've fetched an object from Doctrine, updating it is easy. Suppose
 you have a route that maps a product id to an update action in a controller::
@@ -681,8 +681,8 @@ this method simply tells Doctrine to manage or "watch" the ``$product`` object.
 In this case, since you fetched the ``$product`` object from Doctrine, it's
 already managed.
 
-Deleting an Object
-~~~~~~~~~~~~~~~~~~
+删除对象
+~~~~~~~~
 
 Deleting an object is very similar, but requires a call to the ``remove()``
 method of the entity manager::
@@ -696,8 +696,8 @@ however, isn't actually executed until the ``flush()`` method is called.
 
 .. _`book-doctrine-queries`:
 
-Querying for Objects
---------------------
+查找对象
+--------
 
 You've already seen how the repository object allows you to run basic queries
 without any work::
@@ -714,8 +714,8 @@ instead of querying for rows on a table (e.g. ``product``).
 When querying in Doctrine, you have two options: writing pure Doctrine queries
 or using Doctrine's Query Builder.
 
-Querying for Objects Using Doctrine's Query Builder
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使用Doctrine的“查询语句构造器”（Query Builder）查找对象
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Imagine that you want to query for products, but only return products that
 cost more than ``19.99``, ordered from cheapest to most expensive. You can use
@@ -751,8 +751,8 @@ is no result) or ``getOneOrNullResult()``::
 For more information on Doctrine's Query Builder, consult Doctrine's
 `Query Builder`_ documentation.
 
-Querying for Objects with DQL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使用DQL查询对象
+~~~~~~~~~~~~~~~
 
 Instead of using the ``QueryBuilder``, you can alternatively write the queries
 directly using DQL::
@@ -778,8 +778,8 @@ entities (the topic of :ref:`relations <book-doctrine-relations>` will be
 covered later), group, etc. For more information, see the official
 `Doctrine Query Language`_ documentation.
 
-Custom Repository Classes
-~~~~~~~~~~~~~~~~~~~~~~~~~
+自定义仓库（Repository）类
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the previous sections, you began constructing and using more complex queries
 from inside a controller. In order to isolate, test and reuse these queries,
@@ -878,8 +878,8 @@ You can use this new method just like the default finder methods of the reposito
 
 .. _`book-doctrine-relations`:
 
-Entity Relationships/Associations
----------------------------------
+Entity的关联关系
+----------------
 
 Suppose that the products in your application all belong to exactly one "category".
 In this case, you'll need a ``Category`` object and a way to relate a ``Product``
@@ -896,8 +896,8 @@ you can let Doctrine create the class for you.
 This task generates the ``Category`` entity for you, with an ``id`` field,
 a ``name`` field and the associated getter and setter functions.
 
-Relationship Mapping Metadata
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+关联关系映射数据
+~~~~~~~~~~~~~~~~
 
 To relate the ``Category`` and ``Product`` entities, start by creating a
 ``products`` property on the ``Category`` class:
@@ -1083,8 +1083,8 @@ table, and ``product.category_id`` column, and new foreign key:
     method of systematically updating your production database, read about
     `migrations`_.
 
-Saving Related Entities
-~~~~~~~~~~~~~~~~~~~~~~~
+保存有关联关系的Entity
+~~~~~~~~~~~~~~~~~~~~~~
 
 Now you can see this new code in action! Imagine you're inside a controller::
 
@@ -1125,8 +1125,8 @@ The ``product.category_id`` column for the new product is set to whatever
 the ``id`` is of the new category. Doctrine manages the persistence of this
 relationship for you.
 
-Fetching Related Objects
-~~~~~~~~~~~~~~~~~~~~~~~~
+获取关联的对象
+~~~~~~~~~~~~~~
 
 When you need to fetch associated objects, your workflow looks just like it
 did before. First, fetch a ``$product`` object and then access its related
@@ -1204,8 +1204,8 @@ to the given ``Category`` object via their ``category_id`` value.
     all at once (via a *join*), Doctrine will return the *true* ``Category``
     object, since nothing needs to be lazily loaded.
 
-Joining Related Records
-~~~~~~~~~~~~~~~~~~~~~~~
+关联查询关联对象
+~~~~~~~~~~~~~~~~
 
 In the above examples, two queries were made - one for the original object
 (e.g. a ``Category``) and one for the related object(s) (e.g. the ``Product``
@@ -1251,8 +1251,8 @@ object and its related ``Category`` with just one query::
         // ...
     }
 
-More Information on Associations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+更多关于关联的信息
+~~~~~~~~~~~~~~~~~~
 
 This section has been an introduction to one common type of entity relationship,
 the one-to-many relationship. For more advanced details and examples of how
@@ -1266,15 +1266,15 @@ Doctrine's `Association Mapping Documentation`_.
     documentation. You'll also need to include the ``use Doctrine\ORM\Mapping as ORM;``
     statement, which *imports* the ``ORM`` annotations prefix.
 
-Configuration
--------------
+配置
+----
 
 Doctrine is highly configurable, though you probably won't ever need to worry
 about most of its options. To find out more about configuring Doctrine, see
 the Doctrine section of the :doc:`config reference </reference/configuration/doctrine>`.
 
-Lifecycle Callbacks
--------------------
+运行周期内执行的回调函数
+------------------------
 
 Sometimes, you need to perform an action right before or after an entity
 is inserted, updated, or deleted. These types of actions are known as "lifecycle"
@@ -1367,8 +1367,8 @@ Doctrine's `Lifecycle Events documentation`_.
 
 .. _book-doctrine-field-types:
 
-Doctrine Field Types Reference
-------------------------------
+Doctrine属性类型参考
+--------------------
 
 Doctrine comes with numerous field types available. Each of these
 maps a PHP data type to a specific column type in whatever database you're
@@ -1377,8 +1377,8 @@ the ``length``, ``nullable`` behavior, ``name`` and other options. To see a
 list of all available types and more information, see Doctrine's
 `Mapping Types documentation`_.
 
-Summary
--------
+总结
+----
 
 With Doctrine, you can focus on your objects and how they're used in your
 application and worry about database persistence second. This is because
@@ -1391,8 +1391,8 @@ powerful, allowing you to create complex queries and subscribe to events
 that allow you to take different actions as objects go through their persistence
 lifecycle.
 
-Learn more
-~~~~~~~~~~
+更多信息
+~~~~~~~~
 
 For more information about Doctrine, see the *Doctrine* section of the
 :doc:`cookbook </cookbook/index>`. Some useful articles might be:

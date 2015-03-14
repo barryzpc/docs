@@ -1,8 +1,8 @@
 .. index::
    single: Routing
 
-Routing
-=======
+路由
+====
 
 Beautiful URLs are an absolute must for any serious web application. This
 means leaving behind ugly URLs like ``index.php?article_id=57`` in favor
@@ -24,8 +24,8 @@ areas of your application. By the end of this chapter, you'll be able to:
 .. index::
    single: Routing; Basics
 
-Routing in Action
------------------
+使用路由示例
+------------
 
 A *route* is a map from a URL path to a controller. For example, suppose
 you want to match any URL like ``/blog/my-post`` or ``/blog/all-about-symfony``
@@ -114,8 +114,8 @@ even the most complex URLs easy.
 .. index::
    single: Routing; Under the hood
 
-Routing: Under the Hood
------------------------
+路由原理
+--------
 
 When a request is made to your application, it contains an address to the
 exact "resource" that the client is requesting. This address is called the
@@ -149,8 +149,8 @@ which controller should be executed. The whole process looks like this:
 .. index::
    single: Routing; Creating routes
 
-Creating Routes
----------------
+创建路由规则
+------------
 
 Symfony loads all the routes for your application from a single routing configuration
 file. The file is usually ``app/config/routing.yml``, but can be configured
@@ -202,8 +202,8 @@ file:
     See the :ref:`routing-include-external-resources` section for more
     information.
 
-Basic Route Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~
+路由基本设置
+~~~~~~~~~~~~
 
 Defining a route is easy, and a typical application will have lots of routes.
 A basic route consists of just two parts: the ``path`` to match and a
@@ -270,8 +270,8 @@ will be explained shortly in the :ref:`controller-string-syntax` section.
 .. index::
    single: Routing; Placeholders
 
-Routing with Placeholders
-~~~~~~~~~~~~~~~~~~~~~~~~~
+在路由里使用占位符
+~~~~~~~~~~~~~~~~~~
 
 Of course the routing system supports much more interesting routes. Many
 routes will contain one or more named "wildcard" placeholders:
@@ -338,8 +338,8 @@ The path will *not*, however, match simply ``/blog``. That's because,
 by default, all placeholders are required. This can be changed by adding
 a placeholder value to the ``defaults`` array.
 
-Required and Optional Placeholders
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+可选和非可选占位符
+~~~~~~~~~~~~~~~~~~
 
 To make things more exciting, add a new route that displays a list of all
 the available blog posts for this imaginary blog application:
@@ -543,8 +543,8 @@ URL          Route     Parameters
 .. index::
    single: Routing; Requirements
 
-Adding Requirements
-~~~~~~~~~~~~~~~~~~~
+添加限制
+~~~~~~~~
 
 Take a quick look at the routes that have been created so far:
 
@@ -806,8 +806,8 @@ Path     Parameters
 .. index::
    single: Routing; Method requirement
 
-Adding HTTP Method Requirements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+添加HTTP方法限制
+~~~~~~~~~~~~~~~~
 
 In addition to the URL, you can also match on the *method* of the incoming
 request (i.e. GET, HEAD, POST, PUT, DELETE). Suppose you have a contact form
@@ -903,8 +903,8 @@ form via the same URL, while using distinct controllers for the two actions.
 
     If no ``methods`` are specified, the route will match on *all* methods.
 
-Adding a Host Requirement
-~~~~~~~~~~~~~~~~~~~~~~~~~
+添加主机名限制
+~~~~~~~~~~~~~~
 
 You can also match on the HTTP *host* of the incoming request. For more
 information, see :doc:`/components/routing/hostname_pattern` in the Routing
@@ -912,8 +912,8 @@ component documentation.
 
 .. _book-routing-conditions:
 
-Completely Customized Route Matching with Conditions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使用条件判断来自定义路由设置
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As you've seen, a route can be made to match only certain routing wildcards
 (via regular expressions), HTTP methods, or host names. But the routing system
@@ -1002,8 +1002,8 @@ variables that are passed into the expression:
 
 .. _advanced-routing-example:
 
-Advanced Routing Example
-~~~~~~~~~~~~~~~~~~~~~~~~
+路由进阶示例
+~~~~~~~~~~~~
 
 At this point, you have everything you need to create a powerful routing
 structure in Symfony. The following is an example of just how flexible the
@@ -1115,8 +1115,8 @@ a slash. URLs matching this route might look like:
     Symfony provides you with a way to do this by leveraging service container
     parameters. Read more about this in ":doc:`/cookbook/routing/service_container_parameters`".
 
-Special Routing Parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+有特殊含义的路由参数
+~~~~~~~~~~~~~~~~~~~~
 
 As you've seen, each routing parameter or default value is eventually available
 as an argument in the controller method. Additionally, there are three parameters
@@ -1138,8 +1138,8 @@ that are special: each adds a unique piece of functionality inside your applicat
 
 .. _controller-string-syntax:
 
-Controller Naming Pattern
--------------------------
+控制器命名规则
+--------------
 
 Every route must have a ``_controller`` parameter, which dictates which
 controller should be executed when that route is matched. This parameter
@@ -1187,8 +1187,8 @@ and allows more flexibility.
    uses just one colon separator (e.g. ``service_name:indexAction``) and
    refers to the controller as a service (see :doc:`/cookbook/controller/service`).
 
-Route Parameters and Controller Arguments
------------------------------------------
+路由参数和控制器参数
+--------------------
 
 The route parameters (e.g. ``{slug}``) are especially important because
 each is made available as an argument to the controller method::
@@ -1232,8 +1232,8 @@ see :doc:`/cookbook/routing/extra_information`.
 
 .. _routing-include-external-resources:
 
-Including External Routing Resources
-------------------------------------
+包含外部路由规则
+----------------
 
 All routes are loaded via a single configuration file - usually
 ``app/config/routing.yml`` (see `Creating Routes`_ above). However, if you use
@@ -1324,8 +1324,8 @@ directory are parsed and put into the routing.
 
             return $collection;
 
-Prefixing Imported Routes
-~~~~~~~~~~~~~~~~~~~~~~~~~
+给包含的路由添加统一前缀
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can also choose to provide a "prefix" for the imported routes. For example,
 suppose you want to prefix all routes in the AppBundle with ``/site`` (e.g.
@@ -1372,8 +1372,8 @@ suppose you want to prefix all routes in the AppBundle with ``/site`` (e.g.
 The path of each route being loaded from the new routing resource will now
 be prefixed with the string ``/site``.
 
-Adding a Host Requirement to Imported Routes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+给包含的路由规则添加统一的主机名限制
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set the host regex on imported routes. For more information, see
 :ref:`component-routing-host-imported`.
@@ -1381,8 +1381,8 @@ You can set the host regex on imported routes. For more information, see
 .. index::
    single: Routing; Debugging
 
-Visualizing & Debugging Routes
-------------------------------
+路由规则的可视化列表 & 调试 
+---------------------------
 
 While adding and customizing routes, it's helpful to be able to visualize
 and get detailed information about your routes. A great way to see every route
@@ -1431,8 +1431,8 @@ This command will print which route the URL matches.
 .. index::
    single: Routing; Generating URLs
 
-Generating URLs
----------------
+生成URL
+-------
 
 The routing system should also be used to generate URLs. In reality, routing
 is a bidirectional system: mapping the URL to a controller+parameters and
@@ -1511,8 +1511,8 @@ In an upcoming section, you'll learn how to generate URLs from inside templates.
 .. index::
    single: Routing; Generating URLs in a template
 
-Generating URLs with Query Strings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+生成带查询（query string）的URL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``generate`` method takes an array of wildcard values to generate the URI.
 But if you pass extra ones, they will be added to the URI as a query string::
@@ -1523,8 +1523,8 @@ But if you pass extra ones, they will be added to the URI as a query string::
     ));
     // /blog/2?category=Symfony
 
-Generating URLs from a Template
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+从模板文件里面生成URL
+~~~~~~~~~~~~~~~~~~~~~
 
 The most common place to generate a URL is from within a template when linking
 between pages in your application. This is done just as before, but using
@@ -1549,8 +1549,8 @@ a template helper function:
 .. index::
    single: Routing; Absolute URLs
 
-Generating Absolute URLs
-~~~~~~~~~~~~~~~~~~~~~~~~
+生成绝对地址
+~~~~~~~~~~~~
 
 By default, the router will generate relative URLs (e.g. ``/blog``). From
 a controller, simply pass ``true`` to the third argument of the ``generateUrl()``
@@ -1587,8 +1587,8 @@ to ``generate()``:
     doesn't work. See :doc:`/cookbook/console/sending_emails` to learn how to
     solve this problem.
 
-Summary
--------
+总结
+----
 
 Routing is a system for mapping the URL of incoming requests to the controller
 function that should be called to process the request. It both allows you
@@ -1596,8 +1596,8 @@ to specify beautiful URLs and keeps the functionality of your application
 decoupled from those URLs. Routing is a bidirectional mechanism, meaning that it
 should also be used to generate URLs.
 
-Learn more from the Cookbook
-----------------------------
+了解更多
+--------
 
 * :doc:`/cookbook/routing/scheme`
 

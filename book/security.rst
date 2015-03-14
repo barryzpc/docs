@@ -1,8 +1,8 @@
 .. index::
    single: Security
 
-Security
-========
+安全性
+======
 
 Symfony's security system is incredibly powerful, but it can also be confusing
 to set up. In this chapter, you'll learn how to set up your application's security
@@ -25,8 +25,8 @@ like :ref:`logging out <book-security-logging-out>` and :ref:`encoding user pass
 
 .. _book-security-firewalls:
 
-1) Initial security.yml Setup (Authentication)
-----------------------------------------------
+1) 设置security.yml文件（身份鉴定）
+-----------------------------------
 
 The security system is configured in ``app/config/security.yml``. The default
 configuration looks like this:
@@ -123,8 +123,8 @@ You'll learn later how to deny access to certain URLs or controllers.
     :doc:`Security Configuration Reference </reference/configuration/security>`
     that shows all of the options with some extra explanation.
 
-A) Configuring how your Users will Authenticate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A) 设置身份鉴定方式
+~~~~~~~~~~~~~~~~~~~
 
 The main job of a firewall is to configure *how* your users will authenticate.
 Will they use a login form? Http Basic? An API token? All of the above?
@@ -282,8 +282,8 @@ But who can you login as? Where do users come from?
 .. _security-user-providers:
 .. _where-do-users-come-from-user-providers:
 
-B) Configuring how Users are Loaded
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+B) 配置用户对象载入方式
+~~~~~~~~~~~~~~~~~~~~~~~
 
 When you type in your username, Symfony needs to load that user's information
 from somewhere. This is called a "user provider", and you're in charge of
@@ -433,8 +433,8 @@ this would deny you access. More on that later (:ref:`security-authorization-acc
 
 .. _book-security-user-entity:
 
-Loading Users from the Database
-...............................
+从数据库里载入用户
+..................
 
 If you'd like to load your users via the Doctrine ORM, that's easy! See
 :doc:`/cookbook/security/entity_provider` for all the details.
@@ -443,8 +443,8 @@ If you'd like to load your users via the Doctrine ORM, that's easy! See
 .. _c-encoding-the-users-password:
 .. _encoding-the-user-s-password:
 
-C) Encoding the User's Password
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C) 给密码加密
+~~~~~~~~~~~~~
 
 Whether your users are stored in ``security.yml``, in a database or somewhere
 else, you'll want to encode their passwords. The best algorithm to use is
@@ -584,8 +584,8 @@ before inserting them into the database? Don't worry, see
     It's also possible to use different hashing algorithms on a user-by-user
     basis. See :doc:`/cookbook/security/named_encoders` for more details.
 
-D) Configuration Done!
-~~~~~~~~~~~~~~~~~~~~~~
+D) 完成配置
+~~~~~~~~~~~
 
 Congratulations! You now have a working authentication system that uses Http
 Basic and loads users right from the ``security.yml`` file.
@@ -603,8 +603,8 @@ Your next steps depend on your setup:
 
 .. _`security-authorization`:
 
-2) Denying Access, Roles and other Authorization
-------------------------------------------------
+2) 拒绝访问, 角色，以及其他权限验证
+-----------------------------------
 
 Users can now login to your app using ``http_basic`` or some other method.
 Great! Now, you need to learn how to deny access and work with the User object.
@@ -628,8 +628,8 @@ The process of authorization has two different sides:
 
 .. _book-security-roles:
 
-Roles
-~~~~~
+角色
+~~~~
 
 When a user logs in, they receive a set of roles (e.g. ``ROLE_ADMIN``). In
 the example above, these are hardcoded into ``security.yml``. If you're
@@ -661,8 +661,8 @@ some roles automatically mean that you also have other roles.
 
 .. _security-role-authorization:
 
-Add Code to Deny Access
-~~~~~~~~~~~~~~~~~~~~~~~
+添加拒绝访问的代码
+~~~~~~~~~~~~~~~~~~
 
 There are **two** ways to deny access to something:
 
@@ -674,8 +674,8 @@ There are **two** ways to deny access to something:
 
 .. _security-authorization-access-control:
 
-Securing URL patterns (access_control)
-......................................
+通过URL模式进行保护
+...................
 
 The most basic way to secure part of your application is to secure an entire
 URL pattern. You saw this earlier, where anything matching the regular expression
@@ -804,8 +804,8 @@ the ``^``) would match ``/admin/foo`` but would also match URLs like ``/foo/admi
 
 .. _`book-security-securing-controller`:
 
-Securing Controllers and other Code
-...................................
+保护控制器以及其他代码
+......................
 
 You can easily deny access from inside a controller::
 
@@ -852,8 +852,8 @@ For more information, see the `FrameworkExtraBundle documentation`_.
 
 .. _book-security-template:
 
-Access Control in Templates
-...........................
+在模板中进行权限控制
+....................
 
 If you want to check if the current user has a role inside a template, use
 the built-in helper function:
@@ -887,8 +887,8 @@ in this chapter).
 
         {% if app.user and is_granted('ROLE_ADMIN') %}
 
-Securing other Services
-.......................
+保护其他服务
+............
 
 In fact, anything in Symfony can be protected by doing something similar
 to this. For example, suppose you have a service (i.e. a PHP class) whose
@@ -897,8 +897,8 @@ it's being used from - to only certain users.
 
 For more information see :doc:`/cookbook/security/securing_services`.
 
-Checking to see if a User is Logged In (IS_AUTHENTICATED_FULLY)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+检查用户是否登录（IS_AUTHENTICATED_FULLY）
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 So far, you've checked access based on roles - those strings that start with
 ``ROLE_`` and are assigned to users. But if you *only* want to check if a
@@ -962,8 +962,8 @@ For more details on expressions and security, see :ref:`book-security-expression
 
 .. _security-secure-objects:
 
-Access Control Lists (ACLs): Securing individual Database Objects
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+权限控制列表（ACLs）: 保护数据库数据
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Imagine you are designing a blog where users can comment on your posts. You
 also want a user to be able to edit their own comments, but not those of
@@ -985,8 +985,8 @@ To accomplish this you have 2 options:
 In both cases, you'll still deny access using methods similar to what was
 shown above.
 
-Retrieving the User Object
---------------------------
+获取用户对象
+------------
 
 .. versionadded:: 2.6
      The ``security.token_storage`` service was introduced in Symfony 2.6. Prior
@@ -1025,8 +1025,8 @@ if your User object has a ``getFirstName()`` method, you could use that::
         return new Response('Well hi there '.$user->getFirstName());
     }
 
-Always Check if the User is Logged In
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+总是检查用户登录状态
+~~~~~~~~~~~~~~~~~~~~
 
 It's important to check if the user is authenticated first. If they're not,
 ``$user`` will either be ``null`` or the string ``anon.``. Wait, what? Yes,
@@ -1048,8 +1048,8 @@ the User object, and use the ``isGranted`` method (or
 
     }
 
-Retrieving the User in a Template
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+从模板里获取用户对象
+~~~~~~~~~~~~~~~~~~~~
 
 In a Twig Template this object can be accessed via the `app.user <reference-twig-global-app>`_
 key:
@@ -1070,8 +1070,8 @@ key:
 
 .. _book-security-logging-out:
 
-Logging Out
------------
+退出登录
+--------
 
 Usually, you'll also want your users to be able to log out. Fortunately,
 the firewall can handle this automatically for you when you activate the
@@ -1172,8 +1172,8 @@ is defined by the ``target`` parameter above (e.g. the ``homepage``).
 
 .. _`security-encoding-password`:
 
-Dynamically Encoding a Password
--------------------------------
+动态加密密码
+------------
 
 If, for example, you're storing users in the database, you'll need to encode
 the users' passwords before inserting them. No matter what algorithm you
@@ -1208,8 +1208,8 @@ as the second argument.
 
 .. _security-role-hierarchy:
 
-Hierarchical Roles
-------------------
+角色继承
+--------
 
 Instead of associating many roles to users, you can define role inheritance
 rules by creating a role hierarchy:
@@ -1257,8 +1257,8 @@ In the above configuration, users with ``ROLE_ADMIN`` role will also have the
 ``ROLE_USER`` role. The ``ROLE_SUPER_ADMIN`` role has ``ROLE_ADMIN``, ``ROLE_ALLOWED_TO_SWITCH``
 and ``ROLE_USER`` (inherited from ``ROLE_ADMIN``).
 
-Stateless Authentication
-------------------------
+无状态身份验证
+--------------
 
 By default, Symfony relies on a cookie (the Session) to persist the security
 context of the user. But if you use certificates or HTTP authentication for
@@ -1311,8 +1311,8 @@ cookie will be ever created by Symfony):
 
 .. _book-security-checking-vulnerabilities:
 
-Checking for Known Security Vulnerabilities in Dependencies
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+检查依赖中是否包含已知安全漏洞
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When using lots of dependencies in your Symfony projects, some of them may
 contain security vulnerabilities. That's why Symfony includes a command called
@@ -1334,8 +1334,8 @@ FriendsOfPHP organization.
     any of your dependencies is affected by a known security vulnerability.
     Therefore, you can easily integrate it in your build process.
 
-Final Words
------------
+总结
+----
 
 Woh! Nice work! You now know more than the basics of security. The hardest
 parts are when you have custom requirements: like a custom authentication
@@ -1350,8 +1350,8 @@ configuration tree may be useful.
 
 Good luck!
 
-Learn more from the Cookbook
-----------------------------
+了解更多
+--------
 
 * :doc:`Forcing HTTP/HTTPS </cookbook/security/force_https>`
 * :doc:`Impersonating a User </cookbook/security/impersonating_user>`
