@@ -1,18 +1,16 @@
 .. index::
     single: Apache Router
 
-How to Use the Apache Router
-============================
+使用Apache路由
+==============
 
 Symfony, while fast out of the box, also provides various ways to increase that speed with a little bit of tweaking.
 One of these ways is by letting Apache handle routes directly, rather than using Symfony for this task.
 
 .. caution::
 
-    Apache router was deprecated in Symfony 2.5 and will be removed in Symfony
-    3.0. Since the PHP implementation of the Router was improved, performance
-    gains were no longer significant (while it's very hard to replicate the
-    same behavior).
+    Apache路由器从Symfony 2.5不再建议使用，并且在Symfony
+    3.0里会去掉。因为PHP的路由实现已经得到改善， 性能提升已经不明显了
 
 Change Router Configuration Parameters
 --------------------------------------

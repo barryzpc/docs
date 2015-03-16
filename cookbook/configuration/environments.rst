@@ -1,8 +1,8 @@
 .. index::
     single: Environments
 
-How to Master and Create new Environments
-=========================================
+掌握并创建的运行环境
+====================
 
 Every application is the combination of code and a set of configuration that
 dictates how that code should function. The configuration may define the
@@ -16,8 +16,8 @@ optimized for speed.
 .. index::
    single: Environments; Configuration files
 
-Different Environments, different Configuration Files
------------------------------------------------------
+不同的运行环境对应不同的配置文件
+--------------------------------
 
 A typical Symfony application begins with three environments: ``dev``,
 ``prod``, and ``test``. As discussed, each "environment" simply represents
@@ -123,8 +123,8 @@ activated by modifying the default value in the ``dev`` configuration file:
 .. index::
    single: Environments; Executing different environments
 
-Executing an Application in different Environments
---------------------------------------------------
+在不同的运行配置中运行同一个应用
+--------------------------------
 
 To execute the application in each environment, load up the application using
 either the ``app.php`` (for the ``prod`` environment) or the ``app_dev.php``
@@ -210,8 +210,8 @@ environment by using this code and changing the environment string.
     mode. You'll need to enable that in your front controller by calling
     :method:`Symfony\\Component\\Debug\\Debug::enable`.
 
-Selecting the Environment for Console Commands
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+运行命令时选择环境配置
+~~~~~~~~~~~~~~~~~~~~~~
 
 By default, Symfony commands are executed in the ``dev`` environment and with the
 debug mode enabled. Use the ``--env`` and ``--no-debug`` options to modify this
@@ -246,8 +246,8 @@ having to add any command option.
 .. index::
    single: Environments; Creating a new environment
 
-Creating a new Environment
---------------------------
+创建新的运行环境
+----------------
 
 By default, a Symfony application has three environments that handle most
 cases. Of course, since an environment is nothing more than a string that
@@ -336,8 +336,8 @@ The new environment is now accessible via::
 .. index::
    single: Environments; Cache directory
 
-Environments and the Cache Directory
-------------------------------------
+运行环境和缓存目录
+------------------
 
 Symfony takes advantage of caching in many ways: the application configuration,
 routing configuration, Twig templates and more are cached to PHP objects
@@ -378,7 +378,7 @@ includes the following:
     You can easily change the directory location and name. For more information
     read the article :doc:`/cookbook/configuration/override_dir_structure`.
 
-Going further
--------------
+了解更多
+--------
 
 Read the article on :doc:`/cookbook/configuration/external_parameters`.

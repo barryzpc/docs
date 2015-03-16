@@ -2,8 +2,8 @@
    single: Configuration; Semantic
    single: Bundle; Extension configuration
 
-How to Create Friendly Configuration for a Bundle
-=================================================
+如何创建人性化的包配置
+======================
 
 If you open your application configuration file (usually ``app/config/config.yml``),
 you'll see a number of different configuration "namespaces", such as ``framework``,
@@ -54,8 +54,8 @@ as integration of other related components:
     ``config.yml``, you can always create a parameter there and use that
     parameter somewhere else.
 
-Using the Bundle Extension
---------------------------
+使用包扩展
+----------
 
 The basic idea is that instead of having the user override individual
 parameters, you let the user configure just a few, specifically created,
@@ -121,8 +121,8 @@ bundle configuration would look like:
     :doc:`/cookbook/configuration/using_parameters_in_dic`.
 
 
-Processing the ``$configs`` Array
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+处理``$configs``数组
+~~~~~~~~~~~~~~~~~~~~
 
 First things first, you have to create an extension class as explained in
 :doc:`extension`.
@@ -277,8 +277,8 @@ configuration arrays together.
             // ... now use the flat $config array
         }
 
-Modifying the Configuration of Another Bundle
----------------------------------------------
+修改其他包里的配置
+------------------
 
 If you have multiple bundles that depend on each other, it may be useful
 to allow one ``Extension`` class to modify the configuration passed to another
@@ -287,8 +287,8 @@ configuration in their ``app/config/config.yml`` file. This can be achieved
 using a prepend extension. For more details, see
 :doc:`/cookbook/bundles/prepend_extension`.
 
-Dump the Configuration
-----------------------
+输出所有配置
+------------
 
 The ``config:dump-reference`` command dumps the default configuration of a
 bundle in the console using the Yaml format.
@@ -300,8 +300,8 @@ have something different, your ``Extension`` class must override the
 :method:`Extension::getConfiguration() <Symfony\\Component\\HttpKernel\\DependencyInjection\\Extension::getConfiguration>`
 method and return an instance of your ``Configuration``.
 
-Supporting XML
---------------
+支持XML文件
+-----------
 
 Symfony allows people to provide the configuration in three different formats:
 Yaml, XML and PHP. Both Yaml and PHP use the same syntax and are supported by
@@ -309,16 +309,16 @@ default when using the Config component. Supporting XML requires you to do some
 more things. But when sharing your bundle with others, it is recommended that
 you follow these steps.
 
-Make your Config Tree ready for XML
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使你的配置功能已经可支持XML格式
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Config component provides some methods by default to allow it to correctly
 process XML configuration. See ":ref:`component-config-normalization`" of the
 component documentation. However, you can do some optional things as well, this
 will improve the experience of using XML configuration:
 
-Choosing an XML Namespace
-~~~~~~~~~~~~~~~~~~~~~~~~~
+选择XML命名空间
+~~~~~~~~~~~~~~~
 
 In XML, the `XML namespace`_ is used to determine which elements belong to the
 configuration of a specific bundle. The namespace is returned from the
@@ -341,8 +341,8 @@ the extension. You might want to change this to a more professional URL::
         }
     }
 
-Providing an XML Schema
-~~~~~~~~~~~~~~~~~~~~~~~
+提供XML校验文件
+~~~~~~~~~~~~~~~
 
 XML has a very useful feature called `XML schema`_. This allows you to
 describe all possible elements and attributes and their values in an XML Schema

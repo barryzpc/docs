@@ -1,8 +1,8 @@
 .. index::
    single: Assetic; UglifyJS
 
-How to Minify CSS/JS Files (Using UglifyJS and UglifyCSS)
-=========================================================
+压缩静态文件大小（使用UglifyJS和UglifyCSS）
+===========================================
 
 `UglifyJS`_ is a JavaScript parser/compressor/beautifier toolkit. It can be used
 to combine and minify JavaScript assets so that they require less HTTP requests
@@ -13,8 +13,8 @@ In this cookbook, the installation, configuration and usage of UglifyJS is
 shown in detail. UglifyCSS works pretty much the same way and is only
 talked about briefly.
 
-Install UglifyJS
-----------------
+安装UglifyJS
+------------
 
 UglifyJS is available as an `Node.js`_ npm module and can be installed using
 npm. First, you need to `install Node.js`_. Afterwards you can install UglifyJS
@@ -54,8 +54,8 @@ in the ``node_modules`` directory:
 
     $ ./app/Resources/node_modules/.bin/uglifyjs --help
 
-Configure the ``uglifyjs2`` Filter
-----------------------------------
+配置``uglifyjs2``处理器
+-----------------------
 
 Now we need to configure Symfony to use the ``uglifyjs2`` filter when processing
 your JavaScripts:
@@ -111,8 +111,8 @@ your JavaScripts:
 
 You now have access to the ``uglifyjs2`` filter in your application.
 
-Configure the ``node`` Binary
------------------------------
+配置``node``程序
+----------------
 
 Assetic tries to find the node binary automatically. If it cannot be found, you
 can configure its location using the ``node`` key:
@@ -151,8 +151,8 @@ can configure its location using the ``node`` key:
                 ),
         ));
 
-Minify your Assets
-------------------
+压缩静态文件
+------------
 
 In order to use UglifyJS on your assets, you need to apply it to them. Since
 your assets are a part of the view layer, this work is done in your templates:
@@ -184,8 +184,8 @@ your assets are a part of the view layer, this work is done in your templates:
 With the addition of the ``uglifyjs2`` filter to the asset tags above, you
 should now see minified JavaScripts coming over the wire much faster.
 
-Disable Minification in Debug Mode
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+在开发模式关闭文件压缩功能
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Minified JavaScripts are very difficult to read, let alone debug. Because of
 this, Assetic lets you disable a certain filter when your application is in
@@ -223,8 +223,8 @@ and :ref:`dump your assetic assets <cookbook-assetic-dump-prod>`.
     rather than the common config file. For details on applying filters by
     file extension, see :ref:`cookbook-assetic-apply-to`.
 
-Install, Configure and Use UglifyCSS
-------------------------------------
+安装、配置并使用UglifyCSS
+-------------------------
 
 The usage of UglifyCSS works the same way as UglifyJS. First, make sure
 the node package is installed:

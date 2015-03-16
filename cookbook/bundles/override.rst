@@ -1,22 +1,22 @@
 .. index::
    single: Bundle; Inheritance
 
-How to Override any Part of a Bundle
-====================================
+重载Bundle的某些功能
+====================
 
 This document is a quick reference for how to override different parts of
 third-party bundles.
 
-Templates
----------
+模板
+----
 
 For information on overriding templates, see
 
 * :ref:`overriding-bundle-templates`.
 * :doc:`/cookbook/bundles/inheritance`
 
-Routing
--------
+路由规则
+--------
 
 Routing is never automatically imported in Symfony. If you want to include
 the routes from any bundle, then they must be manually imported from somewhere
@@ -26,16 +26,16 @@ The easiest way to "override" a bundle's routing is to never import it at
 all. Instead of importing a third-party bundle's routing, simply copy
 that routing file into your application, modify it, and import it instead.
 
-Controllers
------------
+控制器
+------
 
 Assuming the third-party bundle involved uses non-service controllers (which
 is almost always the case), you can easily override controllers via bundle
 inheritance. For more information, see :doc:`/cookbook/bundles/inheritance`.
 If the controller is a service, see the next section on how to override it.
 
-Services & Configuration
-------------------------
+服务 & 配置
+-----------
 
 In order to override/extend a service, there are two options. First, you can
 set the parameter holding the service's class name to your own class by setting
@@ -93,8 +93,8 @@ See :doc:`/cookbook/service_container/compiler_passes` for information on how to
 compiler passes. If you want to do something beyond just overriding the class -
 like adding a method call - you can only use the compiler pass method.
 
-Entities & Entity Mapping
--------------------------
+Entity映射配置
+--------------
 
 Due to the way Doctrine works, it is not possible to override entity mapping
 of a bundle. However, if a bundle provides a mapped superclass (such as the
@@ -102,8 +102,8 @@ of a bundle. However, if a bundle provides a mapped superclass (such as the
 associations. Learn more about this feature and its limitations in
 `the Doctrine documentation`_.
 
-Forms
------
+表单
+----
 
 In order to override a form type, it has to be registered as a service (meaning
 it is tagged as ``form.type``). You can then override it as you would override any
@@ -119,8 +119,8 @@ rather than::
 
 .. _override-validation:
 
-Validation Metadata
--------------------
+表单校验数据
+------------
 
 Symfony loads all validation configuration files from every bundle and
 combines them into one validation metadata tree. This means you are able to
@@ -179,8 +179,8 @@ instead of the original ones.
 
 .. _override-translations:
 
-Translations
-------------
+翻译
+----
 
 Translations are not related to bundles, but to domains. That means that you
 can override the translations from any translation file, as long as it is in

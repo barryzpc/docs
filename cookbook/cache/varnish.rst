@@ -1,8 +1,8 @@
 .. index::
     single: Cache; Varnish
 
-How to Use Varnish to Speed up my Website
-=========================================
+如何使用Varnish给网站加速
+=========================
 
 Because Symfony's cache uses the standard HTTP cache headers, the
 :ref:`symfony-gateway-cache` can easily be replaced with any other reverse
@@ -12,8 +12,8 @@ cached content fast and including support for :ref:`Edge Side Includes <edge-sid
 .. index::
     single: Varnish; configuration
 
-Make Symfony Trust the Reverse Proxy
-------------------------------------
+使Symfony信任反向代理请求
+-------------------------
 
 For ESI to work correctly and for the :ref:`X-FORWARDED <varnish-x-forwarded-headers>`
 headers to be used, you need to configure Varnish as a
@@ -21,8 +21,8 @@ headers to be used, you need to configure Varnish as a
 
 .. _varnish-x-forwarded-headers:
 
-Routing and X-FORWARDED Headers
--------------------------------
+路由规则和X-FORWARDED头信息
+---------------------------
 
 To ensure that the Symfony Router generates URLs correctly with Varnish,
 a ``X-Forwarded-Port`` header must be present for Symfony to use the
@@ -60,8 +60,8 @@ If the ``X-Forwarded-Port`` header is not set correctly, Symfony will append
 the port where the PHP application is running when generating absolute URLs,
 e.g. ``http://example.com:8080/my/path``.
 
-Cookies and Caching
--------------------
+Cookies和缓存
+-------------
 
 By default, a sane caching proxy does not cache anything when a request is sent
 with :ref:`cookies or a basic authentication header<http-cache-introduction>`.
@@ -110,8 +110,8 @@ configuration of PHP, your session cookie has the name PHPSESSID:
     implemented and explained by the FOSHttpCacheBundle_ under the name
     `User Context`_.
 
-Ensure Consistent Caching Behaviour
------------------------------------
+确认缓存行为的一致性
+--------------------
 
 Varnish uses the cache headers sent by your application to determine how
 to cache content. However, versions prior to Varnish 4 did not respect
@@ -140,8 +140,8 @@ using Varnish 3:
     You can see the default behavior of Varnish in the form of a VCL file:
     `default.vcl`_ for Varnish 3, `builtin.vcl`_ for Varnish 4.
 
-Enable Edge Side Includes (ESI)
--------------------------------
+开启ESI（Edge Side Includes）功能
+---------------------------------
 
 As explained in the :ref:`Edge Side Includes section<edge-side-includes>`,
 Symfony detects whether it talks to a reverse proxy that understands ESI or
@@ -206,8 +206,8 @@ Symfony adds automatically:
 .. index::
     single: Varnish; Invalidation
 
-Cache Invalidation
-------------------
+清除缓存
+--------
 
 If you want to cache content that changes frequently and still serve
 the most recent version to users, you need to invalidate that content.

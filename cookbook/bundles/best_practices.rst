@@ -1,8 +1,8 @@
 .. index::
    single: Bundle; Best practices
 
-Best Practices for Reusable Bundles
-===================================
+可复用包（Bundle）的最佳实践
+============================
 
 There are 2 types of bundles:
 
@@ -25,8 +25,8 @@ the book and cookbook.
 
 .. _bundles-naming-conventions:
 
-Bundle Name
------------
+包的起名规则
+------------
 
 A bundle is also a PHP namespace. The namespace must follow the technical
 interoperability `standards`_ for PHP namespaces and class names: it starts
@@ -76,8 +76,8 @@ name using underscores (``acme_hello`` for ``AcmeHelloBundle``, or
 is used to enforce uniqueness within a bundle (see below for some usage
 examples).
 
-Directory Structure
--------------------
+文件目录
+--------
 
 The basic directory structure of a HelloBundle must read as follows:
 
@@ -150,8 +150,8 @@ The following classes and files have specific emplacements:
     ``Model`` namespace. See :doc:`/cookbook/doctrine/mapping_model_classes` for
     how to handle the mapping with a compiler pass.
 
-Classes
--------
+类
+--
 
 The bundle directory structure is used as the namespace hierarchy. For
 instance, a ``HelloController`` controller is stored in
@@ -168,8 +168,8 @@ Classes that connect to the event dispatcher should be suffixed with
 
 Exceptions classes should be stored in an ``Exception`` sub-namespace.
 
-Vendors
--------
+第三方包
+--------
 
 A bundle must not embed third-party PHP libraries. It should rely on the
 standard Symfony autoloading instead.
@@ -177,8 +177,8 @@ standard Symfony autoloading instead.
 A bundle should not embed third-party libraries written in JavaScript, CSS, or
 any other language.
 
-Tests
------
+测试
+----
 
 A bundle should come with a test suite written with PHPUnit and stored under
 the ``Tests/`` directory. Tests should follow the following principles:
@@ -193,8 +193,8 @@ the ``Tests/`` directory. Tests should follow the following principles:
    A test suite must not contain ``AllTests.php`` scripts, but must rely on the
    existence of a ``phpunit.xml.dist`` file.
 
-Documentation
--------------
+文档
+----
 
 All classes and functions must come with full PHPDoc.
 
@@ -203,8 +203,8 @@ Extensive documentation should also be provided in the
 the ``Resources/doc/`` directory; the ``Resources/doc/index.rst`` file is
 the only mandatory file and must be the entry point for the documentation.
 
-Installation Instructions
-~~~~~~~~~~~~~~~~~~~~~~~~~
+安装指南
+~~~~~~~~
 
 In order to ease the installation of third-party bundles, consider using the
 following standardized instructions in your ``README.md`` file.
@@ -263,29 +263,29 @@ Optionally, you can add more installation steps (*Step 3*, *Step 4*, etc.) to
 explain other required installation tasks, such as registering routes or
 dumping assets.
 
-Routing
--------
+路由规则
+--------
 
 If the bundle provides routes, they must be prefixed with the bundle alias.
 For an AcmeBlogBundle for instance, all routes must be prefixed with
 ``acme_blog_``.
 
-Templates
----------
+模板
+----
 
 If a bundle provides templates, they must use Twig. A bundle must not provide
 a main layout, except if it provides a full working application.
 
-Translation Files
------------------
+翻译文件
+--------
 
 If a bundle provides message translations, they must be defined in the XLIFF
 format; the domain should be named after the bundle name (``bundle.hello``).
 
 A bundle must not override existing messages from another bundle.
 
-Configuration
--------------
+配置
+----
 
 To provide more flexibility, a bundle can provide configurable settings by
 using the Symfony built-in mechanisms.
@@ -337,8 +337,8 @@ semantic configuration described in the cookbook.
     If you are defining services, they should also be prefixed with the bundle
     alias.
 
-Custom Validation Constraints
------------------------------
+自定义表单校验规则
+------------------
 
 Starting with Symfony 2.5, a new Validation API was introduced. In fact,
 there are 3 modes, which the user can configure in their project:
@@ -379,8 +379,8 @@ API is being used. The following code, would work for *all* users::
         }
     }
 
-Learn more from the Cookbook
-----------------------------
+了解更多
+--------
 
 * :doc:`/cookbook/bundles/extension`
 

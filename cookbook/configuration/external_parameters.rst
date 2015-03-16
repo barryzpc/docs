@@ -1,8 +1,8 @@
 .. index::
     single: Environments; External parameters
 
-How to Set external Parameters in the Service Container
-=======================================================
+如何在服务容器中使用外部参数
+============================
 
 In the chapter :doc:`/cookbook/configuration/environments`, you learned how
 to manage your application configuration. At times, it may benefit your application
@@ -10,8 +10,8 @@ to store certain credentials outside of your project code. Database configuratio
 is one such example. The flexibility of the Symfony service container allows
 you to easily do this.
 
-Environment Variables
----------------------
+运行环境变量
+------------
 
 Symfony will grab any environment variable prefixed with ``SYMFONY__`` and
 set it as a parameter in the service container. Some transformations are
@@ -98,14 +98,14 @@ You can now reference these parameters wherever you need them.
             )
         ));
 
-Constants
----------
+常量
+----
 
 The container also has support for setting PHP constants as parameters.
 See :ref:`component-di-parameters-constants` for more details.
 
-Miscellaneous Configuration
----------------------------
+一些杂项的配置
+--------------
 
 The ``imports`` directive can be used to pull in parameters stored elsewhere.
 Importing a PHP file gives you the flexibility to add whatever is needed

@@ -1,8 +1,8 @@
 .. index::
    single: Bundle; Installation
 
-How to Install 3rd Party Bundles
-================================
+安装第三方包
+============
 
 Most bundles provide their own installation instructions. However, the
 basic steps for installing a bundle are the same:
@@ -11,14 +11,14 @@ basic steps for installing a bundle are the same:
 * `B) Enable the Bundle`_
 * `C) Configure the Bundle`_
 
-A) Add Composer Dependencies
-----------------------------
+A) 通过Composer安装包 
+---------------------
 
 Dependencies are managed with Composer, so if Composer is new to you, learn
 some basics in `their documentation`_. This has 2 steps:
 
-1) Find out the Name of the Bundle on Packagist
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1) 在Packagist查找包的名称
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The README for a bundle (e.g. `FOSUserBundle`_) usually tells you its name
 (e.g. ``friendsofsymfony/user-bundle``). If it doesn't, you can search for
@@ -29,7 +29,7 @@ the library on the `Packagist.org`_ site.
     Looking for bundles? Try searching at `KnpBundles.com`_: the unofficial
     archive of Symfony Bundles.
 
-2) Install the Bundle via Composer
+2) 通过Composer安装
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now that you know the package name, you can install it via Composer:
@@ -43,8 +43,10 @@ and download the library into the ``vendor/`` directory. If you need a specific
 version, add a ``:`` and the version right after the library name (see
 `composer require`_).
 
-B) Enable the Bundle
---------------------
+译者注：如果通过composer安装包的速度不理想，您可以尝试使用国内镜像，比如 `Packagist.cn`_
+
+B) 开启包
+---------
 
 At this point, the bundle is installed in your Symfony project (in
 ``vendor/friendsofsymfony/``) and the autoloader recognizes its classes.
@@ -68,7 +70,7 @@ The only thing you need to do now is register the bundle in ``AppKernel``::
         }
     }
 
-C) Configure the Bundle
+C) 配置包
 -----------------------
 
 It's pretty common for a bundle to need some additional setup or configuration
@@ -105,8 +107,8 @@ The output will look like this:
         node_paths:           []
         # ...
 
-Other Setup
------------
+其他步骤
+--------
 
 At this point, check the ``README`` file of your brand new bundle to see
 what to do next. Have fun!
@@ -116,3 +118,4 @@ what to do next. Have fun!
 .. _FOSUserBundle:       https://github.com/FriendsOfSymfony/FOSUserBundle
 .. _KnpBundles.com:      http://knpbundles.com/
 .. _`composer require`:  https://getcomposer.org/doc/03-cli.md#require
+.. _Packagist.cn         http://packagist.cn

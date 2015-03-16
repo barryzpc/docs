@@ -2,8 +2,8 @@
    single: Configuration; Semantic
    single: Bundle; Extension configuration
 
-How to Load Service Configuration inside a Bundle
-=================================================
+如何在包里载入服务的配置
+========================
 
 In Symfony, you'll find yourself using many services. These services can be
 registered in the `app/config` directory of your application. But when you
@@ -11,8 +11,8 @@ want to decouple the bundle for use in other projects, you want to include the
 service configuration in the bundle itself. This article will teach you how to
 do that.
 
-Creating an Extension Class
----------------------------
+创建扩展类
+----------
 
 In order to load service configuration, you have to create a Dependency
 Injection Extension for your bundle. This class has some conventions in order
@@ -46,8 +46,8 @@ but usually you would simply extend the
         }
     }
 
-Manually Registering an Extension Class
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+手工注册扩展类
+~~~~~~~~~~~~~~
 
 When not following the conventions, you will have to manually register your
 extension. To do this, you should override the
@@ -74,8 +74,8 @@ default, this is done by removing the ``Extension`` suffix and converting the
 class name to underscores (e.g. ``AcmeHelloExtension``'s DI alias is
 ``acme_hello``).
 
-Using the ``load()`` Method
----------------------------
+使用``load()``方法
+------------------
 
 In the ``load()`` method, all services and parameters related to this extension
 will be loaded. This method doesn't get the actual container instance, but a
@@ -113,8 +113,8 @@ Other available loaders are the ``YamlFileLoader``, ``PhpFileLoader`` and
     The ``IniFileLoader`` can only be used to load parameters and it can only
     load them as strings.
 
-Using Configuration to Change the Services
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+通过配置改变Service
+~~~~~~~~~~~~~~~~~~~
 
 The Extension is also the class that handles the configuration for that
 particular bundle (e.g. the configuration in ``app/config/config.yml``). To

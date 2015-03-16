@@ -1,8 +1,8 @@
 .. index::
     single: Session; Database Storage
 
-How to Use PdoSessionHandler to Store Sessions in the Database
-==============================================================
+使用PdoSessionHandler将会话数据存入数据库
+=========================================
 
 .. caution::
 
@@ -75,8 +75,8 @@ configuration format of your choice):
         ));
         $container->setDefinition('session.handler.pdo', $storageDefinition);
 
-Configuring the Table and Column Names
---------------------------------------
+配置表和字段名称
+----------------
 
 This will expect a ``sessions`` table with a number of different columns.
 The table name, and all of the column names, can be configured by passing
@@ -140,8 +140,8 @@ The following things can be configured:
 * ``db_lifetime_col``: (default ``sess_lifetime``) The name of the lifetime
   column in your session table (INTEGER).
 
-Sharing your Database Connection Information
---------------------------------------------
+共享数据库连接信息
+------------------
 
 With the given configuration, the database connection settings are defined for
 the session storage connection only. This is OK when you use a separate

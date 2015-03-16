@@ -1,8 +1,8 @@
 .. index::
    single: Assetic; Apply filters
 
-How to Apply an Assetic Filter to a specific File Extension
-===========================================================
+使用静态文件管理器处理指定扩展名的文件
+======================================
 
 Assetic filters can be applied to individual files, groups of files or even,
 as you'll see here, files that have a specific extension. To show you how
@@ -49,8 +49,8 @@ An example configuration might look like this:
             ),
         ));
 
-Filter a single File
---------------------
+单文件处理
+----------
 
 You can now serve up a single CoffeeScript file as JavaScript from within your
 templates:
@@ -75,8 +75,8 @@ templates:
 This is all that's needed to compile this CoffeeScript file and serve it
 as the compiled JavaScript.
 
-Filter multiple Files
----------------------
+多文件处理
+----------
 
 You can also combine multiple CoffeeScript files into a single output file:
 
@@ -107,8 +107,8 @@ JavaScript.
 
 .. _cookbook-assetic-apply-to:
 
-Filtering Based on a File Extension
------------------------------------
+基于文件扩展名处理
+------------------
 
 One of the great advantages of using Assetic is reducing the number of asset
 files to lower HTTP requests. In order to make full use of this, it would
