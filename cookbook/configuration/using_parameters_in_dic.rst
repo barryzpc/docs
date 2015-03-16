@@ -1,8 +1,8 @@
 .. index::
     single: Using Parameters within a Dependency Injection Class
 
-Using Parameters within a Dependency Injection Class
-----------------------------------------------------
+依赖注入时使用参数
+------------------
 
 You have seen how to use configuration parameters within
 :ref:`Symfony service containers <book-service-container-parameters>`.

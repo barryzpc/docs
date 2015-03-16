@@ -1,8 +1,8 @@
 .. index::
     single: Configuration
 
-How to Organize Configuration Files
-===================================
+如何组织配置文件
+================
 
 The default Symfony Standard Edition defines three
 :doc:`execution environments </cookbook/configuration/environments>` called
@@ -56,8 +56,8 @@ The following sections explain different ways to organize your configuration
 files. In order to simplify the examples, only the ``dev`` and ``prod``
 environments are taken into account.
 
-Different Directories per Environment
--------------------------------------
+不同环境分配不同目录
+--------------------
 
 Instead of suffixing the files with ``_dev`` and ``_prod``, this technique
 groups all the related configuration files under a directory with the same
@@ -152,8 +152,8 @@ needed for the ``app/config/dev/config.yml`` file:
 
 .. include:: /components/dependency_injection/_imports-parameters-note.rst.inc
 
-Semantic Configuration Files
-----------------------------
+按语义分类配置文件
+------------------
 
 A different organization strategy may be needed for complex applications with
 large configuration files. For instance, you could create one file per bundle
@@ -207,15 +207,15 @@ Following the same technique explained in the previous section, make sure to
 import the appropriate configuration files from each main file (``common.yml``,
 ``dev.yml`` and ``prod.yml``).
 
-Advanced Techniques
--------------------
+进阶技巧
+--------
 
 Symfony loads configuration files using the
 :doc:`Config component </components/config/introduction>`, which provides some
 advanced features.
 
-Mix and Match Configuration Formats
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+匹配以及混合配置文件格式
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configuration files can import files defined with any other built-in configuration
 format (``.yml``, ``.xml``, ``.php``, ``.ini``):
@@ -277,8 +277,8 @@ When the configuration values are dynamic, you can use the PHP configuration
 file to execute your own logic. In addition, you can define your own services
 to load configurations from databases or web services.
 
-Global Configuration Files
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+全局配置文件
+~~~~~~~~~~~~
 
 Some system administrators may prefer to store sensitive parameters in files
 outside the project directory. Imagine that the database credentials for your

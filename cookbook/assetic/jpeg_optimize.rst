@@ -1,8 +1,8 @@
 .. index::
    single: Assetic; Image optimization
 
-How to Use Assetic for Image Optimization with Twig Functions
-=============================================================
+通过Twig提供的函数使用静态文件管理器优化图片
+============================================
 
 Amongst its many filters, Assetic has four filters which can be used for on-the-fly
 image optimization. This allows you to get the benefits of smaller file sizes
@@ -10,8 +10,8 @@ without having to use an image editor to process each image. The results
 are cached and can be dumped for production so there is no performance hit
 for your end users.
 
-Using Jpegoptim
----------------
+Jpegoptim
+---------
 
 `Jpegoptim`_ is a utility for optimizing JPEG files. To use it with Assetic,
 add the following to the Assetic config:
@@ -71,8 +71,8 @@ It can now be used from a template:
             <img src="<?php echo $view->escape($url) ?>" alt="Example"/>
         <?php endforeach ?>
 
-Removing all EXIF Data
-~~~~~~~~~~~~~~~~~~~~~~
+清除所有EXIF信息
+~~~~~~~~~~~~~~~~
 
 By default, running this filter only removes some of the meta information
 stored in the file. Any EXIF data and comments are not removed, but you can
@@ -111,8 +111,8 @@ remove these by using the ``strip_all`` option:
             ),
         ));
 
-Lowering maximum Quality
-~~~~~~~~~~~~~~~~~~~~~~~~
+优化图片文件大小
+~~~~~~~~~~~~~~~~
 
 The quality level of the JPEG is not affected by default. You can gain
 further file size reductions by setting the max quality setting lower than
@@ -152,8 +152,8 @@ image quality:
             ),
         ));
 
-Shorter Syntax: Twig Function
------------------------------
+更短的语法：使用Twig
+--------------------
 
 If you're using Twig, it's possible to achieve all of this with a shorter
 syntax by enabling and using a special Twig function. Start by adding the

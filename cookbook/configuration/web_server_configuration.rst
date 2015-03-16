@@ -1,8 +1,8 @@
 .. index::
     single: Web Server
 
-Configuring a Web Server
-========================
+配置Web服务器
+=============
 
 The preferred way to develop your Symfony application is to use
 :doc:`PHP's internal web server </cookbook/web_server/built_in>`. However,
@@ -27,8 +27,8 @@ to use PHP :ref:`with Nginx <web-server-nginx>`.
 
 .. _web-server-apache-mod-php:
 
-Apache2 with mod_php/PHP-CGI
-----------------------------
+Apache2 + mod_php/PHP-CGI
+-------------------------
 
 For advanced Apache configuration options, see the official `Apache`_
 documentation. The minimum basics to get your application running under Apache2
@@ -86,8 +86,8 @@ following configuration snippet:
 
 .. _web-server-apache-fpm:
 
-Apache2 with PHP-FPM
---------------------
+Apache2 + PHP-FPM
+-----------------
 
 To make use of PHP5-FPM with Apache, you first have to ensure that you have
 the FastCGI process manager ``php-fpm`` binary and Apache's FastCGI module
@@ -112,8 +112,8 @@ listen on. Each pool can also be run under a different UID and GID:
     ; or listen on a TCP socket
     listen = 127.0.0.1:9000
 
-Using mod_proxy_fcgi with Apache 2.4
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mod_proxy_fcgi + Apache 2.4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you are running Apache 2.4, you can easily use ``mod_proxy_fcgi`` to pass
 incoming requests to PHP-FPM. Configure PHP-FPM to listen on a TCP socket
@@ -155,8 +155,8 @@ directive to pass requests for PHP files to PHP FPM:
         CustomLog /var/log/apache2/project_access.log combined
     </VirtualHost>
 
-PHP-FPM with Apache 2.2
-~~~~~~~~~~~~~~~~~~~~~~~
+PHP-FPM + Apache 2.2
+~~~~~~~~~~~~~~~~~~~~
 
 On Apache 2.2 or lower, you cannot use ``mod_proxy_fcgi``. You have to use
 the `FastCgiExternalServer`_ directive instead. Therefore, your Apache configuration

@@ -1,8 +1,8 @@
 .. index::
    single: Assetic; YUI Compressor
 
-How to Minify JavaScripts and Stylesheets with YUI Compressor
-=============================================================
+使用YUI压缩JS和CSS文件
+======================
 
 Yahoo! provides an excellent utility for minifying JavaScripts and stylesheets
 so they travel over the wire faster, the `YUI Compressor`_. Thanks to Assetic,
@@ -18,14 +18,14 @@ you can take advantage of this tool very easily.
     strictly necessary. Read :doc:`/cookbook/assetic/uglifyjs` for a modern and
     up-to-date alternative.
 
-Download the YUI Compressor JAR
--------------------------------
+下载YUI压缩程序
+---------------
 
 The YUI Compressor is written in Java and distributed as a JAR. `Download the JAR`_
 from the Yahoo! site and save it to ``app/Resources/java/yuicompressor.jar``.
 
-Configure the YUI Filters
--------------------------
+配置YUI处理器
+-------------
 
 Now you need to configure two Assetic filters in your application, one for
 minifying JavaScripts with the YUI Compressor and one for minifying
@@ -80,8 +80,8 @@ You now have access to two new Assetic filters in your application:
 ``yui_css`` and ``yui_js``. These will use the YUI Compressor to minify
 stylesheets and JavaScripts, respectively.
 
-Minify your Assets
-------------------
+压缩静态文件
+------------
 
 You have YUI Compressor configured now, but nothing is going to happen until
 you apply one of these filters to an asset. Since your assets are a part of
@@ -132,8 +132,8 @@ can be repeated to minify your stylesheets.
             <link rel="stylesheet" type="text/css" media="screen" href="<?php echo $view->escape($url) ?>" />
         <?php endforeach ?>
 
-Disable Minification in Debug Mode
-----------------------------------
+在开发模式关闭文件压缩功能
+--------------------------
 
 Minified JavaScripts and Stylesheets are very difficult to read, let alone
 debug. Because of this, Assetic lets you disable a certain filter when your

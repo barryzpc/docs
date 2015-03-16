@@ -2,8 +2,8 @@
     single: How the front controller, ``AppKernel`` and environments
     work together
 
-Understanding how the Front Controller, Kernel and Environments Work together
-=============================================================================
+了解前端控制器、内核、运行环境是如何一起工作的
+==============================================
 
 The section :doc:`/cookbook/configuration/environments` explained the basics
 on how Symfony uses environments to run your application with different configuration
@@ -24,8 +24,8 @@ three parts that work together:
     This documentation section is provided to explain what is going on behind
     the scenes.
 
-The Front Controller
---------------------
+前端控制器
+----------
 
 The `front controller`_ is a well-known design pattern; it is a section of
 code that *all* requests served by an application run through.
@@ -79,8 +79,8 @@ Technically, the `app/console`_ script used when running Symfony on the command
 line is also a front controller, only that is not used for web, but for command
 line requests.
 
-The Kernel Class
-----------------
+内核
+----
 
 The :class:`Symfony\\Component\\HttpKernel\\Kernel` is the core of
 Symfony. It is responsible for setting up all the bundles that make up
@@ -138,8 +138,8 @@ independently (for example, the admin UI, the frontend UI and database migration
     But odds are high that you don't need to change things like this on the
     fly by having several ``AppKernel`` implementations.
 
-The Environments
-----------------
+运行环境
+--------
 
 As just mentioned, the ``AppKernel`` has to implement another method -
 :method:`Symfony\\Component\\HttpKernel\\KernelInterface::registerContainerConfiguration`.

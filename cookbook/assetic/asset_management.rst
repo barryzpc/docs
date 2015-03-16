@@ -1,8 +1,8 @@
 .. index::
    single: Assetic; Introduction
 
-How to Use Assetic for Asset Management
-=======================================
+使用静态文件管理器管理静态文件
+==============================
 
 Assetic combines two major ideas: :ref:`assets <cookbook-assetic-assets>` and
 :ref:`filters <cookbook-assetic-filters>`. The assets are files such as CSS,
@@ -36,8 +36,8 @@ load them from anywhere) before serving them. This means you can:
 
 .. _cookbook-assetic-assets:
 
-Assets
-------
+静态文件
+--------
 
 Using Assetic provides many advantages over directly serving the files.
 The files do not need to be stored where they are served from and can be
@@ -50,8 +50,8 @@ behind adding either is basically the same, but with a slightly different syntax
 
 .. _cookbook-assetic-including-javascript:
 
-Including JavaScript Files
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+引入Javascript文件
+~~~~~~~~~~~~~~~~~~
 
 To include JavaScript files, use the ``javascripts`` tag in any template:
 
@@ -105,8 +105,8 @@ that reference images by their relative path. See :ref:`cookbook-assetic-cssrewr
 
 .. _cookbook-assetic-including-css:
 
-Including CSS Stylesheets
-~~~~~~~~~~~~~~~~~~~~~~~~~
+引入CSS文件
+~~~~~~~~~~~
 
 To bring in CSS stylesheets, you can use the same methodologies seen
 above, except with the ``stylesheets`` tag:
@@ -159,8 +159,8 @@ the :ref:`cssrewrite <cookbook-assetic-cssrewrite>` filter.
 
 .. _cookbook-assetic-including-image:
 
-Including Images
-~~~~~~~~~~~~~~~~
+引入图片文件
+~~~~~~~~~~~~
 
 To include an image you can use the ``image`` tag.
 
@@ -185,8 +185,8 @@ You can also use Assetic for image optimization. More information in
 
 .. _cookbook-assetic-cssrewrite:
 
-Fixing CSS Paths with the ``cssrewrite`` Filter
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+使用``cssrewrite``修复CSS路径问题
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Since Assetic generates new URLs for your assets, any relative paths inside
 your CSS files will break. To fix this, make sure to use the ``cssrewrite``
@@ -200,8 +200,8 @@ You can see an example in the previous section.
     When using the ``cssrewrite`` filter, don't refer to your CSS files using
     the ``@AppBundle`` syntax. See the note in the above section for details.
 
-Combining Assets
-~~~~~~~~~~~~~~~~
+静态文件合并
+~~~~~~~~~~~~
 
 One feature of Assetic is that it will combine many files into one. This helps
 to reduce the number of HTTP requests, which is great for front end performance.
@@ -270,8 +270,8 @@ combine third party assets, such as jQuery, with your own into a single file:
             <script src="<?php echo $view->escape($url) ?>"></script>
         <?php endforeach ?>
 
-Using Named Assets
-~~~~~~~~~~~~~~~~~~
+给静态文件组命名
+~~~~~~~~~~~~~~~~
 
 AsseticBundle configuration directives allow you to define named asset sets.
 You can do so by defining the input files, filters and output files in your
@@ -345,8 +345,8 @@ with the ``@named_asset`` notation:
 
 .. _cookbook-assetic-filters:
 
-Filters
--------
+处理器
+------
 
 Once they're managed by Assetic, you can apply filters to your assets before
 they are served. This includes filters that compress the output of your assets
@@ -422,8 +422,8 @@ into your template:
 A more detailed guide about configuring and using Assetic filters as well as
 details of Assetic's debug mode can be found in :doc:`/cookbook/assetic/uglifyjs`.
 
-Controlling the URL Used
-------------------------
+静态文件URL设置
+---------------
 
 If you wish to, you can control the URLs that Assetic produces. This is
 done from the template and is relative to the public document root:
@@ -455,8 +455,8 @@ done from the template and is relative to the public document root:
 
 .. _cookbook-assetic-dumping:
 
-Dumping Asset Files
--------------------
+静态文件输出
+------------
 
 In the ``dev`` environment, Assetic generates paths to CSS and JavaScript
 files that don't physically exist on your computer. But they render nonetheless
@@ -471,8 +471,8 @@ it might be downright frustrating.
 Fortunately, Assetic provides a way to dump your assets to real files, instead
 of being generated dynamically.
 
-Dumping Asset Files in the ``prod`` Environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+在生产环境下输出静态文件
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the ``prod`` environment, your JS and CSS files are represented by a single
 tag each. In other words, instead of seeing each JavaScript file you're including
@@ -500,8 +500,8 @@ This will physically generate and write each file that you need (e.g. ``/js/abcd
 If you update any of your assets, you'll need to run this again to regenerate
 the file.
 
-Dumping Asset Files in the ``dev`` Environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+在开发模式下输出静态文件
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, each asset path generated in the ``dev`` environment is handled
 dynamically by Symfony. This has no disadvantage (you can see your changes

@@ -1,8 +1,8 @@
 .. index::
     single: Override Symfony
 
-How to Override Symfony's default Directory Structure
-=====================================================
+如何重载默认的目录结构
+======================
 
 Symfony automatically ships with a default directory structure. You can
 easily override this directory structure to create your own. The default
@@ -26,8 +26,8 @@ directory structure is:
 
 .. _override-cache-dir:
 
-Override the ``cache`` Directory
---------------------------------
+重载缓存目录
+------------
 
 You can override the cache directory by overriding the ``getCacheDir`` method
 in the ``AppKernel`` class of you application::
@@ -58,8 +58,8 @@ the location of the cache directory to ``app/{environment}/cache``.
 
 .. _override-logs-dir:
 
-Override the ``logs`` Directory
--------------------------------
+重载日志目录
+------------
 
 Overriding the ``logs`` directory is the same as overriding the ``cache``
 directory, the only difference is that you need to override the ``getLogDir``
@@ -80,8 +80,8 @@ method::
 
 Here you have changed the location of the directory to ``app/{environment}/logs``.
 
-Override the ``web`` Directory
-------------------------------
+重载 ``web`` 目录
+-----------------
 
 If you need to rename or move your ``web`` directory, the only thing you
 need to guarantee is that the path to the ``app`` directory is still correct
@@ -155,8 +155,8 @@ file:
         $ php app/console cache:clear --env=prod
         $ php app/console assetic:dump --env=prod --no-debug
 
-Override the ``vendor`` Directory
----------------------------------
+重载 ``vendor`` 目录
+--------------------
 
 To override the ``vendor`` directory, you need to introduce changes in the
 following files:

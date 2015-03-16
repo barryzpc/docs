@@ -1,8 +1,8 @@
 .. index::
     single: Bundle; Removing AcmeDemoBundle
 
-How to Remove the AcmeDemoBundle
-================================
+删除AcmeDemoBundle
+==================
 
 The Symfony Standard Edition comes with a complete demo that lives inside a
 bundle called AcmeDemoBundle. It is a great boilerplate to refer to while
@@ -13,8 +13,8 @@ starting a project, but you'll probably want to eventually remove it.
     This article uses the AcmeDemoBundle as an example, but you can use
     these steps to remove any bundle.
 
-1. Unregister the Bundle in the ``AppKernel``
----------------------------------------------
+1. 从``AppKernel``中去除
+------------------------
 
 To disconnect the bundle from the framework, you should remove the bundle from
 the ``AppKernel::registerBundles()`` method. The bundle is normally found in
@@ -38,21 +38,21 @@ development environment and you can find it inside the if statement below::
         }
     }
 
-2. Remove Bundle Configuration
-------------------------------
+2. 删除包配置
+-------------
 
 Now that Symfony doesn't know about the bundle, you need to remove any
 configuration and routing configuration inside the ``app/config`` directory
 that refers to the bundle.
 
-2.1 Remove Bundle Routing
-~~~~~~~~~~~~~~~~~~~~~~~~~
+2.1 删除路由规则
+~~~~~~~~~~~~~~~~
 
 The routing for the AcmeDemoBundle can be found in ``app/config/routing_dev.yml``.
 Remove the ``_acme_demo`` entry at the bottom of this file.
 
-2.2 Remove Bundle Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2.2 删除包配置
+~~~~~~~~~~~~~~
 
 Some bundles contain configuration in one of the ``app/config/config*.yml``
 files. Be sure to remove the related configuration from these files. You can
@@ -65,8 +65,8 @@ used in the configuration for the ``app/config/security.yml`` file. You can
 use it as a boilerplate for your own security, but you **can** also remove
 everything: it doesn't matter to Symfony if you remove it or not.
 
-3. Remove the Bundle from the Filesystem
-----------------------------------------
+3. 删除包文件
+-------------
 
 Now you have removed every reference to the bundle in your application, you
 should remove the bundle from the filesystem. The bundle is located in the
@@ -81,14 +81,14 @@ can remove the ``Acme`` directory as well.
 
         echo $this->container->get('kernel')->getBundle('AcmeDemoBundle')->getPath();
 
-3.1 Remove Bundle Assets
+3.1 删除包生成的静态文件
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Remove the assets of the bundle in the web/ directory (e.g.
 ``web/bundles/acmedemo`` for the AcmeDemoBundle).
 
-4. Remove Integration in other Bundles
---------------------------------------
+4. 删除其他包里的依赖关系
+-------------------------
 
 .. note::
 

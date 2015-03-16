@@ -1,8 +1,8 @@
 .. index::
    single: Bundle; Inheritance
 
-How to Use Bundle Inheritance to Override Parts of a Bundle
-===========================================================
+通过包继承机制重载包的某些功能或配置
+====================================
 
 When working with third-party bundles, you'll probably come across a situation
 where you want to override a file in that third-party bundle with a file
@@ -37,8 +37,8 @@ simply by creating a file with the same name.
     Despite the method name, there is no parent/child relationship between
     the bundles, it is just a way to extend and override an existing bundle.
 
-Overriding Controllers
-~~~~~~~~~~~~~~~~~~~~~~
+控制器重载
+~~~~~~~~~~
 
 Suppose you want to add some functionality to the ``registerAction`` of a
 ``RegistrationController`` that lives inside FOSUserBundle. To do so,
@@ -73,8 +73,8 @@ original method, and change its functionality::
     the controller using the standard ``FOSUserBundle:Registration:register``
     syntax in routes and templates. This is the best practice.
 
-Overriding Resources: Templates, Routing, etc
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+模板、路由规则等资源的重载
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Most resources can also be overridden, simply by creating a file in the same
 location as your parent bundle.

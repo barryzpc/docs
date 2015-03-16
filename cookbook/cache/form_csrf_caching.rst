@@ -1,8 +1,8 @@
 .. index::
     single: Cache; CSRF; Forms
 
-Caching Pages that Contain CSRF Protected Forms
-===============================================
+缓存包含了使用CSRF保护的表单的页面
+==================================
 
 CSRF tokens are meant to be different for every user. This is why you
 need to be cautious if you try to cache pages with forms including them.
@@ -10,8 +10,8 @@ need to be cautious if you try to cache pages with forms including them.
 For more information about how CSRF protection works in Symfony, please
 check :ref:`CSRF Protection <forms-csrf>`.
 
-Why Caching Pages with a CSRF token is Problematic
---------------------------------------------------
+为什么缓存带有CSRF校验码的页面是个难题
+--------------------------------------
 
 Typically, each user is assigned a unique CSRF token, which is stored in
 the session for validation. This means that if you *do* cache a page with
@@ -25,8 +25,8 @@ with a CSRF token. This is because a cookie is sent in order to preserve
 the PHP session open and Varnish's default behaviour is to not cache HTTP
 requests with cookies.
 
-How to Cache Most of the Page and still be able to Use CSRF Protection
-----------------------------------------------------------------------
+如何缓存带有CSRF保护的页面
+--------------------------
 
 To cache a page that contains a CSRF token, you can use more advanced caching
 techniques like :ref:`ESI fragments <edge-side-includes>`, where you cache
