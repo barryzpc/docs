@@ -1,8 +1,8 @@
 .. index::
     single: Console; Commands as Services
 
-How to Define Commands as Services
-==================================
+将命令定义为服务
+================
 
 By default, Symfony will take a look in the ``Command`` directory of each
 bundle and automatically register your commands. If a command extends the
@@ -56,8 +56,8 @@ with ``console.command``:
             ->addTag('console.command')
         ;
 
-Using Dependencies and Parameters to Set Default Values for Options
--------------------------------------------------------------------
+使用依赖注入加参数的方式给选项设置默认值
+----------------------------------------
 
 Imagine you want to provide a default value for the ``name`` option. You could
 pass one of the following as the 5th argument of ``addOption()``:

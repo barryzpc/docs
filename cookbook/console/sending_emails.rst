@@ -2,8 +2,8 @@
    single: Console; Sending emails
    single: Console; Generating URLs
 
-How to Generate URLs and Send Emails from the Console
-=====================================================
+如何在命令行里生成URL发邮件
+===========================
 
 Unfortunately, the command line context does not know about your VirtualHost
 or domain name. This means that if you generate absolute URLs within a
@@ -17,8 +17,8 @@ what URL it should use when generating URLs.
 There are two ways of configuring the request context: at the application level
 and per Command.
 
-Configuring the Request Context Globally
-----------------------------------------
+全局配置请求上下文
+------------------
 
 To configure the Request Context - which is used by the URL Generator - you can
 redefine the parameters it uses as default values to change the default host
@@ -60,8 +60,8 @@ will override the defaults.
         $container->setParameter('router.request_context.scheme', 'https');
         $container->setParameter('router.request_context.base_url', 'my/path');
 
-Configuring the Request Context per Command
--------------------------------------------
+给单个命令配置请求上下文
+------------------------
 
 To change it only in one command you can simply fetch the Request Context
 from the ``router`` service and override its settings::
@@ -82,8 +82,8 @@ from the ``router`` service and override its settings::
        }
    }
 
-Using Memory Spooling
----------------------
+使用邮件池
+----------
 
 .. versionadded:: 2.3
     When using Symfony 2.3+ and SwiftmailerBundle 2.3.5+, the memory spool is now

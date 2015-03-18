@@ -1,8 +1,8 @@
 .. index::
     single: Console; Usage
 
-How to Use the Console
-======================
+命令的使用
+==========
 
 The :doc:`/components/console/usage` page of the components documentation looks
 at the global console options. When you use the console as part of the full
