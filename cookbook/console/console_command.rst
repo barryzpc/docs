@@ -1,15 +1,15 @@
 .. index::
    single: Console; Create commands
 
-How to Create a Console Command
-===============================
+创建命令行命令
+==============
 
 The Console page of the Components section (:doc:`/components/console/introduction`) covers
 how to create a console command. This cookbook article covers the differences
 when creating console commands within the Symfony framework.
 
-Automatically Registering Commands
-----------------------------------
+命令的自动注册
+--------------
 
 To make the console commands available automatically with Symfony, create a
 ``Command`` directory inside your bundle and create a PHP file suffixed with
@@ -72,8 +72,8 @@ This command will now automatically be available to run:
 
 .. _cookbook-console-dic:
 
-Register Commands in the Service Container
--------------------------------------------
+在服务容器里注册命令
+--------------------
 
 Just like controllers, commands can be declared as services. See the
 :doc:`dedicated cookbook entry </cookbook/console/commands_as_services>`
@@ -159,8 +159,8 @@ before translating contents::
 However for other services the solution might be more complex. For more details,
 see :doc:`/cookbook/service_container/scopes`.
 
-Testing Commands
-----------------
+命令测试
+--------
 
 When testing commands used as part of the full framework
 :class:`Symfony\\Bundle\\FrameworkBundle\\Console\\Application <Symfony\\Bundle\\FrameworkBundle\\Console\\Application>` should be used

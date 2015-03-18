@@ -1,8 +1,8 @@
 .. index::
    single: Controller; As Services
 
-How to Define Controllers as Services
-=====================================
+将控制器定义为服务
+==================
 
 In the book, you've learned how easily a controller can be used when it
 extends the base
@@ -28,8 +28,8 @@ this works fine, controllers can also be specified as services.
     see this done in some open-source Symfony bundles. It's also important
     to understand the pros and cons of both approaches.
 
-Defining the Controller as a Service
-------------------------------------
+定义控制器为服务
+----------------
 
 A controller can be defined as a service in the same way as any other class.
 For example, if you have the following simple controller::
@@ -74,8 +74,8 @@ Then you can define it as a service as follows:
             'AppBundle\Controller\HelloController'
         ));
 
-Referring to the Service
-------------------------
+引用服务
+--------
 
 To refer to a controller that's defined as a service, use the single colon (:)
 notation. For example, to forward to the ``indexAction()`` method of the service
@@ -124,8 +124,8 @@ the route ``_controller`` value:
     If your controller service implements the ``__invoke`` method, you can simply refer to the service id
     (``acme.hello.controller``).
 
-Alternatives to base Controller Methods
----------------------------------------
+控制器基类快捷方法的另一种实现方式
+----------------------------------
 
 When using a controller defined as a service, it will most likely not extend
 the base ``Controller`` class. Instead of relying on its shortcut methods,

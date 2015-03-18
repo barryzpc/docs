@@ -1,8 +1,8 @@
 .. index::
    single: Console; Enabling logging
 
-How to Enable Logging in Console Commands
-=========================================
+在命令里使用日志
+================
 
 The Console component doesn't provide any logging capabilities out of the box.
 Normally, you run console commands manually and observe the output, which is
@@ -17,8 +17,8 @@ There are basically two logging cases you would need:
  * Manually logging some information from your command;
  * Logging uncaught Exceptions.
 
-Manually Logging from a Console Command
----------------------------------------
+手动开启日志
+------------
 
 This one is really simple. When you create a console command within the full
 framework as described in ":doc:`/cookbook/console/console_command`", your command
@@ -66,8 +66,8 @@ container and use it to do the logging::
 Depending on the environment in which you run your command (and your logging
 setup), you should see the logged entries in ``app/logs/dev.log`` or ``app/logs/prod.log``.
 
-Enabling automatic Exceptions Logging
--------------------------------------
+开启错误日志自动记录功能
+------------------------
 
 To get your console application to automatically log uncaught exceptions for
 all of your commands, you can use :doc:`console events</components/console/events>`.
@@ -166,8 +166,8 @@ service configuration. Your method receives a
 :class:`Symfony\\Component\\Console\\Event\\ConsoleExceptionEvent` object,
 which has methods to get information about the event and the exception.
 
-Logging non-0 Exit Statuses
----------------------------
+记录非正常退出状态
+------------------
 
 The logging capabilities of the console can be further extended by logging
 non-0 exit statuses. This way you will know if a command had any errors, even

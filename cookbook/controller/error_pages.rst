@@ -2,8 +2,8 @@
    single: Controller; Customize error pages
    single: Error pages
 
-How to Customize Error Pages
-============================
+自定义报错页面
+==============
 
 When an exception is thrown, the core ``HttpKernel`` class catches it and
 dispatches a ``kernel.exception`` event. This gives you the power to convert
@@ -29,8 +29,8 @@ much control you need:
 
 .. _use-default-exception-controller:
 
-Using the Default ExceptionController
--------------------------------------
+使用默认的意外控制器
+--------------------
 
 By default, the ``showAction()`` method of the
 :class:`Symfony\\Bundle\\TwigBundle\\Controller\\ExceptionController`
@@ -49,8 +49,8 @@ shown to the user in production.
 
 .. _cookbook-error-pages-by-status-code:
 
-How the Template for the Error and Exception Pages Is Selected
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+错误或意外页面的命名规则
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The TwigBundle contains some default templates for error and
 exception pages in its ``Resources/views/Exception`` directory.
@@ -85,8 +85,8 @@ available templates based on the HTTP status code and request format:
     called to obtain the HTTP status code to use. Otherwise,
     the status code will be "500".
 
-Overriding or Adding Templates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+重载或添加模板
+~~~~~~~~~~~~~~
 
 To override these templates, simply rely on the standard method for
 overriding templates that live inside a bundle. For more information,
@@ -147,8 +147,8 @@ Refer to the previous section for the order in which the
 
 .. _testing-error-pages:
 
-Testing Error Pages during Development
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+在测试环境测试错误页面
+~~~~~~~~~~~~~~~~~~~~~~
 
 The default ``ExceptionController`` also allows you to preview your
 *error* pages during development.
@@ -211,8 +211,8 @@ given status code and format.
 
 .. _custom-exception-controller:
 
-Replacing the Default ExceptionController
-------------------------------------------
+使用自定义的错误处理控制器
+--------------------------
 
 If you need a little more flexibility beyond just overriding the
 template, then you can change the controller that renders the error
@@ -300,8 +300,8 @@ template to be used.
 
 .. _use-kernel-exception-event:
 
-Working with the kernel.exception Event
------------------------------------------
+处理kernel.exception事件
+------------------------
 
 As mentioned in the beginning, the ``kernel.exception`` event is
 dispatched whenever the Symfony Kernel needs to
