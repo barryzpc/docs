@@ -554,7 +554,7 @@ use a Kernel class, ``AppKernel``, to bootstrap the application.
 
 Though front controllers are essential in handling every request, you'll
 rarely need to modify or even think about them. They'll be mentioned again
-briefly in the `Environments`_ section.
+briefly in the `运行环境配置`_ section.
 
 应用（``app``）目录
 ~~~~~~~~~~~~~~~~~~~
@@ -574,11 +574,11 @@ defaults.
 
 ``registerContainerConfiguration()``
     Loads the main application configuration resource file (see the
-    `Application Configuration`_ section).
+    `应用配置`_ section).
 
 In day-to-day development, you'll mostly use the ``app/`` directory to modify
 configuration and routing files in the ``app/config/`` directory (see
-`Application Configuration`_). It also contains the application cache
+`应用配置`_). It also contains the application cache
 directory (``app/cache``), a log directory (``app/logs``) and a directory
 for application-level resource files, such as templates (``app/Resources``).
 You'll learn more about each of these directories in later chapters.
@@ -609,7 +609,7 @@ You'll learn more about each of these directories in later chapters.
             src/Acme/DemoBundle/Controller/RandomController.php
 
 代码（``src``）目录
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Put simply, the ``src/`` directory contains all the actual code (PHP code,
 templates, configuration files, stylesheets, etc) that drives *your* application.
@@ -876,7 +876,7 @@ format you prefer:
 .. note::
 
    You'll learn exactly how to load each file/format in the next section
-   `Environments`_.
+   `运行环境配置`_.
 
 Each top-level entry like ``framework`` or ``twig`` defines the configuration
 for a particular bundle. For example, the ``framework`` key defines the configuration

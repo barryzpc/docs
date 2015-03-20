@@ -25,7 +25,7 @@ Symfony文档中文翻译
 标题格式，以`book/controller.rst`为例：
 
 ```
-[翻译请求] book/controller.rst
+[翻译申请] book/controller.rst
 ```
 
 内容不限
@@ -58,6 +58,11 @@ Symfony文档中文翻译
 .. _symfony.cn: http://symfony.cn
 .. _a Symfony fan: http://symfony.fans.blog
 ```
+
+文档格式
+--------
+
+文档必须是[reStructuredText](http://docutils.sourceforge.net/rst.html)格式。翻译时可偷懒无需学习reStructuredText语法，但请一定做到*只替换原文里的文字，而不要改动其格式*。
 
 版权说明
 --------

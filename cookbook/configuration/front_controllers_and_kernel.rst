@@ -11,9 +11,9 @@ settings. This section will explain a bit more in-depth what happens when
 your application is bootstrapped. To hook into this process, you need to understand
 three parts that work together:
 
-* `The Front Controller`_
-* `The Kernel Class`_
-* `The Environments`_
+* `前端控制器`_
+* `内核`_
+* `运行环境`_
 
 .. note::
 

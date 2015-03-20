@@ -1236,7 +1236,7 @@ see :doc:`/cookbook/routing/extra_information`.
 ----------------
 
 All routes are loaded via a single configuration file - usually
-``app/config/routing.yml`` (see `Creating Routes`_ above). However, if you use
+``app/config/routing.yml`` (see `创建路由规则`_ above). However, if you use
 routing annotations, you'll need to point the router to the controllers with
 the annotations. This can be done by "importing" directories into the routing
 configuration:
