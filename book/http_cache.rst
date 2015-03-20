@@ -923,7 +923,7 @@ different URLs. More flexible concepts exist for those cases:
 .. _edge-side-includes:
 
 使用ESI（Edge Side Includes）
-----------------------------
+-----------------------------
 
 Gateway caches are a great way to make your website perform better. But they
 have one limitation: they can only cache whole pages. If you can't cache

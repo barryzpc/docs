@@ -1,15 +1,15 @@
 .. index::
    single: Bundle; Installation
 
-安装第三方包
-============
+安装第三方包（Bundle）
+======================
 
 Most bundles provide their own installation instructions. However, the
 basic steps for installing a bundle are the same:
 
-* `A) Add Composer Dependencies`_
-* `B) Enable the Bundle`_
-* `C) Configure the Bundle`_
+* `A) 通过Composer安装包`_
+* `B) 开启包`_
+* `C) 配置包`_
 
 A) 通过Composer安装包 
 ---------------------
@@ -30,7 +30,7 @@ the library on the `Packagist.org`_ site.
     archive of Symfony Bundles.
 
 2) 通过Composer安装
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Now that you know the package name, you can install it via Composer:
 
@@ -71,7 +71,7 @@ The only thing you need to do now is register the bundle in ``AppKernel``::
     }
 
 C) 配置包
------------------------
+---------
 
 It's pretty common for a bundle to need some additional setup or configuration
 in ``app/config/config.yml``. The bundle's documentation will tell you about
@@ -118,4 +118,4 @@ what to do next. Have fun!
 .. _FOSUserBundle:       https://github.com/FriendsOfSymfony/FOSUserBundle
 .. _KnpBundles.com:      http://knpbundles.com/
 .. _`composer require`:  https://getcomposer.org/doc/03-cli.md#require
-.. _Packagist.cn         http://packagist.cn
+.. _Packagist.cn:        http://packagist.cn

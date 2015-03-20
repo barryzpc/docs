@@ -45,7 +45,7 @@ file.
 --------
 
 A unit test is usually a test against a specific PHP class. If you want to
-test the overall behavior of your application, see the section about `Functional Tests`_.
+test the overall behavior of your application, see the section about `功能测试`_.
 
 Writing Symfony unit tests is no different from writing standard PHPUnit
 unit tests. Suppose, for example, that you have an *incredibly* simple class
@@ -209,7 +209,7 @@ some form values, and submit the corresponding form::
 
     The form can also handle uploads and contains methods to fill in different types
     of form fields (e.g. ``select()`` and ``tick()``). For details, see the
-    `Forms`_ section below.
+    `表单`_ section below.
 
 Now that you can easily navigate through an application, use assertions to test
 that it actually does what you expect it to. Use the Crawler to make assertions

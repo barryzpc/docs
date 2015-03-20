@@ -401,7 +401,7 @@ checks translation resources for several locales:
    resource (e.g. ``messages.fr.xliff``);
 
 #. If the translation still isn't found, Symfony uses the ``fallback`` configuration
-   parameter, which defaults to ``en`` (see `Configuration`_).
+   parameter, which defaults to ``en`` (see `设置`_).
 
 .. versionadded:: 2.6
     The ability to log missing translations was introduced in Symfony 2.6.

@@ -123,7 +123,7 @@ for the homepage of our app:
 .. _best-practices-paramconverter:
 
 运用ParamConverter
------------------
+------------------
 
 If you're using Doctrine, then you can *optionally* use the `ParamConverter`_
 to automatically query for an entity and pass it as an argument to your controller.
@@ -160,7 +160,7 @@ for an object whose ``$id`` property matches the ``{id}`` value. It will
 also show a 404 page if no ``Post`` can be found.
 
 如果查询条件更复杂
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 This works without any configuration because the wildcard name ``{id}`` matches
 the name of the property on the entity. If this isn't true, or if you have
