@@ -1,3 +1,6 @@
 [submodule "sphinx-php"]
 	path = _exts
 	url = https://github.com/fabpot/sphinx-php.git
+[submodule "locale/zh_CN"]
+	path = locale/zh_CN
+	url = https://github.com/sfcn/docs-po.git

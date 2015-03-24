@@ -274,3 +274,6 @@ texinfo_documents = [
 # Use PHP syntax highlighting in code examples by default
 highlight_language='php'
 
+# intl
+locale_dirs = ['locale/']
+gettext_compact = False
