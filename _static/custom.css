@@ -1,0 +1,5 @@
+.rst-content div.sidebar {
+    float: none;
+    margin: 0 0 24px 0;
+    width: 100%;
+}
